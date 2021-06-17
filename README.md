@@ -24,3 +24,13 @@ git push --force
 git brach -d feature
 git push origin --delete feature
 ```
+
+<h1> Own git server </h1>
+
+```bash
+sudo apt install git-core
+mkdir -p ...path_to_git
+mkdir -p ...path_to_git/repo.git
+cd ..path_to_git/repo.git
+git init --bare
+```

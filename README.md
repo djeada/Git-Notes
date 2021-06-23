@@ -34,3 +34,23 @@ mkdir -p ...path_to_git/repo.git
 cd ..path_to_git/repo.git
 git init --bare
 ```
+
+<h1>How To Checkout Git Tags</h1>
+
+History of commits.
+
+```bash
+git log --oneline --graph
+
+```
+
+Last 10 tags.
+```bash
+git describe --tags `git rev-list --tags --max-count=10`
+```
+
+Checkout
+```bash
+tag="v2.0"
+git checkout $tag
+```

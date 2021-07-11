@@ -1,5 +1,7 @@
 # git
 
+merge tool
+
 <h1> How to merge to master </h1>
 
 ```bash

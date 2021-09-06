@@ -1,6 +1,11 @@
 # git
 
-merge tool
+TODO:
+* merge tool
+* change commit message
+* squash last 5 commits
+* remove commit
+* change message of a commit
 
 <h1> How to merge to master </h1>
 

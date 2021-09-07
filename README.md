@@ -37,7 +37,7 @@ Old commit:
 
 ```bash
 git rebase -i HEAD~N
-# N is the commit number, beginning with the most recent.
+# N is the commit number, beginning from the most recent.
 git commit --amend
 git rebase --continue
 git push --force

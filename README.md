@@ -34,6 +34,7 @@ git push --force
 ```
 
 Old commit:
+Where N is a number, e.g. 6:
 
 ```bash
 git rebase -i HEAD~N
@@ -41,6 +42,15 @@ git rebase -i HEAD~N
 git commit --amend
 git rebase --continue
 git push --force
+```
+
+<h1>How to remove n last commits?</h1>
+
+Where N is a number, e.g. 6:
+
+```bash
+git reset HEAD~N
+git push origin +HEAD
 ```
 
 <h1>Fetch a file from another branch without changing the current branch.</h1>

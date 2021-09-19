@@ -1,4 +1,5 @@
 # git
+Notes on git
 
 TODO:
 * merge tool

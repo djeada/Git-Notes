@@ -23,3 +23,11 @@ Merge branch_a into branch_b:
 git checkout branch_b
 
 git merge branch_a
+
+go to a specific commit:
+
+git checkout commit_number
+
+Add a specific commit to your branch:
+
+git cherry-pick commit_number

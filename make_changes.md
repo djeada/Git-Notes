@@ -1,3 +1,5 @@
+TODO: add undo for add and commit 
+
 Stages the file, ready for commit:
 
 git add filename

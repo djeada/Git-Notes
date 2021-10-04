@@ -31,3 +31,11 @@ git checkout commit_number
 Add a specific commit to your branch:
 
 git cherry-pick commit_number
+
+<h1> How to remove branch feature?</h1>
+
+```bash
+git brach -d feature
+git push origin --delete feature
+```
+

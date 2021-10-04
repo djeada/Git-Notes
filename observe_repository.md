@@ -29,3 +29,9 @@ git show commit_id:filename
 Show full change history:
 
 git log
+
+<h1>Show word changes in diff</h1>
+
+```bash
+git diff --word-diff 
+```

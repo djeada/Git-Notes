@@ -1,4 +1,7 @@
-TODO: add undo for add and commit 
+TODO: 
+* add undo for add and commit 
+* change commit message
+* remove commit
 
 Stages the file, ready for commit:
 

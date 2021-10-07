@@ -1,5 +1,5 @@
 # Git
-Notes on git
+Notes on git.
 
 <h1>Available notes</h1>
 

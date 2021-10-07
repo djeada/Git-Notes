@@ -23,7 +23,7 @@ git init project_name
 <h1>What happens behind the scenes?</h1>
 A repository may appear to be nothing more than a directory dedicated to your source code. That is not the case. So, what happens when we create a repository? 
 
-You might have noticed the mysterious.git directory that was created along with the repository. If you delete it, your project directory will revert to a normal directory with files and subdirectories. This directory contains all git objects. One of those objects is a series of snapshots, trough which git stores the entire history of all files and subdirectories in your project directory. In the snapshots files are referred to as "blobs," while directories are referred to as "trees.". 
+You might have noticed the mysterious .git directory that was created along with the repository. If you delete it, your project directory will revert to a normal directory with files and subdirectories. This directory contains all git objects. One of those objects is a series of snapshots, trough which git stores the entire history of all files and subdirectories in your project directory. In the snapshots files are referred to as "blobs," while directories are referred to as "trees.". 
 Git also stores snapshot metadata, such as who created each snapshot, messages connected with each snapshot, and so on.
 
 <h1>Download an existing repository</h1>

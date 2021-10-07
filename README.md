@@ -14,3 +14,12 @@ Notes on git
 * <a href="https://github.com/djeada/Git/blob/main/src/squashing.md">squashing</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/archive.md">archive</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/git_server.md">git server</a>
+
+<h1>Bibliography</h1>
+
+* https://git-scm.com/book/en/v2
+* https://ohshitgit.com/
+* https://xosh.org/explain-git-in-simple-words/
+* https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html
+* https://eagain.net/articles/git-for-computer-scientists/
+* https://learngitbranching.js.org

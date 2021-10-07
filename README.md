@@ -14,10 +14,3 @@ Notes on git
 * <a href="https://github.com/djeada/Git/blob/main/src/squashing.md">squashing</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/archive.md">archive</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/git_server.md">git server</a>
-
-
-<h1>Fetch a file from another branch without changing the current branch.</h1>
-
-```bash
-git checkout other_branch -- path/to/file 
-```

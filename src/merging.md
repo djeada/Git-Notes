@@ -1,5 +1,13 @@
 TODO: mergetool
 
+<h1>Merge conflicts</h1>
+
+If merge conflicts, read the super-helpful tips in terminal:
+
+1. git diff to resolve the merge conflicts I have
+2. git rebase --continue
+
+
 <h1> How to merge to master </h1>
 
 ```bash

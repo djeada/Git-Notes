@@ -17,7 +17,11 @@ git push
 Rebasing with Merge Conflicts
 git pull --rebase
 
-If merge conflicts, read the super-helpful tips in terminal:
 
-1. git diff to resolve the merge conflicts I have
-2. git rebase --continue
+<h1>Difference between fetch and pull</h1>
+
+<h1>Fetch a file from another branch without changing the current branch.</h1>
+
+```bash
+git checkout other_branch -- path/to/file 
+```

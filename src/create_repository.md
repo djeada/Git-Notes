@@ -12,6 +12,14 @@ In a nutshell, git is useful for:
 <h1>What is a repository?</h1>
 A repository is a special directory that tracks and saves all changes to the files contained within it. This data is kept in a subdirectory called .git. Users can delete, copy, or create repositories for their projects. 
 
+There could be only one local repository.
+There might be a local repository as well as a remote repository.
+Finally, there might be multiple local repositories as well as multiple remote repositories.
+
+Git was created to accommodate a distributed approach that does not require a central repository.
+Git was also built in such a way that the "client" and "server" do not have to be online at the same time.
+It was created so that users with unstable connections may share code through email and even work fully unconnected and share code via CD's.
+
 <h1>Create a new repostiory</h1>
 
 Create a new local repository name project_name in the current directory:

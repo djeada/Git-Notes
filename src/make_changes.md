@@ -29,7 +29,7 @@ Revert everything to the last commit:
 git reset --hard
 ```
 
-<h1>What are commits?</h1>
+<h1>What are the commits?</h1>
 
 Commits are similar to saves.
 To capture the present status of your project, commit files from the staging area by associating them with a message.

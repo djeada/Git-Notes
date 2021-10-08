@@ -24,7 +24,7 @@ Show all staged and unstaged file changes:
 git diff HEAD
 ```
 
-Show word changes in diff
+Show word changes in diff:
 
 ```bash
 git diff --word-diff 

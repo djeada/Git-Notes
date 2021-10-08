@@ -10,7 +10,7 @@ Notes on git.
 * <a href="https://github.com/djeada/Git/blob/main/src/stashing_files.md">stashing files</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/observe_repository.md">observe repository</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/synchronization.md">synchronization</a>
-* <a href="https://github.com/djeada/Git/blob/main/src/squashing_commits.md">squashing</a>
+* <a href="https://github.com/djeada/Git/blob/main/src/squashing_commits.md">squashing commits</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/archive.md">archive</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/git_server.md">git server</a>
 

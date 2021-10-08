@@ -24,7 +24,7 @@ git pull --rebase
 <h1>Differences between fetch and pull</h1>
 
 Fetch will not change your files, but pull may.
-You may update your remote-tracking branches in refs/remotes/remote at any time by running git fetch.
+You may update your remote-tracking branches in refs/remotes/remote at any time by running git fetch (i.e. it will just bring the local copy of the remote repository up to date).
 This operation is safe to do since it never affects any of your own local branches under refs/heads.
 
 

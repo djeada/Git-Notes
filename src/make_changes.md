@@ -1,29 +1,44 @@
 TODO: 
-* add undo for add and commit 
-* change commit message
-* remove commit
+* add undo for commit 
+
+<h1>Staging files</h1>
 
 Stages the file, ready for commit:
 
+```bash
 git add filename
+```
 
 Stage all changed files, ready for commit:
 
+```bash
 git add .
+```
 
-Commit all staged files to versioned history:
-
-git commit -m “commit message”
+<h1>How to undo git add?</h1>
 
 Unstages file, keeping the file changes:
 
+```bash
 git reset filename
+```
 
 Revert everything to the last commit:
 
+```bash
 git reset --hard
+```
 
-<h1>How can I edit the commit message after a git push?</h1>
+<h1>Commits</h1>
+
+Commit all staged files to versioned history:
+
+```bash
+git commit -m “commit message”
+git push --force
+```
+
+<h1>How to edit the commit message after a git push?</h1>
 
 Last commit:
 

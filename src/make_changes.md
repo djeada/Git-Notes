@@ -29,13 +29,24 @@ Revert everything to the last commit:
 git reset --hard
 ```
 
-<h1>Commits</h1>
+<h1>What are commits?</h1>
+
+Commits are similar to saves.
+To capture the present status of your project, commit files from the staging area by associating them with a message.
+The commit message should indicate what modifications have been done since the last commit.
+If you wish to go back to a prior state of your project that was connected with a commit, you may simply do so with the <i>checkout</i> command. 
 
 Commit all staged files to versioned history:
 
 ```bash
 git commit -m “commit message”
-git push --force
+git push
+```
+
+Restore project state from commit with id commit_id:
+
+```bash
+git checkout commit_id
 ```
 
 <h1>How to edit the commit message after a git push?</h1>

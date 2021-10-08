@@ -1,4 +1,4 @@
-<h1>Check which files have been modified since last commit</h1>
+<h1>Check the changes since the last commit</h1>
 
 List new or modified files not yet committed:
 

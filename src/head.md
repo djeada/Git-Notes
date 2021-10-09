@@ -12,11 +12,15 @@ cat .git/HEAD
 
 Normally, you'll get anything along the lines of: 
 
+```
 ref: refs/heads/master
+```
 
 You could receive something like this: 
 
+```
 b4d373k8990g2b5de30a37bn843b2f51fks2b40
+```
 
 HEAD in the first case refers to the master branch. In the second example, it refers to a commit that is not the last commit in any branch. The second case is referred to as the detached head state. 
 

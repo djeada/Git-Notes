@@ -3,7 +3,7 @@ Squashing is the process of combining multiple commits into a single commit:
 
 To combine 3 last commits into a single commit and write a new commit message from scratch, use:
 
-```
+```bash
 git rebase -i HEAD~3 
 ```
 

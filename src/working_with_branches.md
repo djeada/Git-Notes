@@ -1,37 +1,40 @@
+<h1>Showing branches</h1>
+
 List all local branches:
 
+```bash
 git branch
+```
 
 List all branches, local and remote:
 
+```bash
 git branch -av
+```
+
+<h1>Switching between branches</h1>
 
 Switch to a branch_name and update working directory:
 
+```bash
 git checkout branch_name
+```
 
-Create a new branch called branch_name
+<h1>Creating branches</h1>
 
+Create a new branch called branch_name:
+
+```bash
 git checkout -b branch_name
+```
 
-Delete a branch called branch_name:
-
-git branch -d branch_name
-
+<h1>Merging branches</h1>
 Merge branch_a into branch_b:
 
+```bash
 git checkout branch_b
-
 git merge branch_a
-
-go to a specific commit:
-
-git checkout commit_number
-
-Add a specific commit to your branch:
-
-git cherry-pick commit_number
-
+```
 
 <h1>Fetch a file from another branch without changing the current branch.</h1>
 
@@ -39,10 +42,16 @@ git cherry-pick commit_number
 git checkout other_branch -- path/to/file 
 ```
 
-<h1> How to remove branch feature?</h1>
+Add a specific commit to your branch:
 
 ```bash
-git brach -d feature
-git push origin --delete feature
+git cherry-pick commit_number
+```
+
+<h1>Removing branches</h1>
+
+```bash
+git brach -d branch_name
+git push origin --delete branch_name
 ```
 

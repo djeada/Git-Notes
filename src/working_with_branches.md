@@ -45,6 +45,11 @@ To switch to a branch_name and update working directory, use:
 git checkout branch_name
 ```
 
+This process will do the following:
+
+* The HEAD pointer has been updated to point to branch_name.
+* The files in the working directory have been swapped and now represent the status of the branch_name as of the most recent commit. 
+
 <h1>Creating branches</h1>
 
 Create a new branch called branch_name:

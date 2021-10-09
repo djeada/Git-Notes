@@ -6,6 +6,7 @@ Notes on git.
 * <a href="https://github.com/djeada/Git/blob/main/src/create_repository.md">create repository</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/make_changes.md">make changes</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/working_with_branches.md">working with branches</a>
+* <a href="https://github.com/djeada/Git/blob/main/src/head.md">head</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/tags.md">tags</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/stashing_files.md">stashing files</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/observe_repository.md">observe repository</a>

@@ -4,9 +4,25 @@ Suppose you have a working  version of your program. You want to add a new featu
 <h1>How do branches work techincally?</h1>
 Branches are used to abstract the edit and commit procedure. Consider them a method to request a clean working directory, staging area, and project history. New commits are added to the current branch's history. A branch is just a pointer to the most recent commit in a given context. When you create a branch, git just needs to create a new pointer. This operation makes no additional changes to the repository. 
 
+A history is a directed acyclic graph (DAG) of snapshots in Git. This simply implies that each snapshot in Git refers to a collection of "parents," or snapshots that came before it. Because a snapshot may descend from many parents, for example, as a result of joining (merging) two concurrent branches of development, it is a collection of parents rather than a single parent (as would be the case in a linear history).
+
+A commit history can be represented as follows: 
+
+o <-- o <-- o <-- o 
+                  ^
+                  |
+                  o <-- o
+
+The letter o represents a commit. Each commit's parent is indicated with an arrow. After the third commit, the history splits into two distinct branches. This might imply that two distinct characteristics are being created in tandem, independently of one another. In the future, both branches may be combined to generate a new snapshot that includes both features, resulting in a new history that looks like this, with the newly formed merging commit: 
+
+o <-- o <-- o <-- o <-------------- o
+                  ^                 ^
+                  |                 |
+                  o <-- o <-- o <-- o
+
 <h1>When to create branches?</h1>
 
-There are various approaches to this subject.
+There are various approaches to this subject. We will briefly mention some of them.
 
 <h2>Bug fixes</h2>
 A branch may be created when implementing a fix for a bug discovered in the software. You never know how long it will take to figure out a solution to the problem. Create a safe space for experimentation is really useful in this case.

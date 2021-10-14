@@ -1,6 +1,3 @@
-TODO: 
-* add undo for commit 
-
 <h1>Staging files</h1>
 
 Stages the file, ready for commit:
@@ -47,6 +44,26 @@ Restore project state from commit with id commit_id:
 
 ```bash
 git checkout commit_id
+```
+
+<h1>Undo a commit that has not been pushed yet</h1>
+
+To undo commit and keep all files staged, use: 
+
+```bash
+git reset --soft HEAD~
+```
+
+To undo commit and unstage all files, use: 
+
+```bash
+git reset HEAD~
+```
+
+To undo the commit and completely remove all changes, use: 
+
+```bash
+git reset --hard HEAD~
 ```
 
 <h1>How to edit the commit message after a git push?</h1>

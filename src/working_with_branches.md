@@ -8,17 +8,21 @@ A history is a directed acyclic graph (DAG) of snapshots in Git. This simply imp
 
 A commit history can be represented as follows: 
 
+```bash
 o <-- o <-- o <-- o 
                   ^
                   |
                   o <-- o
+```
 
 The letter o represents a commit. Each commit's parent is indicated with an arrow. After the third commit, the history splits into two distinct branches. This might imply that two distinct characteristics are being created in tandem, independently of one another. In the future, both branches may be combined to generate a new snapshot that includes both features, resulting in a new history that looks like this, with the newly formed merging commit: 
 
+```bash
 o <-- o <-- o <-- o <-------------- o
                   ^                 ^
                   |                 |
                   o <-- o <-- o <-- o
+```
 
 <h1>When to create branches?</h1>
 

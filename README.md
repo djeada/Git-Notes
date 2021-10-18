@@ -3,6 +3,7 @@ Notes on git.
 
 <h1>Available notes</h1>
 
+* <a href="https://github.com/djeada/Git/blob/main/src/wroking_with_github.md">working with git</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/create_repository.md">create repository</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/make_changes.md">make changes</a>
 * <a href="https://github.com/djeada/Git/blob/main/src/working_with_branches.md">working with branches</a>

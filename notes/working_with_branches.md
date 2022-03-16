@@ -41,7 +41,9 @@ Typical long-lived branches include:
 * dev branch for integrating various short-lived branches 
 
 <h2>Continous integration</h2>
-Short-lived branches are considerably easier to merge with the master than long-lived ones. This difficulty inspired the concept of continuous integration. Developers using this method merge their branches often, at least once per day, and sometimes several times per day. 
+Short-lived branches are considerably easier to merge with the master than long-lived ones. This phenomenon has given rise to the idea of continuous integration (or trunk based development). Developers using this method merge their branches often, at least once per day, and sometimes several times per day. 
+
+    A few lines of code that can be immediately merged into the master branch are preferable than a whole feature that will be held in a separate branch for months only to be forgotten and never merged. 
 
 <h1>Showing branches</h1>
 

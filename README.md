@@ -3,9 +3,9 @@ Notes on git.
 
 <h1>Available notes</h1>
 
-* <a href="https://github.com/djeada/Git/blob/main/notes/wroking_with_github.md">working with git</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/create_repository.md">create repository</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/make_changes.md">make changes</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/wroking_with_github.md">intro</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/create_repository.md">creating a repository</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/make_changes.md">making changes</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/working_with_branches.md">working with branches</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/head.md">head</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/tags.md">tags</a>

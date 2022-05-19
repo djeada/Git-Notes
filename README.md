@@ -15,6 +15,7 @@ Notes on git.
 * <a href="https://github.com/djeada/Git/blob/main/notes/squashing_commits.md">squashing commits</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/archive.md">archive</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/git_server.md">git server</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/points_of_confusion.md">points of confusion</a>
 
 <h1>Bibliography</h1>
 

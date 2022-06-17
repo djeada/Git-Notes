@@ -1,7 +1,7 @@
 # Git
 Notes on git.
 
-<h1>Available notes</h1>
+## Available notes
 
 * <a href="https://github.com/djeada/Git/blob/main/notes/wroking_with_github.md">intro</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/create_repository.md">creating a repository</a>
@@ -17,7 +17,7 @@ Notes on git.
 * <a href="https://github.com/djeada/Git/blob/main/notes/git_server.md">git server</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/points_of_confusion.md">points of confusion</a>
 
-<h1>Bibliography</h1>
+## Bibliography
 
 * https://git-scm.com/book/en/v2
 * https://ohshitgit.com/

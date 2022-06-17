@@ -1,4 +1,4 @@
-<h1>Staging files</h1>
+## Staging files
 
 Stages the file, ready for commit:
 
@@ -12,7 +12,7 @@ Stage all changed files, ready for commit:
 git add .
 ```
 
-<h1>How to undo git add?</h1>
+## How to undo git add?
 
 Unstages file, keeping the file changes:
 
@@ -26,7 +26,7 @@ Revert everything to the last commit:
 git reset --hard
 ```
 
-<h1>What are the commits?</h1>
+## What are the commits?
 
 Commits are similar to saves.
 To capture the present status of your project, commit files from the staging area by associating them with a message.
@@ -46,7 +46,7 @@ Restore project state from commit with id commit_id:
 git checkout commit_id
 ```
 
-<h1>Undo a commit that has not been pushed yet</h1>
+## Undo a commit that has not been pushed yet
 
 To undo commit and keep all files staged, use: 
 
@@ -66,7 +66,7 @@ To undo the commit and completely remove all changes, use:
 git reset --hard HEAD~
 ```
 
-<h1>How to edit the commit message after a git push?</h1>
+## How to edit the commit message after a git push?
 
 Last commit:
 
@@ -86,11 +86,17 @@ git rebase --continue
 git push --force
 ```
 
-<h1>How to remove n last commits?</h1>
+## How to remove n last commits?
 
 Where N is a number, e.g. 6:
 
 ```bash
 git reset HEAD~N
 git push origin +HEAD
+```
+
+## How to remove a file from commit history?
+
+```bash
+git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch file_to_remove' HEAD
 ```

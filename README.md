@@ -25,3 +25,4 @@ Notes on git.
 * https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html
 * https://eagain.net/articles/git-for-computer-scientists/
 * https://learngitbranching.js.org
+* http://www-cs-students.stanford.edu/~blynn/gitmagic/ch01.html

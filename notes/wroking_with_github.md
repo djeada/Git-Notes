@@ -17,7 +17,7 @@ git config --global user.name "example_name"
 git config --global user.email "email@gmail.com"
 ```
 
-## Setup ssh
+## Setup SSH
 
 Check to see if the files ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub exist on your system.
 

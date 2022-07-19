@@ -1,5 +1,11 @@
 ## What are branches?
-Suppose you have a working  version of your program. You want to add a new feature, but it necessitates some modifications to the logic of current parts of the app. There are several options available to you. You might just begin working on your current source code, being extra cautious and hope not to break anything that is already working. You could alternatively create a backup copy of your project directory, but this would waste valuable disk space and require you to remember which files and where exactly were modified by you. Another way is to utilize git branches. The last approach solves the issues of the second one. Branches allow you to keep various versions of your code distinct and clean. And commits maintain track of every modification you make. 
+Suppose you have a working  version of your program. You want to add a new feature, but it necessitates some modifications to the logic of current parts of the app. There are several options available to you. 
+
+* You might just begin working on your current source code, being extra cautious and hope not to break anything that is already working. 
+* You could alternatively create a backup copy of your project directory, but this would waste valuable disk space and require you to remember which files and where exactly were modified by you. 
+* Another way is to utilize git branches. 
+
+The last approach solves the issues of the second one. Branches allow you to keep various versions of your code distinct and clean. And commits maintain track of every modification you make. 
 
 ## How do branches work techincally?
 Branches are used to abstract the edit and commit procedure. Consider them a method to request a clean working directory, staging area, and project history. New commits are added to the current branch's history. A branch is just a pointer to the most recent commit in a given context. When you create a branch, git just needs to create a new pointer. This operation makes no additional changes to the repository. 

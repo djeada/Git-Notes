@@ -1,13 +1,13 @@
-## What is HEAD?
-HEAD is by default a pointer to the current branch.
+## What is <code>HEAD</code>?
+<code>HEAD</code> is by default a pointer to the current branch.
 It does not have to be the most recent commit in any branch; it may also refer to tags or any other commits.
-When you checkout a new branch, HEAD is updated to point to the new one.
-The current HEAD is unique to each local repository and hence unique to each developer. 
+When you checkout a new branch, <code>HEAD</code> is updated to point to the new one.
+The current <code>HEAD</code> is unique to each local repository and hence unique to each developer. 
  
-You can see what HEAD is pointing using:
+You can see what <code>HEAD</code> is pointing using:
 
 ```bash
-cat .git/HEAD
+cat .git/<code>HEAD</code>
 ```
 
 Normally, you'll get anything along the lines of: 
@@ -22,15 +22,15 @@ You could receive something like this:
 b4d373k8990g2b5de30a37bn843b2f51fks2b40
 ```
 
-HEAD in the first case refers to the master branch. In the second example, it refers to a commit that is not the last commit in any branch. The second case is referred to as the detached head state. 
+<code>HEAD</code> in the first case refers to the master branch. In the second example, it refers to a commit that is not the last commit in any branch. The second case is referred to as the detached head state. 
 
-## Detached head
+## Detached HEAD
 
-A "detached HEAD" is when HEAD points to a commit that is not the last commit in any branch.
+A "detached <code>HEAD</code>" is when <code>HEAD</code> points to a commit that is not the last commit in any branch.
 No branch will be updated if you commit in this state.
 It makes no difference where that commit is.
 
-Operations that can cause HEAD to get "detached HEAD": 
+Operations that can cause <code>HEAD</code> to get "detached <code>HEAD</code>": 
 
 1. Checking out a specific commit:
 
@@ -58,4 +58,4 @@ git checkout v1.0.0
 
 ## HEAD is used to refer to N most recent commits in a branch. 
 
-We may use <code>HEAD</code> to refer to the most recent commit, and <code>HEAD~</code> to refer to the commit before to the tip, and <code>HEAD~2</code> to refer to the commit even earlier, and so on. 
+We may use <code>HEAD</code> to refer to the most recent commit, and <code>HEAD</code>~</code> to refer to the commit before to the tip, and <code>HEAD</code>~2</code> to refer to the commit even earlier, and so on. 

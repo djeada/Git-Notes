@@ -58,4 +58,4 @@ git checkout v1.0.0
 
 ## HEAD is used to refer to N most recent commits in a branch. 
 
-We may use HEAD to refer to the most recent commit, and HEAD~ to refer to the commit before to the tip, and HEAD~2 to refer to the commit even earlier, and so on. 
+We may use <code>HEAD</code> to refer to the most recent commit, and <code>HEAD~</code> to refer to the commit before to the tip, and <code>HEAD~2</code> to refer to the commit even earlier, and so on. 

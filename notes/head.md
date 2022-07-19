@@ -1,4 +1,4 @@
-## What is <code>HEAD</code>?
+## What is HEAD?
 <code>HEAD</code> is by default a pointer to the current branch.
 It does not have to be the most recent commit in any branch; it may also refer to tags or any other commits.
 When you checkout a new branch, <code>HEAD</code> is updated to point to the new one.

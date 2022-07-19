@@ -1,7 +1,7 @@
-<h1>What are branches?</h1>
+## What are branches?
 Suppose you have a working  version of your program. You want to add a new feature, but it necessitates some modifications to the logic of current parts of the app. There are several options available to you. You might just begin working on your current source code, being extra cautious and hope not to break anything that is already working. You could alternatively create a backup copy of your project directory, but this would waste valuable disk space and require you to remember which files and where exactly were modified by you. Another way is to utilize git branches. The last approach solves the issues of the second one. Branches allow you to keep various versions of your code distinct and clean. And commits maintain track of every modification you make. 
 
-<h1>How do branches work techincally?</h1>
+## How do branches work techincally?
 Branches are used to abstract the edit and commit procedure. Consider them a method to request a clean working directory, staging area, and project history. New commits are added to the current branch's history. A branch is just a pointer to the most recent commit in a given context. When you create a branch, git just needs to create a new pointer. This operation makes no additional changes to the repository. 
 
 A history is a directed acyclic graph (DAG) of snapshots in Git. This simply implies that each snapshot in Git refers to a collection of "parents," or snapshots that came before it. Because a snapshot may descend from many parents, for example, as a result of joining (merging) two concurrent branches of development, it is a collection of parents rather than a single parent (as would be the case in a linear history).
@@ -24,7 +24,7 @@ o <-- o <-- o <-- o <-------------- o
                   o <-- o <-- o <-- o
 ```
 
-<h1>When to create branches?</h1>
+## When to create branches?
 
 There are various approaches to this subject. We will briefly mention some of them.
 
@@ -43,9 +43,9 @@ Typical long-lived branches include:
 <h2>Continous integration</h2>
 Short-lived branches are considerably easier to merge with the master than long-lived ones. This phenomenon has given rise to the idea of continuous integration (or trunk based development). Developers using this method merge their branches often, at least once per day, and sometimes several times per day. 
 
-    A few lines of code that can be immediately merged into the master branch are preferable than a whole feature that will be held in a separate branch for months only to be forgotten and never merged. 
+Remember: A few lines of code that can be merged into the master branch immediately is preferable than a whole feature that will be held on a separate branch for months only to be forgotten and never merged. 
 
-<h1>Showing branches</h1>
+## Showing branches
 
 List all local branches:
 
@@ -59,7 +59,7 @@ List all branches, local and remote:
 git branch -av
 ```
 
-<h1>Switching between branches</h1>
+## Switching between branches
 
 To switch to a branch_name and update working directory, use:
 
@@ -72,7 +72,7 @@ This process will do the following:
 * The HEAD pointer has been updated to point to branch_name.
 * The files in the working directory have been swapped and now represent the status of the branch_name as of the most recent commit. 
 
-<h1>Creating branches</h1>
+## Creating branches
 
 Create a new branch called branch_name:
 
@@ -82,7 +82,7 @@ git checkout -b branch_name
 
 This operation does not alter the repository's history. You just get a new pointer to the most recent commit. 
 
-<h1>Transferring changes between branches</h1>
+## Transferring changes between branches
 
 Fetch a file from another branch without changing the current branch:
 
@@ -96,7 +96,7 @@ Add a specific commit to your branch:
 git cherry-pick commit_number
 ```
 
-<h1>Merging branches</h1>
+## Merging branches
 
 Merge branch_a into branch_b:
 
@@ -107,7 +107,7 @@ git merge branch_a
 
 Branch_a's changes will be incorporated into branch_b, but branch_b will remain unaffected.
 
-<h1>Removing branches</h1>
+## Removing branches
 
 To remove a branch both locally and remotely, use:
 

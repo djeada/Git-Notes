@@ -8,6 +8,14 @@
 * The same goes for work with other developers (your friends). 
 * You may also use it to show people your code (also potential employers). This is especially true if you chose to use an internet-accessible Git server. 
 
+## Who is using Git?
+
+* Operating system kernels: https://github.com/torvalds/linux
+* Scientists: https://github.com/nasa
+* Most popular frameworks: https://github.com/facebook/react
+* Goverment agencies: https://github.com/nationalsecurityagency
+* Authors of the textbook: https://github.com/d2l-ai/d2l-en
+
 ## Git configuration
 
 Save your user name and email address for future usage with git:

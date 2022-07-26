@@ -11,7 +11,7 @@ Notes on git.
 * <a href="https://github.com/djeada/Git/blob/main/notes/tags.md">tags</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/stashing_files.md">stashing files</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/observing_repository.md">observing a repository</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/synchronization.md">synchronization</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/synchronization.md">change synchronization between local and remote repositories</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/squashing_commits.md">squashing commits</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/archive.md">creating a repository archive</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/git_server.md">setting up your own Git server</a>

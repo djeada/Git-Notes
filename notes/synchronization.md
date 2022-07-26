@@ -60,8 +60,8 @@ Furthermore, you may consider to always merge commits manually, since even thoug
 
 If merge conflicts occur, read the super-helpful terminal advice and continue as follows: 
 
-1. git diff to resolve the merge conflicts
-2. git rebase --continue
+1. <code>git diff</code> to resolve the merge conflicts
+2. <code>git rebase --continue</code>
 3. repeat untill all issues are resolved 
 
 ## How to merge with master?

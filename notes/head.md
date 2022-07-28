@@ -7,7 +7,7 @@ The current <code>HEAD</code> is unique to each local repository and hence uniqu
 You can see what <code>HEAD</code> is pointing using:
 
 ```bash
-cat .git/<code>HEAD</code>
+cat .git/HEAD
 ```
 
 Normally, you'll get anything along the lines of: 

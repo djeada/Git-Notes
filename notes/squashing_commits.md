@@ -1,3 +1,4 @@
+## Squashing N last commits
 
 Squashing is the process of combining multiple commits into a single commit: 
 
@@ -7,9 +8,18 @@ To combine 3 last commits into a single commit and write a new commit message fr
 git rebase -i HEAD~3 
 ```
 
-An alternative way:
+There is also an option to use <code>merge</merge> command instead of <code>rebase</code>:
+
+```bash
+git reset --hard HEAD~3
+git merge --squash HEAD@{1}
+git commit
+```
+
+An alternative way (Dangarous beacuse force push may create problem when working with other people on the same project):
 
 ```bash
 git reset --soft HEAD~3
 git commit
+git push -f
 ```

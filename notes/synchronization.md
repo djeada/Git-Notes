@@ -70,6 +70,8 @@ If merge conflicts occur, read the super-helpful terminal advice and continue as
 3. repeat untill all issues are resolved 
 
 ## How to merge with master?
+Suppose you spent some time working on a new branch named <code>feature_branch</code> before deciding to merge your updates with the master.
+You may do it by following these steps: 
 
 ```bash
 git push origin feature_branch

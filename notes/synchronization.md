@@ -44,7 +44,7 @@ git fetch
 git merge
 ```
   
-Another option is to blow away any uncommitted local changes and use the remote version of your branch to bring your files up to date:
+Another option is to get rid of any uncommitted local changes and use the remote version of your branch to bring your files up to date:
 
 ```bash
 git fetch
@@ -52,6 +52,11 @@ git reset --hard origin/branch_name
 ```
 
 Make sure to first commit any work-in-progress! 
+
+## Merging vs rebasing
+
+* merge creates a merge commit with all changes (easy & safe to use).
+* rebase moves all commits on the tip of the other branch (good to keep git history linear & clean)
 
 ## Merge conflicts
 
@@ -96,5 +101,6 @@ It is important to note that it will only function if there are no new commits o
   
 ## What if the remote was updated by someone else in the meantime?
   
-Pushing never results in a merging.
-The user should pull, resolve any merge issues locally, and then push to the remote. 
+One common scenario is that while one developer was gathering his commits and deciding whether or not to push them to the remote, another developer pushed his updates in the meanwhile.
+What will happen next? Since pushing never results in merging, the developer will be informed that his commits were rejected by the remote after pushing them.
+The developer must now pull, handle any merge issues locally, and push to the remote again. 

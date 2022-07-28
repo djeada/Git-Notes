@@ -1,4 +1,4 @@
-## Merge Conflicts
+## Merge conflicts
 
 Merge conflicts are extremely difficult to resolve.
 Instead of providing a default of accepting both modifications, we must go through a lengthy process of manually synchronizing all the changes.

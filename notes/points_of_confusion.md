@@ -1,7 +1,7 @@
 ## Merge Conflicts
 
 Merge conflicts are extremely difficult to resolve.
-Instead of providing a default of accepting both modifications, we must go through a lengthy process of manually synthesizing all the changes.
+Instead of providing a default of accepting both modifications, we must go through a lengthy process of manually synchronizing all the changes.
 If you accept the modifications and subsequently notice a mistake, you must dismiss the entire process, undo the merge, and repeat from the beginning.
 
 ## Confusing interface

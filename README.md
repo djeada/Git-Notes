@@ -1,5 +1,5 @@
 # Git
-Notes on git.
+Notes on Git.
 
 ## Available notes
 

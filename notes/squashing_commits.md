@@ -8,7 +8,7 @@ To combine 3 last commits into a single commit and write a new commit message fr
 git rebase -i HEAD~3 
 ```
 
-There is also an option to use <code>merge</merge> command instead of <code>rebase</code>:
+There is also an option to use <code>merge</code> command instead of <code>rebase</code>:
 
 ```bash
 git reset --hard HEAD~3

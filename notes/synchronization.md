@@ -112,7 +112,7 @@ git clean -i
 
 If you don't want Git to create those backups, use:
 
-```bash
+```Git
 git config --global mergetool.keepBackup false
 ```
 

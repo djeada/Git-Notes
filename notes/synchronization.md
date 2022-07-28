@@ -1,6 +1,3 @@
-TODO: 
-- mergetool
-
 ## Adding changes from the remote repository to the local repository
 
 To only download the latest changes from the origin without merging them with the local files, use the following command:
@@ -61,7 +58,6 @@ Make sure to first commit any work-in-progress!
 * Rebasing moves all commits on the tip of the other branch (preserve the git history).
 
 ## Merge conflicts
-
 Merge conflicts arise when two changes are present in the same location in the same file. Then you have to solve the conflict manually.
 Furthermore, you may consider to always merge commits manually, since even though two edits are physically separated in the file, they might still be conceptually at odds.
 
@@ -71,8 +67,19 @@ If merge conflicts occur, read the super-helpful terminal advice and continue as
 2. <code>git rebase --continue</code>
 3. repeat untill all issues are resolved 
 
-## Sending changes from the local to the remote
+## Mergetool
 
+Git includes a mergetool command that launches an editor to help you solve merge conflicts.
+By default, it will launch a Vim-based tool named Vimdiff.
+You can, however, change to one of the numerous supported editors.
+To get a list of supported editors, use:
+
+
+```bash
+git mergetool --tool-help
+```
+
+## Sending changes from the local to the remote
 Push local changes to the origin:
 
 ```bash
@@ -82,7 +89,6 @@ git push origin branch_name
 It is important to note that it will only function if there are no new commits on the remote branch.
   
 ## What if the remote was updated by someone else in the meantime?
-  
 One common scenario is that while one developer was gathering his commits and deciding whether or not to push them to the remote, another developer pushed his updates in the meanwhile.
 What will happen next? Since pushing never results in merging, the developer will be informed that his commits were rejected by the remote after pushing them.
 The developer must now pull, handle any merge issues locally, and push to the remote again. 

@@ -16,7 +16,7 @@ git merge --squash HEAD@{1}
 git commit
 ```
 
-An alternative way (Dangarous beacuse force push may create problem when working with other people on the same project):
+An alternative way (be cautious since force pushing might cause problems while working with multiple people on the same project):
 
 ```bash
 git reset --soft HEAD~3

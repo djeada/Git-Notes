@@ -56,6 +56,6 @@ git switch master --detached
 git checkout v1.0.0
 ```
 
-## HEAD can be used to refer to N most recent commits in a branch. 
+## HEAD can be used to refer to N most recent commits
 
 We may use <code>HEAD</code> to refer to the most recent commit, <code>HEAD~</code> to refer to the commit before the tip, <code>HEAD~2</code> to refer to the commit before that, and so on.

@@ -16,13 +16,13 @@ Normally, you'll get anything along the lines of:
 ref: refs/heads/master
 ```
 
-You could receive something like this: 
+You could also see something like this:
 
 ```
 b4d373k8990g2b5de30a37bn843b2f51fks2b40
 ```
 
-<code>HEAD</code> in the first case refers to the master branch. In the second example, it refers to a commit that is not the last commit in any branch. The second case is referred to as the detached head state. 
+<code>HEAD</code> in the first case refers to the master branch. In the second example, it refers to a commit that is not the last commit in any branch.
 
 ## Detached HEAD
 
@@ -56,6 +56,6 @@ git switch master --detached
 git checkout v1.0.0
 ```
 
-## HEAD is used to refer to N most recent commits in a branch. 
+## HEAD can be used to refer to N most recent commits in a branch. 
 
-We may use <code>HEAD</code> to refer to the most recent commit, and <code>HEAD</code>~</code> to refer to the commit before to the tip, and <code>HEAD</code>~2</code> to refer to the commit even earlier, and so on. 
+We may use <code>HEAD</code> to refer to the most recent commit, <code>HEAD~</code> to refer to the commit before the tip, <code>HEAD~2</code> to refer to the commit before that, and so on.

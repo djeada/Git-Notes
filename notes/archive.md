@@ -1,4 +1,4 @@
-<h1>Create an archive</h1>
+## Create an archive
 
 To export your repository, use git archive. This tool may be used to extract a copy of code from an existing commit, tag, or branch. It should be noted that the .git directory will not be included.
 

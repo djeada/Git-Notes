@@ -26,9 +26,9 @@ b4d373k8990g2b5de30a37bn843b2f51fks2b40
 
 ## Detached HEAD
 
-A "detached <code>HEAD</code>" is when <code>HEAD</code> points to a commit that is not the last commit in any branch.
-No branch will be updated if you commit in this state.
-It makes no difference where that commit is.
+When <code>HEAD</code> points to a commit that is not the latest commit in any branch, this is referred to as a "detached <code>HEAD</code>."
+If you commit in this situation, no branch will be updated.
+It doesn't matter where that commit is. 
 
 Operations that can cause <code>HEAD</code> to get "detached <code>HEAD</code>": 
 

@@ -1,25 +1,27 @@
 TODO: 
 - mergetool
 
-## Updating the local repository with updates from the remote repository
+## Adding changes from the remote repository to the local repository
 
-Get the latest changes from origin without merging:
+To only download the latest changes from the origin without merging them with the local files, use the following command:
 
 ```bash
 git fetch
 ```
 
-Fetch the latest changes from origin and merge:
+Use the following command to download the most recent changes and merge them with the local files:
 
 ```bash
 git pull
 ```
 
-Fetch the latest changes from origin and rebase: 
+Use the following command to both download the most latest modifications and rebase the local changes on the remote commit history: 
 
 ```bash
 git pull --rebase
 ```
+
+Let's look deeper into differences between different commands and strategies.
 
 ## Differences between fetch and pull
 
@@ -55,8 +57,8 @@ Make sure to first commit any work-in-progress!
 
 ## Merging vs rebasing
 
-* Merge creates a merge commit with all changes (easy & safe to use).
-* Rebase moves all commits on the tip of the other branch (good to keep git history linear & clean)
+* Merging creates a merge commit with all changes (all the commits from the merged branch are squashed into one).
+* Rebasing moves all commits on the tip of the other branch (preserve the git history).
 
 ## Merge conflicts
 

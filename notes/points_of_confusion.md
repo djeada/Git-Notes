@@ -7,5 +7,5 @@ If you accept the modifications and subsequently notice a mistake, you must dism
 ## Confusing interface
 
 Any action you wish to take, no matter how basic, will be achievable in a variety of ways, with no single approach being superior to all others.
-It is sometimes necessary to issue a command with an unusual combination of exotic flags.
-More examples may be found by searching stackoverflow for common git questions and examining the most upvoted responses. 
+When trying to complete even a simple task, it may be required to execute a command with an uncommon combination of exotic flags.
+More examples may be found by searching stackoverflow for common Git questions and examining the most upvoted responses. 

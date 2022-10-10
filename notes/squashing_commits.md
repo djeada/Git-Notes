@@ -1,6 +1,14 @@
-## Squashing N last commits
+## What is squashing?
 
-Squashing is the process of combining multiple commits into a single commit: 
+Squashing is the process of combining multiple commits into a single commit.
+
+## Squashing vs merging
+
+Merging is reserved for branches.
+Squashing is used to combine two or more commits that are usually on the same branch.
+Common practice is to make many smaller commits for yourself and then combine them into larger ones with more informative messages before merging with the *dev* or *master*. 
+
+## Squashing N last commits
 
 To combine 3 last commits into a single commit and write a new commit message from scratch, use:
 

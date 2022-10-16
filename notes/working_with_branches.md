@@ -104,14 +104,22 @@ git cherry-pick commit_number
 
 ## Merging branches
 
-Merge branch_a into branch_b:
+Merge *branch_a* into *branch_b*:
 
 ```bash
 git checkout branch_b
 git merge branch_a
 ```
 
-Branch_a's changes will be incorporated into branch_b, but branch_b will remain unaffected.
+Branch_a's changes will be incorporated into branch_b, but branch_a will remain unaffected.
+
+A typical usecase would be to pull updates from the master and incorporate them into the development branch. 
+
+```bash
+git checkout dev
+git fetch origin
+git merge origin/master
+```
 
 ## Removing branches
 

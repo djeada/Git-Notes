@@ -34,22 +34,22 @@ o <-- o <-- o <-- o <-------------- o
 
 There are various approaches to this subject. We will briefly mention some of them.
 
-<h2>Bug fixes</h2>
+### Bug fixes
 A branch may be created when implementing a fix for a bug discovered in the software. You never know how long it will take to figure out a solution to the problem. Create a safe space for experimentation is really useful in this case.
 
-<h2>New features</h2>
+### New features
 When putting a new idea into action, you may want to consider creating a branch. You will not make any modifications to the working version of your application until your changes are considered ready for integration with the rest of the program. If the new idea doesn't work out, you may simply delete the branch and move on. 
 
-<h2>Long-lived branches</h2>
+### Long-lived branches
 
 Typical long-lived branches include: 
 * master branch for the project's mainline or production code 
 * dev branch for integrating various short-lived branches 
 
-<h2>Continous integration</h2>
+### Continous integration
 Short-lived branches are considerably easier to merge with the master than long-lived ones. This phenomenon has given rise to the idea of continuous integration (or trunk based development). Developers using this method merge their branches often, at least once per day, and sometimes several times per day. 
 
-Remember: A few lines of code that can be merged into the master branch immediately is preferable than a whole feature that will be held on a separate branch for months only to be forgotten and never merged. 
+Remember that a few lines of code that can be promptly merged into the master branch are preferable than a complete feature that will be held on a separate branch for months only to be forgotten and never merged. 
 
 ## Showing branches
 

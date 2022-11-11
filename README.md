@@ -16,6 +16,8 @@ Notes on Git.
 * <a href="https://github.com/djeada/Git/blob/main/notes/archive.md">creating a repository archive</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/git_server.md">setting up your own Git server</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/points_of_confusion.md">points of confusion</a>
+* <a href="https://github.com/djeada/Git-Notes/blob/main/notes/branching_strategies.md">branching strategies</a>
+* <a href="https://github.com/djeada/Git-Notes/blob/main/notes/mono_and_multi_repo.md">mono and multi repo</a>
 
 ## Bibliography
 

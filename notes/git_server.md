@@ -1,25 +1,38 @@
-## Setting up your own Git server
+## Setting up a Git server
 
-You don't have to use hosting services like GitHub to use Git. If you have access to a server, you may install Git on it and create your repositories manually.
+Instead of using hosting services like GitHub, you can set up your own Git server by installing Git on a server and creating your repositories manually.
 
-Installing git on Debian based systems:
+### Installing Git on a Debian-based system
+
+To install Git on a Debian-based system, use the following command:
 
 ```bash
 sudo apt install git-core
 ```
 
-## Creating a repository
+### Creating a repository
 
-Assume you've opted to keep your Git repositories under /opt/git/.
-Then, if you want to create a new repository called *new_git_repo*, do the following: 
+To create a new Git repository called new_git_repo, follow these steps:
+
+1. Create a directory for the repository:
 
 ```bash
 mkdir -p /opt/git/new_git_repo.git
+```
+
+2. Navigate to the directory:
+
+```bash
 cd /opt/git/new_git_repo.git
+```
+
+3. Initialize the repository as a bare repository:
+
+```bash
 git init --bare
 ```
 
-Anyone with SSH access to your server may now clone the repository using the following command (assuming your username is user and the machine's IP address is 192.168.1.10):
+Anyone with SSH access to the server can now clone the repository using the following command (replace user with your username and 192.168.1.10 with the IP address of the machine):
 
 ```bash
 git clone git+ssh://user@192.168.1.10/opt/git/new_git_repo.git

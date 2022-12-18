@@ -1,34 +1,47 @@
-## Monorepo
+## Monorepos
 
-Single repository for many project. Monorepos are more suitable when you are working with a monolith. 
-
-### Advantages
-
-* Cooperation. Because everyone is using the same repository, reusing code is much easier.
-* Dependency management is simplified because each dependency change only needs to be implemented once.
-* Refactoring is now easier. You may immediately apply the modifications to the whole codebase. 
-
-### Disadvantages
-
-* Git slows down as the codebase grows in size. 
-* Feature branches are more difficult to keep track of due to their sheer number.
-* Encourages tight coupling. It is simple to import from the same codebase.
-* The larger the codebase, the more difficult it is to grasp. Good luck with the training the new hires.
-* Because we always have to deal with the entire codebase, CI/CD setup may be complicated and the system easily overworked.
-* If the master ever breaks, we're in big trouble. Instead of affecting a handful of people, a force push will effect the whole workforce. 
-
-## Multirepo
-
-One repository per project.
+A monorepo is a single repository that contains all the code for a project, including multiple applications, libraries, and other dependencies. Monorepos are more suitable for large, monolithic projects where there is a need for close collaboration and frequent code reuse.
 
 ### Advantages
 
-* Each service and library have their own versioning.
-* Code check-outs and pulls are small and separate, so there are no performance issues even as the project size grows.
-* Teams can work independently and do not need access to the entire codebase. 
-* Faster development and flexibility for each team.
+* Simplifies cooperation and code reuse: Because everyone is using the same repository, it is much easier to share code and collaborate on changes.
+* Simplifies dependency management: Changes to dependencies only need to be made once, rather than in multiple repositories.
+* Facilitates refactoring: It is easier to make changes across the entire codebase, rather than in separate repositories.
+* May improve build and test times: All code is stored in the same place, so it is faster to build and test changes.
 
 ### Disadvantages
 
-* The dependencies and libraries used across services and projects must be synchronized on a regular basis.
-* Encourages a siloed culture, resulting in duplicate code.
+* May slow down Git operations: As the codebase grows in size, Git may become slower to perform operations such as cloning or pulling.
+* May be difficult to manage feature branches: With a large number of branches, it may be harder to keep track of all the changes and ensure that they are properly merged.
+* Encourages tight coupling: It is easy to import code from within the same codebase
+* May be difficult for new team members to understand: A large codebase can be overwhelming for new team members, making it harder for them to get up to speed and contribute effectively.
+* May require a more complex CI/CD setup: Because the entire codebase is built and tested together, the CI/CD system may need to be more sophisticated and capable of handling a large amount of code.
+* A force push to the master branch could cause widespread problems: If the master branch becomes broken, it could affect the entire project and team, rather than just a small subset of code.
+
+### When to use
+
+* Suitable for large, monolithic projects with a need for close collaboration and frequent code reuse
+* May work well when there is a single team responsible for all the code in the project
+
+## Multirepos
+
+A multirepo is a repository for each project, with each repository containing the code and dependencies for that project. Multirepos are more suitable for projects that are divided into multiple, independent components or services.
+
+### Advantages
+
+Simplifies versioning: Each service or library has its own versioning, making it easier to track changes and manage dependencies.
+Improves Git performance: Code checkouts and pulls are smaller and separate, so there are no performance issues even as the project grows in size.
+Facilitates independent work: Teams can work independently and do not need access to the entire codebase.
+Improves flexibility: Each team has more freedom and control over their own codebase, allowing for faster development.
+
+### Disadvantages
+
+* Requires coordination of dependencies: The dependencies and libraries used across services and projects must be synchronized on a regular basis.
+* Encourages a siloed culture: With separate repositories, there may be a tendency for teams to work in isolation, resulting in duplicate code and a lack of collaboration.
+* May be more difficult to share code: Reusing code across repositories requires more effort and coordination.
+* May require more complex deployment processes: With multiple repositories, it may be more difficult to coordinate the deployment of changes across all the different components.
+
+### When to use
+
+* Suitable for projects that are divided into multiple, independent components or services
+* May work well when there are multiple teams working on different parts of the project, or when there is a need for independent deployment of different components

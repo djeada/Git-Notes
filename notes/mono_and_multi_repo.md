@@ -29,10 +29,10 @@ A multirepo is a repository for each project, with each repository containing th
 
 ### Advantages
 
-Simplifies versioning: Each service or library has its own versioning, making it easier to track changes and manage dependencies.
-Improves Git performance: Code checkouts and pulls are smaller and separate, so there are no performance issues even as the project grows in size.
-Facilitates independent work: Teams can work independently and do not need access to the entire codebase.
-Improves flexibility: Each team has more freedom and control over their own codebase, allowing for faster development.
+* Simplifies versioning: Each service or library has its own versioning, making it easier to track changes and manage dependencies.
+* Improves Git performance: Code checkouts and pulls are smaller and separate, so there are no performance issues even as the project grows in size.
+* Facilitates independent work: Teams can work independently and do not need access to the entire codebase.
+* Improves flexibility: Each team has more freedom and control over their own codebase, allowing for faster development.
 
 ### Disadvantages
 

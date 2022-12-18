@@ -4,7 +4,7 @@ This repository contains notes on various topics related to Git. The notes are i
 
 ## Available notes
 
-* <a href="https://github.com/djeada/Git/blob/main/notes/wroking_with_github.md">introduction</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/working_with_github.md">introduction</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/create_repository.md">creating a repository</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/making_changes.md">making changes</a>
 * <a href="https://github.com/djeada/Git/blob/main/notes/working_with_branches.md">working with branches</a>

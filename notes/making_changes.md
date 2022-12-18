@@ -1,101 +1,99 @@
 ## Staging files
 
-Stages the file, ready for commit:
+To stage a file for commit, use the git add command followed by the file name:
 
 ```bash
 git add filename
 ```
 
-Stage all changed files, ready for commit:
+To stage all changed files for commit, use:
 
 ```bash
 git add .
 ```
 
-## How to undo git add?
+### Undoing git add
 
-Unstages file, keeping the file changes:
+To unstage a file and keep the changes, use:
 
 ```bash
 git reset filename
 ```
 
-Revert everything to the last commit:
+To revert everything to the last commit, use:
 
 ```bash
 git reset --hard
 ```
 
-## What are the commits?
+## Committing files
 
-Commits are similar to saves.
-To capture the present status of your project, commit files from the staging area by associating them with a message.
-The commit message should indicate what modifications have been done since the last commit.
-If you wish to go back to a prior state of your project that was connected with a commit, you may simply do so with the <i>checkout</i> command. 
+Commits are similar to saves in that they capture the current state of your project and associate it with a message. The commit message should describe the changes made since the last commit. You can use the git checkout command to go back to a previous state of your project that was captured in a commit.
 
-Commit all staged files to versioned history:
+To commit all staged files to the version history, use:
 
 ```bash
-git commit -m “commit message”
+git commit -m "commit message"
 git push
 ```
 
-Restore project state from commit with id commit_id:
+To restore the project state from a commit with the ID commit_id, use:
 
 ```bash
 git checkout commit_id
 ```
 
-## Undo a commit that has not been pushed yet
+### Undoing commits that have not been pushed
 
-To undo commit and keep all files staged, use: 
+To undo the last commit and keep all files staged, use:
 
 ```bash
 git reset --soft HEAD~
 ```
 
-To undo commit and unstage all files, use: 
+To undo the last commit and unstage all files, use:
 
 ```bash
 git reset HEAD~
 ```
 
-To undo the commit and completely remove all changes, use: 
+To completely remove all changes made in the last commit, use:
 
 ```bash
 git reset --hard HEAD~
 ```
 
-## How to edit the commit message after a git push?
+### Editing commit messages
 
-Last commit:
+To edit the message of the last commit:
 
 ```bash
 git commit --amend -m "new message"
 git push --force
 ```
 
-Old commit:
-Where N is a number, e.g. 6:
+To edit the message of an old commit (where N is the number of commits back, e.g. 6):
 
 ```bash
 git rebase -i HEAD~N
-# N is the commit number, beginning from the most recent.
+# N is the commit number, starting from the most recent.
 git commit --amend
 git rebase --continue
 git push --force
 ```
 
-## How to remove n last commits?
+### Removing commits
 
-Where N is a number, e.g. 6:
+To remove the last N commits (where N is the number, e.g. 6):
 
 ```bash
 git reset HEAD~N
 git push origin +HEAD
 ```
 
-## How to remove a file from commit history?
+### Removing a file from commit history
+
+To remove a file from the commit history, use:
 
 ```bash
 git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch file_to_remove' HEAD

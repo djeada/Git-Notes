@@ -4,21 +4,21 @@ This repository contains notes on various topics related to Git. The notes are i
 
 ## Available notes
 
-* <a href="https://github.com/djeada/Git/blob/main/notes/working_with_github.md">introduction</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/create_repository.md">creating a repository</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/making_changes.md">making changes</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/working_with_branches.md">working with branches</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/head.md">what is HEAD?</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/tags.md">tags</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/stashing_files.md">stashing files</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/observing_repository.md">observing a repository</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/synchronization.md">change synchronization between local and remote repositories</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/squashing_commits.md">squashing commits</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/archive.md">creating a repository archive</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/git_server.md">setting up your own Git server</a>
-* <a href="https://github.com/djeada/Git/blob/main/notes/points_of_confusion.md">points of confusion</a>
-* <a href="https://github.com/djeada/Git-Notes/blob/main/notes/branching_strategies.md">branching strategies</a>
-* <a href="https://github.com/djeada/Git-Notes/blob/main/notes/mono_and_multi_repo.md">mono and multi repo</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/working_with_github.md">Introduction to version control</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/create_repository.md">Creating a repository</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/making_changes.md">Making changes in a repository</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/working_with_branches.md">Working with branches</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/head.md">Understanding the HEAD</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/tags.md">Tagging in version control</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/stashing_files.md">Stashing changes</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/observing_repository.md">Observing changes in a repository</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/synchronization.md">Synchronizing changes between local and remote repositories</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/squashing_commits.md">Squashing commits</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/archive.md">Exporting a repository as an archive</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/git_server.md">Setting up a self-hosted Git server</a>
+* <a href="https://github.com/djeada/Git/blob/main/notes/points_of_confusion.md">Common points of confusion with Git</a>
+* <a href="https://github.com/djeada/Git-Notes/blob/main/notes/branching_strategies.md">Branching strategies</a>
+* <a href="https://github.com/djeada/Git-Notes/blob/main/notes/mono_and_multi_repo.md">Monorepos and multirepos</a>
 
 ## Bibliography
 

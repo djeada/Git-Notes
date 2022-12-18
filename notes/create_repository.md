@@ -51,5 +51,4 @@ You can also try listing the `.git` directory and see if it exists:
 
 ```bash
 ls .git
-```bash
 ```

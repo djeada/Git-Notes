@@ -1,4 +1,4 @@
-$$ Branching strategies
+## Branching strategies
 
 There are various approaches to deciding when and how to create and merge branches in a Git repository, and each has its own benefits and drawbacks. The best branching strategy for a team or project depends on a number of factors, including the company model, the size and complexity of the project, and the preferences of the development team.
 

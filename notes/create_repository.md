@@ -1,62 +1,55 @@
-<h1>What does git do?</h1>
-Version control systems are software applications that keep track of modifications to source code (or other collections of files and folders).
-These technologies help in the maintenance of a change history while also promoting developer collaboration.
+## What is Git?
 
-In a nutshell, git is useful for: 
+Git is a version control system that allows developers to track changes in their code over time, revert to previous versions if necessary, and collaborate with others on projects. Git is useful for:
 
 * Creating backups of your work.
 * Working on multiple versions of the same file at the same time.
-* Bringing the changes together into a single cohesive version.
-* Keeping track of who and when wrote a certain module, file, function, or even line of code. 
+* Merging changes into a single cohesive version.
+* Keeping track of who wrote each module, file, function, or line of code, and when they wrote it.
 
-<h1>What is a repository?</h1>
-A repository is a special directory that tracks and saves all changes to the files contained within it. This data is kept in a subdirectory called .git. Users can delete, copy, or create repositories for their projects. 
+## What is a repository?
 
-There could be only one local repository. There might be a local repository as well as a remote repository. Finally, there might be multiple local repositories as well as multiple remote repositories.
+A repository is a special directory that tracks and saves all changes to the files contained within it. This data is stored in a subdirectory called `.git`. Repositories can be created, copied, or deleted for different projects.
 
-Git was created to accommodate a distributed approach that does not require a central repository.
-Git was also built in such a way that the "client" and "server" do not have to be online at the same time.
-It was created so that users with unstable connections may share code through email and even work fully unconnected and share code via CD's.
+There can be only one local repository, or there may be both a local and a remote repository. There may also be multiple local and multiple remote repositories.
 
-<h1>Create a new repostiory</h1>
+Git was designed to support a distributed approach that does not require a central repository. It was also built in a way that allows the "client" and "server" to be offline at different times. This makes it possible to share code through email or even on physical media like CDs, even if the users have unstable connections.
 
-Create a new local repository name project_name in the current directory:
+## Creating a new repository
+
+To create a new local repository named project_name in the current directory, use the following command:
 
 ```bash
 git init project_name
 ```
 
-<h1>What happens behind the scenes?</h1>
-A repository may appear to be nothing more than a directory dedicated to your source code. That is not the case. So, what happens when we create a repository? 
+## What happens behind the scenes?
 
-You might have noticed the mysterious .git directory that was created along with the repository. If you delete it, your project directory will revert to a normal directory with files and subdirectories. This directory contains all git objects. One of those objects is a series of snapshots, trough which git stores the entire history of all files and subdirectories in your project directory. In the snapshots files are referred to as "blobs," while directories are referred to as "trees.". 
-Git also stores snapshot metadata, such as who created each snapshot, messages connected with each snapshot, and so on.
+A repository may appear to be nothing more than a directory dedicated to your source code, but it is actually much more than that. When you create a repository, a special `.git` directory is created along with it. If you delete this directory, your project directory will revert to a normal directory with files and subdirectories.
 
-<h1>Download an existing repository</h1>
+The `.git` directory contains all of the Git objects for your repository, including snapshots of your files and directories (called "blobs" and "trees," respectively) and metadata about each snapshot, such as the author, commit message, and so on.
 
-Use <i>clone</i> command followed by an url, for example:
+## Downloading an existing repository
+
+To download an existing repository, use the git clone command followed by the URL of the repository:
 
 ```bash
 git clone https://github.com/djeada/git.git
 ```
 
-If you do not want the repository to be downloaded to the current directory, add the destination path after the url:
+If you don't want the repository to be downloaded to the current directory, specify a destination path after the URL:
 
 ```bash
 git clone https://github.com/djeada/git.git /opt/projects
 ```
 
-<h1>How to check if a directory is a git repository?</h1>
-Use the following command to see if the current path is within a git repository:
+## Checking if a directory is a Git repository
 
-```bash
-git status 
-```
+To check if a directory is a Git repository, use the git status command. If the current directory is not a repository, you will get an error message that says "fatal: Not a git repository."
 
-If it isn't a repository, you should get an error message that says "fatal: Not a git repository." 
-
-You may also try listing the .git directory and checking whether it exists: 
+You can also try listing the `.git` directory and see if it exists:
 
 ```bash
 ls .git
+```bash
 ```

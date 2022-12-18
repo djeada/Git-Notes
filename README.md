@@ -1,5 +1,6 @@
 # Git
-Notes on Git.
+
+This repository contains notes on various topics related to Git. The notes are intended to be a reference for Git commands and concepts, and are organized by topic.
 
 ## Available notes
 
@@ -30,9 +31,7 @@ Notes on Git.
 * http://www-cs-students.stanford.edu/~blynn/gitmagic/ch01.html
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+If you have suggestions for improving the notes or have found a mistake, please [open an issue](https://github.com/djeada/Git-Notes/issues) or [submit a pull request](https://github.com/djeada/Git-Notes/pulls). Contributions are welcome!
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

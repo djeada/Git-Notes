@@ -1,11 +1,15 @@
+## Common points of confusion with Git
+
+While Git is a powerful tool that allows teams to collaborate effectively, it can also be confusing and overwhelming for those new to it.
+
 ## Merge conflicts
 
-Merge conflicts are extremely difficult to resolve.
-Instead of providing a default of accepting both modifications, we must go through a lengthy process of manually synchronizing all the changes.
-If you accept the modifications and subsequently notice a mistake, you must dismiss the entire process, undo the merge, and repeat from the beginning.
+One common issue that users may encounter is merge conflicts. These occur when two different versions of a file have been modified and merged, resulting in a conflict that must be manually resolved. This can be a time-consuming and frustrating process, as it requires carefully reviewing the changes and deciding which ones to keep or discard. If a mistake is made, the entire merge must be undone and redone, adding to the frustration.
 
 ## Confusing interface
 
-Any action you wish to take, no matter how basic, will be achievable in a variety of ways, with no single approach being superior to all others.
-When trying to complete even a simple task, it may be required to execute a command with an uncommon combination of exotic flags.
-More examples may be found by searching stackoverflow for common Git questions and examining the most upvoted responses. 
+Another issue with Git is its interface, which can be confusing due to the numerous options and commands available. It is not uncommon for users to spend hours trying to figure out how to perform even basic tasks, such as reverting changes or merging branches. The interface can also be intimidating for new users, as it requires a certain level of familiarity with command-line tools and terminal commands.
+
+## Conclusion
+
+Despite these challenges, Git is an essential tool for modern software development and is worth the effort to learn and master. With practice and experience, you will become more confident and efficient in using Git to manage your projects. If you are new to Git and struggling to get started, it may be helpful to seek out online tutorials or resources, or to ask experienced developers for advice and guidance.

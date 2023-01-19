@@ -2,6 +2,8 @@
 
 This repository contains notes on various topics related to Git. The notes are intended to be a reference for Git commands and concepts, and are organized by topic.
 
+![git](https://user-images.githubusercontent.com/37275728/213567462-13afed9d-a296-4a64-bb9c-68eeda4e707e.png)
+
 ## Available notes
 
 * <a href="https://github.com/djeada/Git/blob/main/notes/working_with_github.md">Introduction to version control</a>

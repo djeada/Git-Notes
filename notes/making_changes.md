@@ -72,13 +72,29 @@ git commit --amend -m "new message"
 git push --force
 ```
 
-To edit the message of an old commit (where N is the number of commits back, e.g. 6):
+To modify an old commit message:
+
+1. Use the `git rebase -i HEAD~n` command to display a list of the last n commits, where n is the number of recent commits you want to view, starting from the most recent. For instance, to view the latest three commits:
 
 ```bash
-git rebase -i HEAD~N
-# N is the commit number, starting from the most recent.
-git commit --amend
-git rebase --continue
+git rebase -i HEAD~3
+```
+
+2. In the list displayed in your text editor, change the word "pick" to "reword" for each commit message you'd like to alter. For example:
+
+```
+pick e499d89 Delete main.py script
+reword 0c39034 Improve README.md 
+reword f7fde4a Modify the commit message but keep the same changes.
+```
+
+3. Save and close the file.
+
+4. In each modified commit file, write the new commit message, save it, and close it.
+
+5. When you're ready to update your changes on GitHub, use the `git push --force` command. For example:
+
+```bash
 git push --force
 ```
 

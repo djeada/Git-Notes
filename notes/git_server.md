@@ -1,8 +1,10 @@
-## Setting up a Git server
+# How to set up your own Git server
 
-Instead of using hosting services like GitHub, you can set up your own Git server by installing Git on a server and creating your repositories manually.
+If you're a backend developer, you probably already know the importance of having a version control system like Git. While GitHub is a great platform, setting up your own Git server can offer more flexibility and control over your code.
 
-### Installing Git on a Debian-based system
+Here's how you can set up your own Git server:
+
+## Installing Git on a Debian-based system
 
 To install Git on a Debian-based system, use the following command:
 
@@ -10,30 +12,64 @@ To install Git on a Debian-based system, use the following command:
 sudo apt install git-core
 ```
 
-### Creating a repository
+## Creating a repository
 
-To create a new Git repository called new_git_repo, follow these steps:
+To create a new Git repository, follow these steps:
 
-1. Create a directory for the repository:
-
-```bash
-mkdir -p /opt/git/new_git_repo.git
-```
-
-2. Navigate to the directory:
+Choose a location for your repository. For example, you can create a directory called myrepo in /opt/git/:
 
 ```bash
-cd /opt/git/new_git_repo.git
+sudo mkdir -p /opt/git/myrepo.git
 ```
-
-3. Initialize the repository as a bare repository:
+Change to the newly created directory:
 
 ```bash
-git init --bare
+cd /opt/git/myrepo.git
 ```
 
-Anyone with SSH access to the server can now clone the repository using the following command (replace user with your username and 192.168.1.10 with the IP address of the machine):
+Initialize the repository as a bare repository:
 
 ```bash
-git clone git+ssh://user@192.168.1.10/opt/git/new_git_repo.git
+sudo git init --bare
 ```
+
+## Configuring access to the repository
+
+To allow others to access the repository, you need to configure access to the server. Assuming you're using SSH, here's how you can do it:
+
+Create a new user for Git:
+
+```bash
+sudo adduser git
+```
+Set the password for the user:
+
+```bash
+sudo passwd git
+```
+
+Allow SSH access for the user:
+
+```bash
+sudo su git
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+```
+
+Add the public key of the user who will be accessing the repository:
+
+```bash
+cat /path/to/public_key >> ~/.ssh/authorized_keys
+```
+
+## Cloning the repository
+
+Now that the repository is set up and access is configured, anyone with SSH access to the server can clone the repository using the following command:
+
+```bash
+git clone git@yourserver:/opt/git/myrepo.git
+```
+
+That's it! You now have your own Git server up and running.

@@ -1,12 +1,12 @@
 ## What is stashing?
 
-In Git, "stashing" refers to temporarily saving changes that are not ready to be committed. This allows you to switch branches or make other changes without losing your work.
+In Git terminology, "stashing" refers to temporarily saving changes that are not ready to be committed. This allows you to switch branches or make other changes without losing your work.
 
 For example, suppose you are working on a feature in a branch called feature, and you need to switch to the master branch to fix a bug. However, you don't want to commit the changes you've made in the feature branch, because they are not ready to be merged into the master branch yet. In this case, you can use stashing to save your changes and switch branches without losing your work.
 
 ## Stashing changes
 
-To stash your changes in Git, use the git stash command. This will save your changes to a temporary storage area and revert your working directory to the most recent commit.
+To stash your changes, use the git stash command. This will save your changes to a temporary storage area and revert your working directory to the most recent commit.
 
 For example:
 

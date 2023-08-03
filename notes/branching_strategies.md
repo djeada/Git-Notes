@@ -8,6 +8,7 @@ Let's take a closer look at some prevalent branching strategies:
 
 In trunk-based development, a single main branch—typically named `master` or `main`—is the focal point for all commits. Once committed, code changes on the master branch are deployed to a staging environment. Following successful acceptance testing, the changes are pushed to the production environment. This method hinges heavily on robust automated testing to verify the correct functionality of all software components.
 
+```
   Trunk (master)
       |
       | ---------> Production Release [TAG]
@@ -21,7 +22,7 @@ V    V    V    V    V    V
 ---------------------------------
 |   |   |   |   |   |   |
 B1  B2  B3  B4  B5  B6 ... (Short-lived Bugfix Branches)
-
+```
 
 #### Advantages
 
@@ -119,7 +120,7 @@ Git Flow is a specific branching model in Git that prescribes how branches shoul
 - 'Release' branches are created from 'develop' for final adjustments before a release.
 - 'Hotfix' branches are used for emergency fixes, branching off 'main'.
 
-
+```
       Master Branch
               |
               | ---------> Production Release [TAG]
@@ -141,7 +142,7 @@ Develop Branch
      -------------------------------
     |       |       |       |       |
     Bug1   Bug2   Bug3   Bug4   Bug5  ...  (Bugfix Branches)
-
+```
 
 #### Advantages
 

@@ -1,4 +1,4 @@
-# Git Archive: Creating Compressed Snapshots of Git Repositories
+# Git Archive
 
 Git archive is a powerful command that allows you to create compressed archives of your Git repository. These archives can be in one of several formats, including tar, gzip, and zip. Git archive is particularly useful when you want to create a snapshot of your repository at a specific point in time.
 

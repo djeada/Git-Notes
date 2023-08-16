@@ -4,7 +4,20 @@ At the core of Git are a few fundamental actions: staging changes, committing th
 
 ### Staging files
 
-To prepare changes for a commit, we "stage" them. Here's how:
+To prepare changes for a commit, we "stage" them. 
+
+```
++--------------+    +--------------+     +-------------------+
+|              |    |              |     |                   |
+| Working      |    | Staging      |     | Repository        |
+| Directory    |    | Area (Index) |     | (Commit History)  |
+|              |    |              |     |                   |
+|  (Changes)   | -> | (Changes to  | ->  | (Commits)         |
+|              |    | be committed)|     |                   |
++--------------+    +--------------+     +-------------------+
+```
+
+Here's how:
 
 - **Stage a specific file:**
     ```bash
@@ -32,6 +45,20 @@ If you've staged changes but haven't committed them, you can unstage them:
 ### Committing files
 
 Commits are similar to saves in that they capture the current state of your project and associate it with a message. The commit message should describe the changes made since the last commit. You can use the git checkout command to go back to a previous state of your project that was captured in a commit.
+
+```
+   +----------+
+   |  commit  |
+   |   hash   | A unique identifier (SHA-1 hash) for the commit.
+   +----------+
+   |  author  | The person who authored the commit.
+   |  date    | The date and time the commit was made.
+   +----------+
+   | message  | A brief description of the changes made in the commit.
+   +----------+
+   | changes  | The actual changes made to the files.
+   +----------+
+```
 
 - **Commit all staged files with a message:**
     ```bash

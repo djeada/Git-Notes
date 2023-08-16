@@ -6,6 +6,37 @@ In the world of Git, the iterative development process often results in multiple
 
 At its core, squashing is about compressing several commits into one. This not only provides a concise view of the work done but also allows for a more streamlined commit history. While squashing can make the commit history neater, it is crucial to remember that squashing rewrites history, which can be problematic in shared branches.
 
+```
+Before Squashing:
+-----------------
+
+      master
+        |
+  A--B--C
+        |
+     feature
+        |
+  D--E--F--G
+        |
+     topic
+
+After Squashing:
+----------------
+
+      master
+        |
+  A--B--C
+        |
+     feature
+        |
+        H
+        |
+     topic
+
+Where:
+D--E--F--G are combined into a single commit H.
+```
+
 ### Squashing vs. Merging
 
 The distinction between merging and squashing is vital:

@@ -1,116 +1,111 @@
-## Staging files
+## Working with Git: Staging, Committing, and Undoing Actions
 
-To stage a file for commit, use the git add command followed by the file name:
+At the core of Git are a few fundamental actions: staging changes, committing those changes, and, when necessary, undoing certain actions. These notes provide a clear overview of these basic operations and some common scenarios where they are used.
 
-```bash
-git add filename
-```
+### Staging files
 
-To stage all changed files for commit, use:
+To prepare changes for a commit, we "stage" them. Here's how:
 
-```bash
-git add .
-```
+- **Stage a specific file:**
+    ```bash
+    git add filename
+    ```
+- **Stage all changed files:**
+    ```bash
+    git add .
+    ```
 
-### Undoing git add
+### Unstaging files
 
-To unstage a file and keep the changes, use:
+If you've staged changes but haven't committed them, you can unstage them:
 
-```bash
-git reset filename
-```
+- **Unstage a specific file (but keep changes):**
+    ```bash
+    git reset filename
+    ```
 
-To revert everything to the last commit, use:
+- **Revert everything to the state of the last commit:**
+    ```bash
+    git reset --hard
+    ```
 
-```bash
-git reset --hard
-```
-
-## Committing files
+### Committing files
 
 Commits are similar to saves in that they capture the current state of your project and associate it with a message. The commit message should describe the changes made since the last commit. You can use the git checkout command to go back to a previous state of your project that was captured in a commit.
 
-To commit all staged files to the version history, use:
+- **Commit all staged files with a message:**
+    ```bash
+    git commit -m "Your descriptive commit message"
+    ```
 
-```bash
-git commit -m "commit message"
-git push
-```
+- **Push your commits to a remote repository (like GitHub):**
+    ```bash
+    git push
+    ```
 
-To restore the project state from a commit with the ID commit_id, use:
+- **Go back to a previous state captured in a specific commit:**
+    ```bash
+    git checkout commit_id
+    ```
 
-```bash
-git checkout commit_id
-```
+### Undoing commits
 
-### Undoing commits that have not been pushed
+Made a mistake? Here's how you can undo it:
 
-To undo the last commit and keep all files staged, use:
+- **Undo the last commit but keep all files staged:**
+    ```bash
+    git reset --soft HEAD~
+    ```
 
-```bash
-git reset --soft HEAD~
-```
+- **Undo the last commit and unstage the changes:**
+    ```bash
+    git reset HEAD~
+    ```
 
-To undo the last commit and unstage all files, use:
-
-```bash
-git reset HEAD~
-```
-
-To completely remove all changes made in the last commit, use:
-
-```bash
-git reset --hard HEAD~
-```
+- **Erase all changes made in the last commit:**
+    ```bash
+    git reset --hard HEAD~
+    ```
 
 ### Editing commit messages
 
-To edit the message of the last commit:
+Your commit message could be better? Let's fix that:
 
-```bash
-git commit --amend -m "new message"
-git push --force
-```
+- **Edit the message of the most recent commit:**
+    ```bash
+    git commit --amend -m "New, improved message"
+    git push --force
+    ```
 
-To modify an old commit message:
-
-1. Use the `git rebase -i HEAD~n` command to display a list of the last n commits, where n is the number of recent commits you want to view, starting from the most recent. For instance, to view the latest three commits:
-
-```bash
-git rebase -i HEAD~3
-```
-
-2. In the list displayed in your text editor, change the word "pick" to "reword" for each commit message you'd like to alter. For example:
-
-```
-pick e499d89 Delete main.py script
-reword 0c39034 Improve README.md 
-reword f7fde4a Modify the commit message but keep the same changes.
-```
-
-3. Save and close the file.
-
-4. In each modified commit file, write the new commit message, save it, and close it.
-
-5. When you're ready to update your changes on GitHub, use the `git push --force` command. For example:
-
-```bash
-git push --force
-```
+- **Modify an older commit message:**
+    1. Start an interactive rebase for the last `n` commits:
+        ```bash
+        git rebase -i HEAD~n
+        ```
+    2. Change "pick" to "reword" for commits you'd like to modify.
+    3. Save and close. For each commit, provide a new message.
+    4. Push the changes:
+        ```bash
+        git push --force
+        ```
 
 ### Removing commits
 
-To remove the last N commits (where N is the number, e.g. 6):
+Deleted more than you intended? Here's how to go back:
 
-```bash
-git reset HEAD~N
-git push origin +HEAD
-```
+- **Remove the last N commits:**
+    ```bash
+    git reset HEAD~N
+    git push origin +HEAD
+    ```
 
-### Removing a file from commit history
+### Cleaning up your commit history
 
-To remove a file from the commit history, use:
+Have sensitive data or a large file in your history? Here's how to remove it:
 
-```bash
-git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch file_to_remove' HEAD
-```
+- **Remove a file from the commit history:**
+    ```bash
+    git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch file_to_remove' HEAD
+    ```
+
+Note: Always be careful with commands that alter commit history, especially if collaborating with others. If you're unsure, consult with your team or check Git documentation.

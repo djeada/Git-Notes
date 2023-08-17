@@ -72,7 +72,7 @@ echo "public_key_content" >> ~/.ssh/authorized_keys
 
 Replace public_key_content with the actual public SSH key from the user's client machine.
 
-## Utilizing the Repository
+## Using the Repository
 
 With the server ready, users can now clone, push, and pull:
 

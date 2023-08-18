@@ -13,6 +13,22 @@ A Git repository, often shortened to repo, is a special directory or a storage s
 
 A repository can be created, cloned (copied), or deleted as per project requirements. In terms of location, repositories can be local (on your computer) or remote (on a server or hosted service like GitHub). While a project typically has at least one local repository, it may have multiple remote repositories for backup, collaboration, or other purposes.
 
+```
++-----------------+   +-----------------+   +-----------------+
+|   Alice's Repo  |   |  Central Repo   |   |   Bob's Repo    |
+|                 |   |  (e.g., GitHub) |   |                 |
+|  o---o---o---o  |   |  o---o---o---o  |   |  o---o---o---o  |
++--------|--------+   +--------|--------+   +--------|--------+
+         |                     |                     |
+   Push/Pull           Push/Pull             Push/Pull
+         |                     |                     |
++--------v--------+   +--------v--------+   +--------v--------+
+| Local Workspace |   | Server Storage  |   | Local Workspace |
+|                 |   |                 |   |                 |
+|   o---o---o---o |   |   o---o---o---o |   |   o---o---o---o |
++-----------------+   +-----------------+   +-----------------+
+```
+
 One of Git's unique features is that it supports a distributed approach. Unlike centralized version control systems, Git does not necessitate a central repository. Each copy of the repository is a full-fledged version with complete history and version-tracking abilities. Furthermore, Git is designed to allow the "client" and "server" to be offline at different times, thereby enabling code sharing through varied means such as email or even physical media like CDs, a particularly useful feature in areas with unstable internet connections.
 
 ## Initializing a New Repository
@@ -28,6 +44,29 @@ This command initiates a new Git repository and creates an empty project with th
 ## What happens behind the scenes?
 
 While superficially a Git repository might seem like merely a directory housing your source code, it is in fact far more complex. When you initialize a repository, Git generates a unique `.git` subdirectory inside it.
+
+```
++------------------------+
+|         Git Repo       |
+|                        |
+|  +----------+          |
+|  | .git dir |          |
+|  +----------+          |
+|                        |
+|  +----------+  +-----+ |
+|  | Code    |  | Docs | |
+|  +----------+  +-----+ |
+|                        |
+|  +----------+          |
+|  | Config   |          |
+|  +----------+          |
+|                        |
+|  +----------+          |
+|  | Hooks    |          |
+|  +----------+          |
+|                        |
++------------------------+
+```
 
 The `.git` directory transforms a simple directory into a fully functional Git repository. It holds all the vital Git objects and metadata that allow Git to proficiently track modifications and preserve the history of your project. If this `.git` directory is removed, your project directory will revert back to a regular directory, devoid of any Git tracking abilities.
 

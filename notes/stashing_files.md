@@ -4,6 +4,30 @@ In Git terminology, "stashing" refers to temporarily saving changes that are not
 
 For example, suppose you are working on a feature in a branch called feature, and you need to switch to the master branch to fix a bug. However, you don't want to commit the changes you've made in the feature branch, because they are not ready to be merged into the master branch yet. In this case, you can use stashing to save your changes and switch branches without losing your work.
 
+```
+Before Stashing
+----------------
+... -> [C3] -> [C4] (HEAD)
+          \
+           [WIP]
+
+
+After git stash
+---------------
+... -> [C3] -> [C4] (HEAD)
+
+
+After git stash pop/apply
+-------------------------
+... -> [C3] -> [C4] (HEAD)
+          \
+           [WIP]
+```
+
+- `[C3]` and `[C4]`: These are past commits, with `[C4]` being the most recent commit.
+- `(HEAD)`: This is the current pointer, indicating where you are in the commit tree.
+- `[WIP]`: This represents your current working directory with changes that haven't been committed.
+    
 ## Stashing changes
 
 To stash your changes, use the git stash command. This will save your changes to a temporary storage area and revert your working directory to the most recent commit.

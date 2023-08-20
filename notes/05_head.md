@@ -1,4 +1,4 @@
-## Understanding Git's HEAD
+## Understanding HEAD
 
 `HEAD` is a special pointer in Git, which refers to the currently checked-out snapshot of your project. This could be a particular commit, a branch, or a tag. It serves as a kind of "you are here" marker, indicating what part of the project history you're currently looking at or working with. When you make a commit, `HEAD` updates to point to the latest commit.
 

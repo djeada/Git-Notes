@@ -20,10 +20,13 @@ To prepare changes for a commit, we "stage" them.
 Here's how:
 
 - **Stage a specific file:**
+  
     ```bash
     git add filename
     ```
+    
 - **Stage all changed files:**
+  
     ```bash
     git add .
     ```
@@ -33,11 +36,13 @@ Here's how:
 If you've staged changes but haven't committed them, you can unstage them:
 
 - **Unstage a specific file (but keep changes):**
+  
     ```bash
     git reset filename
     ```
 
 - **Revert everything to the state of the last commit:**
+  
     ```bash
     git reset --hard
     ```
@@ -61,16 +66,19 @@ Commits are similar to saves in that they capture the current state of your proj
 ```
 
 - **Commit all staged files with a message:**
+  
     ```bash
     git commit -m "Your descriptive commit message"
     ```
 
 - **Push your commits to a remote repository (like GitHub):**
+  
     ```bash
     git push
     ```
 
 - **Go back to a previous state captured in a specific commit:**
+  
     ```bash
     git checkout commit_id
     ```
@@ -80,16 +88,19 @@ Commits are similar to saves in that they capture the current state of your proj
 Made a mistake? Here's how you can undo it:
 
 - **Undo the last commit but keep all files staged:**
+  
     ```bash
     git reset --soft HEAD~
     ```
 
 - **Undo the last commit and unstage the changes:**
+  
     ```bash
     git reset HEAD~
     ```
 
 - **Erase all changes made in the last commit:**
+  
     ```bash
     git reset --hard HEAD~
     ```
@@ -99,6 +110,7 @@ Made a mistake? Here's how you can undo it:
 Your commit message could be better? Let's fix that:
 
 - **Edit the message of the most recent commit:**
+  
     ```bash
     git commit --amend -m "New, improved message"
     git push --force
@@ -106,12 +118,15 @@ Your commit message could be better? Let's fix that:
 
 - **Modify an older commit message:**
     1. Start an interactive rebase for the last `n` commits:
+       
         ```bash
         git rebase -i HEAD~n
         ```
-    2. Change "pick" to "reword" for commits you'd like to modify.
-    3. Save and close. For each commit, provide a new message.
-    4. Push the changes:
+  
+    3. Change "pick" to "reword" for commits you'd like to modify.
+    4. Save and close. For each commit, provide a new message.
+    5. Push the changes:
+       
         ```bash
         git push --force
         ```
@@ -121,6 +136,7 @@ Your commit message could be better? Let's fix that:
 Deleted more than you intended? Here's how to go back:
 
 - **Remove the last N commits:**
+  
     ```bash
     git reset HEAD~N
     git push origin +HEAD
@@ -131,6 +147,7 @@ Deleted more than you intended? Here's how to go back:
 Have sensitive data or a large file in your history? Here's how to remove it:
 
 - **Remove a file from the commit history:**
+  
     ```bash
     git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch file_to_remove' HEAD
     ```

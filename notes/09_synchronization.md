@@ -25,10 +25,12 @@ git pull --rebase
 #### Fetch vs. Pull
 
 Fetch:
+
 - Downloads updates from the remote but leaves your local branch untouched.
 - Provides flexibility as you decide when to integrate those changes.
 
 Pull:
+
 - Essentially a combination of fetch and merge.
 - Directly integrates the fetched changes into your current branch.
 
@@ -77,11 +79,13 @@ git merge feature_branch
 When it comes to integrating changes from one branch into another, Git offers two primary strategies:
 
 Merging:
+
 - Combines changes from both branches into a new commit.
 - Retains the individual commit history of both branches but may result in a non-linear history.
 - Creates a unique commit that references the two branch tips being merged.
 
 Rebasing:
+
 - Moves the entire commit history of the current branch onto the tip of the target branch.
 - Offers a cleaner, linear commit history, which can simplify reading and navigating the commit log.
 - Rebasing rewrites history, which can be problematic if collaborating with others on the same branch. It's best suited for local branch organization and cleanup.
@@ -89,9 +93,7 @@ Rebasing:
 ### Understanding Merge Conflicts
 
 - Merge conflicts typically occur in a collaborative coding environment, especially when changes happen in close proximity within a file.
-  
 - Manual intervention is needed to decide which code changes to retain and which to discard.
-
 - While distinct code changes might not physically clash, they can still be conceptually conflicting, requiring careful review.
 
 ```

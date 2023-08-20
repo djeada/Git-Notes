@@ -1,4 +1,4 @@
-## Git Squashing: A Deep Dive
+## Git Squashing
 
 In the world of Git, the iterative development process often results in multiple commits for minor changes. But before merging changes to a primary branch, it's valuable to have a clean, linear history. This is where the concept of "squashing" steps in.
 
@@ -50,24 +50,28 @@ The distinction between merging and squashing is vital:
 When it comes to squashing, the interactive rebase tool is your best friend:
 
 1. **Using Rebase**:
-    ```bash
-    git rebase -i HEAD~N
-    ```
-   After this command, a text editor will open showing the last N commits. Simply change the word 'pick' to 'squash' (or 's' for short) for every commit you want to squash into the previous one. Save and close the editor, and Git will squash the specified commits.
 
-2. **Alternative using Merge**:
-   If you're not a fan of rebasing, you can achieve a similar result using reset and merge:
-    ```bash
-    git reset --hard HEAD~N
-    git merge --squash HEAD@{1}
-    git commit
-    ```
+```bash
+git rebase -i HEAD~N
+```
 
-3. **Force Pushing**:
-   Sometimes, after squashing locally, you need to update a remote branch. Do this with caution, as rewriting shared history can be disruptive to other collaborators:
-    ```bash
-    git push origin branch_name --force
-    ```
+After this command, a text editor will open showing the last N commits. Simply change the word 'pick' to 'squash' (or 's' for short) for every commit you want to squash into the previous one. Save and close the editor, and Git will squash the specified commits.
+
+3. **Alternative using Merge**:
+If you're not a fan of rebasing, you can achieve a similar result using reset and merge:
+
+```bash
+git reset --hard HEAD~N
+git merge --squash HEAD@{1}
+git commit
+```
+
+5. **Force Pushing**:
+Sometimes, after squashing locally, you need to update a remote branch. Do this with caution, as rewriting shared history can be disruptive to other collaborators:
+
+```bash
+git push origin branch_name --force
+```
 
 ### A Word of Caution
 

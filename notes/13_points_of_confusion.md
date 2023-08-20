@@ -2,32 +2,32 @@
 
 While Git stands as a crucial tool in modern software development, its complexity can sometimes be a barrier. Here are common points of criticism and confusion:
 
-### 1. Git-specific Terminology
+### Git-specific Terminology
 
 For many, especially those new to version control, Git's terminology feels like learning a new language:
 
 - **Commit, Branch, Merge, and Pull Request**: Such terms are central to Git's functionality but are not always intuitive. The sheer volume of new terms can overwhelm beginners and lead to misunderstandings.
 
-### 2. Branching and Merging
+### Branching and Merging
 
 These are fundamental to Git, but they come with their own set of complications:
 
 - **Merge Conflicts**: One of the most dreaded aspects for many. When two branches have differing changes, Git requires manual intervention, which can be tedious and error-prone.
   
-### 3. Command-Line Interface (CLI)
+### Command-Line Interface (CLI)
 
 The steep learning curve associated with Git is often attributed to its CLI:
 
 - **Lack of User-friendliness**: While powerful, Git's CLI isn't always intuitive, especially when compared to graphical interfaces of other software. This poses a significant entry barrier for many users, especially those unfamiliar with terminal commands.
 
-### 4. Undoing Changes
+### Undoing Changes
 
 The power Git provides for handling project history can sometimes backfire:
 
 - **Ambiguity between Revert and Reset**: Both commands undo changes but in profoundly different manners. This distinction isn't always clear, leading to potential mistakes.
 - **Destructive Commands**: Operations like `git reset --hard` can cause irreversible loss of work, especially when used without a full understanding.
 
-### 5. Detached HEAD State
+### Detached HEAD State
 
 This is a notorious point of confusion:
 

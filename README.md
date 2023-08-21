@@ -6,21 +6,21 @@ This repository contains notes on various topics related to Git. The notes are i
 
 ## Available notes
 
-- [Introduction to version control](https://github.com/djeada/Git/blob/main/notes/working_with_github.md)
-- [Creating a repository](https://github.com/djeada/Git/blob/main/notes/create_repository.md)
-- [Making changes in a repository](https://github.com/djeada/Git/blob/main/notes/making_changes.md)
-- [Working with branches](https://github.com/djeada/Git/blob/main/notes/working_with_branches.md)
-- [Understanding the HEAD](https://github.com/djeada/Git/blob/main/notes/head.md)
-- [Tagging in version control](https://github.com/djeada/Git/blob/main/notes/tags.md)
-- [Stashing changes](https://github.com/djeada/Git/blob/main/notes/stashing_files.md)
-- [Observing changes in a repository](https://github.com/djeada/Git/blob/main/notes/observing_repository.md)
-- [Synchronizing changes between local and remote repositories](https://github.com/djeada/Git/blob/main/notes/synchronization.md)
-- [Squashing commits](https://github.com/djeada/Git/blob/main/notes/squashing_commits.md)
-- [Exporting a repository as an archive](https://github.com/djeada/Git/blob/main/notes/archive.md)
-- [Setting up a self-hosted Git server](https://github.com/djeada/Git/blob/main/notes/git_server.md)
-- [Common points of confusion with Git](https://github.com/djeada/Git/blob/main/notes/points_of_confusion.md)
-- [Branching strategies](https://github.com/djeada/Git-Notes/blob/main/notes/branching_strategies.md)
-- [Monorepos and multirepos](https://github.com/djeada/Git-Notes/blob/main/notes/mono_and_multi_repo.md)
+- [Introduction to version control](https://github.com/djeada/Git-Notes/blob/main/notes/01_introduction_to_version_control.md)
+- [Creating a repository](https://github.com/djeada/Git-Notes/blob/main/notes/02_create_repository.md)
+- [Making changes in a repository](https://github.com/djeada/Git-Notes/blob/main/notes/03_making_changes.md)
+- [Working with branches](https://github.com/djeada/Git-Notes/blob/main/notes/04_working_with_branches.md)
+- [Understanding the HEAD](https://github.com/djeada/Git-Notes/blob/main/notes/05_head.md)
+- [Tagging in version control](https://github.com/djeada/Git-Notes/blob/main/notes/06_tags.md)
+- [Stashing changes](https://github.com/djeada/Git-Notes/blob/main/notes/07_stashing_files.md)
+- [Observing changes in a repository](https://github.com/djeada/Git-Notes/blob/main/notes/08_observing_repository.md)
+- [Synchronizing changes between local and remote repositories](https://github.com/djeada/Git-Notes/blob/main/notes/09_synchronization.md)
+- [Squashing commits](https://github.com/djeada/Git-Notes/blob/main/notes/10_squashing_commits.md)
+- [Exporting a repository as an archive](https://github.com/djeada/Git-Notes/blob/main/notes/11_archive.md)
+- [Setting up a self-hosted Git server](https://github.com/djeada/Git-Notes/blob/main/notes/12_git_server.md)
+- [Common points of confusion with Git](https://github.com/djeada/Git-Notes/blob/main/notes/13_points_of_confusion.md)
+- [Branching strategies](https://github.com/djeada/Git-Notes/blob/main/notes/14_branching_strategies.md)
+- [Monorepos and multirepos](https://github.com/djeada/Git-Notes/blob/main/notes/15_mono_and_multi_repo.md)
 
 ## References
 

@@ -105,7 +105,7 @@ Master Branch:                      Feature Branch:
 |                           |       |                           |                 
 | ++++++++++++              |       | ++++++++++++              |                 
 |                           |       |                           |                 
-| the conflicting line     |       | the alternate line        |                 
+| the conflicting line      |       | the alternate line        |                 
 |                           |       |                           |                 
 | ++++++++++++              |       | ++++++++++++              |                 
 |                           |       |                           |                 

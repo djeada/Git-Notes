@@ -46,26 +46,26 @@ This command initiates a new Git repository and creates an empty project with th
 While superficially a Git repository might seem like merely a directory housing your source code, it is in fact far more complex. When you initialize a repository, Git generates a unique `.git` subdirectory inside it.
 
 ```
-+------------------------+
-|         Git Repo       |
-|                        |
-|  +----------+          |
-|  | .git dir |          |
-|  +----------+          |
-|                        |
-|  +----------+  +-----+ |
-|  | Code    |  | Docs | |
-|  +----------+  +-----+ |
-|                        |
-|  +----------+          |
-|  | Config   |          |
-|  +----------+          |
-|                        |
-|  +----------+          |
-|  | Hooks    |          |
-|  +----------+          |
-|                        |
-+------------------------+
++-------------------------+
+|         Git Repo        |
+|                         |
+|  +----------+           |
+|  | .git dir |           |
+|  +----------+           |
+|                         |
+|  +----------+  +------+ |
+|  | Code     |  | Docs | |
+|  +----------+  +------+ |
+|                         |
+|  +----------+           |
+|  | Config   |           |
+|  +----------+           |
+|                         |
+|  +----------+           |
+|  | Hooks    |           |
+|  +----------+           |
+|                         |
++-------------------------+
 ```
 
 The `.git` directory transforms a simple directory into a fully functional Git repository. It holds all the vital Git objects and metadata that allow Git to proficiently track modifications and preserve the history of your project. If this `.git` directory is removed, your project directory will revert back to a regular directory, devoid of any Git tracking abilities.

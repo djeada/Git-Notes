@@ -1,4 +1,4 @@
-## Working with Git: Staging, Committing, and Undoing Actions
+## Staging, Committing, and Undoing Actions
 
 At the core of Git are a few fundamental actions: staging changes, committing those changes, and, when necessary, undoing certain actions. These notes provide a clear overview of these basic operations and some common scenarios where they are used.
 

@@ -24,15 +24,10 @@ git pull --rebase
 
 #### Fetch vs. Pull
 
-Fetch:
-
-- Downloads updates from the remote but leaves your local branch untouched.
-- Provides flexibility as you decide when to integrate those changes.
-
-Pull:
-
-- Essentially a combination of fetch and merge.
-- Directly integrates the fetched changes into your current branch.
+| Action  | Fetch                                                                      | Pull                                                                       |
+|---------|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| Purpose | Downloads updates from the remote but leaves your local branch untouched. | Directly integrates the fetched changes into your current branch.          |
+|         | Provides flexibility as you decide when to integrate those changes.        | Essentially a combination of fetch and merge.                             |
 
 After fetching, if you decide to integrate the changes, you can either:
 
@@ -78,17 +73,11 @@ git merge feature_branch
 
 When it comes to integrating changes from one branch into another, Git offers two primary strategies:
 
-Merging:
-
-- Combines changes from both branches into a new commit.
-- Retains the individual commit history of both branches but may result in a non-linear history.
-- Creates a unique commit that references the two branch tips being merged.
-
-Rebasing:
-
-- Moves the entire commit history of the current branch onto the tip of the target branch.
-- Offers a cleaner, linear commit history, which can simplify reading and navigating the commit log.
-- Rebasing rewrites history, which can be problematic if collaborating with others on the same branch. It's best suited for local branch organization and cleanup.
+| Aspect            | Merging                                                | Rebasing                                                    |
+|-------------------|--------------------------------------------------------|-------------------------------------------------------------|
+| Process           | Combines changes into a new commit                    | Moves commit history onto target branch                     |
+| Commit History    | Retains individual commit history of both branches    | Provides a cleaner, linear commit history                   |
+| Collaboration     | Creates a unique commit referencing merged branches   | Rewrites history, potential collaboration issues            |
 
 ### Understanding Merge Conflicts
 

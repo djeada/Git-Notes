@@ -86,7 +86,8 @@ To create a pull request:
 1. Give your pull request a descriptive title and add a brief description of the changes you made.
 
 The maintainer of the upstream repository will then be able to review your changes and decide whether or not to merge them into the upstream branch.
-Handling pull requests
+
+### Handling pull requests
 
 If you are the maintainer of an upstream repository and someone else has submitted a pull request, you can review and merge the changes using the following steps:
 

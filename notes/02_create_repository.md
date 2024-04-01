@@ -80,7 +80,7 @@ The `.git` directory contains the following key elements:
 
 * **Refs**: References, or refs, function as pointers to commit objects.
 
-Collectively, these objects and references form a graph structure that can be traversed to retrieve the project's history, harnessing the potent version control capabilities of Git.
+Together, all these things make a kind of map that we can follow to see how a project has changed over time, using Git's powerful tools for keeping track of different versions.
 
 ## Cloning an Existing Repository
 

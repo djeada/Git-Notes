@@ -102,7 +102,7 @@ In the command above, the repository will be cloned into the `/opt/projects` dir
 
 ## Verifying a Git Repository
 
-To ascertain whether a directory is a Git repository, you can use the `git status` command. If the directory is a Git repository, you'll see information about the current status of the repository. However, if the directory is not a Git repository, Git will display an error message stating "fatal: Not a git repository."
+To check whether a directory is a Git repository, you can use the `git status` command. If the directory is a Git repository, you'll see information about the current status of the repository. However, if the directory is not a Git repository, Git will display an error message stating "fatal: Not a git repository."
 
 Alternatively, you can check for the presence of the `.git` subdirectory which is characteristic of a Git repository. Use the ls command to list the files and directories in the current directory:
 

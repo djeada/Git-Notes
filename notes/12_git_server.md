@@ -108,11 +108,10 @@ Replace yourserver with your server's IP or domain name.
 
 ### Additional Tips for a Robust Git Server
 
-- **Implement Web Interface**: Consider GitWeb or cgit for repository management via a web interface.
-- **Regular Backups**: Develop a strategy for regular repository backups.
-- **Refined Access Control**: Utilize Git hooks and deploy keys for enhanced security.
-- **Integrate CI/CD Tools**: Incorporate Continuous Integration and Continuous Deployment for streamlined development processes.
-- **Monitor and Logging**: Implement monitoring and logging solutions for server performance and security.
-- **Regular Updates**: Keep your server and Git installation up-to-date with the latest security patches.
-- **Network Security**: Implement firewall rules and network security best practices to safeguard your server.
-
+- Consider GitWeb or cgit for repository management via a web interface.
+- Develop a strategy for regular repository backups.
+- Utilize Git hooks and deploy keys for enhanced security.
+- Incorporate Continuous Integration and Continuous Deployment for streamlined development processes.
+- Implement monitoring and logging solutions for server performance and security.
+- Keep your server and Git installation up-to-date with the latest security patches.
+- Implement firewall rules and network security best practices to safeguard your server.

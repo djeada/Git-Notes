@@ -52,32 +52,102 @@ Saved working directory and index state WIP on feature: abcdefg Work in progress
 HEAD is now at abcdefg Add new feature
 ```
 
-## Viewing stashed changes
+Sure, here’s a more comprehensive expansion of those sections on Git:
 
-To see a list of all the stashed changes in your repository, you can use the git stash list command. For example:
+---
+
+## Viewing Stashed Changes
+
+Stashing in Git allows you to save your uncommitted changes temporarily without committing them to your repository. This is useful when you need to switch branches or work on something else without losing your current progress. To manage and view your stashed changes, Git provides several commands.
+
+### Listing All Stashes
+
+To see a list of all the stashed changes in your repository, you can use the `git stash list` command. This command will display a list of all the stashes that you have created in your repository. Each stash entry will include an index, a description of the changes, and a message if one was provided. For example:
 
 ```bash
 $ git stash list
 stash@{0}: WIP on feature: abcdefg Work in progress on new feature
+stash@{1}: WIP on bugfix: 1234567 Temporary stash before bugfix
+stash@{2}: WIP on refactor: 89abcde Started refactoring codebase
 ```
 
-You can also view the details of a specific stash by specifying its index or reference. For example:
+In the output above:
+- `stash@{0}`, `stash@{1}`, `stash@{2}` are references to specific stashes.
+- The description after the reference provides context about the stashed changes.
+
+### Viewing Details of a Specific Stash
+
+If you want to view the details of a specific stash, you can use the `git stash show` command followed by the stash reference. This command will show a summary of the changes included in the stash. For example:
 
 ```bash
-git stash show stash@{0}
+$ git stash show stash@{0}
 ```
 
-This will show the changes that were stashed, as well as the message if one was provided.
-
-## Applying stashed changes
-
-To apply the changes from a stash, use the git stash apply command followed by the stash reference. For example:
+This will provide an overview of the files that were modified, added, or deleted in the stashed changes. To get a more detailed view, you can use the `-p` option, which will show the actual diff of the changes:
 
 ```bash
-git stash apply stash@{0}
+$ git stash show -p stash@{0}
 ```
 
-This will apply the changes from the stash to your working directory, but the stash will remain in the stash list.
+This detailed view includes the exact changes made to each file, similar to the output of `git diff`. This can be particularly useful if you need to review what was stashed before deciding to apply or drop the stash.
+
+### Displaying Stash Statistics
+
+Additionally, you can use the `--stat` option with `git stash show` to see a concise summary of changes including the number of insertions and deletions:
+
+```bash
+$ git stash show --stat stash@{0}
+```
+
+This provides a quick overview of the scope of the changes without showing the full diff.
+
+## Applying ("Unstashing") Stashed Changes
+
+Once you have reviewed your stashed changes, you may want to apply them back to your working directory. This process is often referred to as "unstashing." Git provides several commands to apply stashed changes in different ways.
+
+### Applying a Stash
+
+To apply the changes from a specific stash, you use the `git stash apply` command followed by the stash reference. This command applies the stashed changes to your working directory but does not remove the stash from the stash list. For example:
+
+```bash
+$ git stash apply stash@{0}
+```
+
+After running this command, the changes from `stash@{0}` will be applied to your working directory. However, the stash itself will still be available in the stash list. This is useful if you want to apply the same stash multiple times or keep it for future reference.
+
+### Applying the Latest Stash
+
+If you want to apply the most recent stash, you can omit the stash reference:
+
+```bash
+$ git stash apply
+```
+
+This command will apply the changes from the most recent stash (i.e., `stash@{0}`).
+
+### Resolving Conflicts
+
+When applying a stash, you may encounter conflicts if the changes in the stash conflict with the changes in your working directory. Git will notify you of any conflicts, and you will need to resolve them manually, similar to resolving merge conflicts. Once resolved, you can continue working with the applied changes.
+
+### Removing a Stash After Applying
+
+If you want to apply a stash and remove it from the stash list in one step, you can use the `git stash pop` command. This command applies the stash and then deletes it from the stash list:
+
+```bash
+$ git stash pop stash@{0}
+```
+
+This is useful when you are sure you no longer need the stash after applying it. The stash is applied to your working directory, and `stash@{0}` is removed from the list.
+
+### Applying Stashes with Index Changes
+
+By default, `git stash apply` only applies changes to the working directory. If your stash includes changes to the index (staged files), you can include those changes by using the `--index` option:
+
+```bash
+$ git stash apply --index stash@{0}
+```
+
+This ensures that both the working directory changes and the index changes are applied, making your working directory and index exactly as they were when the stash was created.
 
 ## Dropping stashed changes
 

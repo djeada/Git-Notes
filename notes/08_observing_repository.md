@@ -4,90 +4,144 @@ Git's powerful suite of commands offers an insightful look into your codebase's 
 
 ### Viewing Changes
 
-Different commands in Git allow you to peek into modifications:
+Different commands in Git allow you to inspect modifications in your project. Here’s a comprehensive guide to viewing changes:
 
-- **List Uncommitted Files**:
+I. **List Uncommitted Files:**
 
-```
+Use the `git status` command to see which files have been changed, added, or deleted but haven’t been committed yet.
+
+```bash
 git status
 ```
 
-This reveals which files have changed, added, or deleted but haven't been committed yet.
+This command provides a summary of the current state of your working directory and staging area.
 
-- **View Unstaged Changes**:
+II. **View Unstaged Changes:**
 
-```
+To see the differences in files that have not yet been staged for commit, use the `git diff` command.
+
+```bash
 git diff
 ```
 
-Displays differences in files not yet staged.
+This command shows the changes between your working directory and the staging area.
 
-- **See Staged but Uncommitted Changes**:
+III. **See Staged but Uncommitted Changes:**
 
-```
+If you have staged changes but haven’t committed them yet, you can view these differences with the `git diff --cached` command.
+
+```bash
 git diff --cached
 ```
 
-Unveils differences in files staged but not yet committed.
+This command reveals the differences between the staging area and the last commit.
 
-- **Inspect All Changes Since the Last Commit**:
+IV. **Inspect All Changes Since the Last Commit:**
 
-```
+To see all changes (both staged and unstaged) since the last commit, use the `git diff HEAD` command.
+
+```bash
 git diff HEAD
 ```
 
-Shows both staged and unstaged changes.
+This command compares your working directory and staging area against the last commit.
 
-- **Highlight Word-Level Changes**:
+V. **Highlight Word-Level Changes:**
 
-```
+For a more granular view of changes, the `git diff --word-diff` command shows differences at the word level rather than the line level.
+
+```bash
 git diff --word-diff
 ```
 
-Rather than line-by-line diffs, this pinpoints changes at the word level.
+This command highlights the exact words that have been added or removed, providing a clearer view of the changes.
 
-- **Audit a File's Change History**:
+VI. **Audit a File's Change History:**
 
-```
+To track changes line by line in a specific file, use the `git blame` command followed by the filename. This command annotates each line with information about the last commit that modified it.
+
+```bash
 git blame filename
 ```
 
-Provides annotations for each line in a specified file, indicating the last commit that modified the line.
+Example: To audit changes in `index.html`, use:
+
+```bash
+git blame index.html
+```
+
+VII. **Viewing Changes in a Specific File:**
+
+You can use `git diff` followed by the filename to see changes in a particular file.
+
+```bash
+git diff filename
+```
+
+Example: To view changes in `style.css`, use:
+
+```bash
+git diff style.css
+```
 
 ### Comparing Commits
 
-Dive deeper into differences between commits:
+Dive deeper into differences between commits using the following Git commands:
 
-- **Visualize Commit History**:
+I. **Visualize Commit History:**
 
-```
+To see a chronological list of commits along with their messages, authors, and dates, use the `git log` command.
+
+```bash
 git log
 ```
 
-Showcases a chronological list of commits with messages, authors, and dates.
+This command provides a detailed history of all commits in the repository, helping you trace changes over time.
 
-- **Contrast Two Specific Commits**:
+II. **Visualize a More Detailed Log:**
 
+For a more detailed commit history, including differences between commits, use:
+
+```bash
+git log -p
 ```
+
+III. **Graphical Representation of Commit History:**
+
+To visualize the commit history as a graph, showing branches and merges, use:
+
+```bash
+git log --graph --oneline --all
+```
+
+IV. **Contrast Two Specific Commits:**
+
+To compare the differences between two specific commits, use the `git diff` command followed by the commit IDs.
+
+```bash
 git diff commit_1 commit_2
 ```
 
-Details differences between two specified commit IDs.
+Example: To compare commit `a1b2c3d4` with commit `e5f6g7h8`, you would run:
 
-- **Review a File's State at a Given Commit**:
-
+```bash
+git diff a1b2c3d4 e5f6g7h8
 ```
+
+This command details the changes made between the two specified commits.
+
+V. **Review a File's State at a Given Commit:**
+
+To view the state and changes of a specific file at a particular commit, use the `git show` command followed by the commit ID and the filename.
+
+```bash
 git show commit_id:filename
 ```
 
-Reveals the state and changes of a specified file at a particular commit.
+Example: To see the state of `index.html` at commit `a1b2c3d4`, use:
 
-### Tips and Best Practices
+```bash
+git show a1b2c3d4:index.html
+```
 
-1. **Descriptive Commit Messages**: Ensure your commit messages are clear and descriptive. They serve as a guide to team members and your future self.
-
-2. **Review Before Committing**: Use `git diff` before you stage or commit. This helps catch unintended changes.
-
-3. **Branching for Large Tasks**: For major or extended changes, consider branching. This makes merging easier and allows for concurrent development.
-
-4. **Understand the Git Workflow**: Get to know Git's stages (working directory, staging area, and commit history). Being familiar with these stages helps avoid errors and streamlines processes.
+This command displays the content of the specified file as it was at the given commit.

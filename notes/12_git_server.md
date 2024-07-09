@@ -28,9 +28,11 @@ Creating your own Git server offers increased control, enhanced security, and a 
 
 ### Pre-requisites
 
-- **Server Requirements**: A Debian-based OS on a physical or virtual server.
-- **SSH Configuration**: Ensure an SSH server is installed and running.
-- **Administrative Access**: Root or sudo privileges are necessary for installation and configuration.
+When preparing to set up the server, certain requirements and configurations are essential:
+
+- To begin with, a Debian-based operating system should be installed on a physical or virtual server to meet the server requirements.
+- It's important to ensure that an SSH server is installed and running to allow secure remote access for configuration and management.
+- Administrative access is required, so having root or sudo privileges is necessary for performing the installation and configuration tasks.
 
 ### Installing Git
 
@@ -43,42 +45,63 @@ sudo apt install git-core
 
 ### Setting Up a Repository
 
-1. Decide on a location for your repositories. For this guide, we're using /opt/git/:
+#### I. Decide on a location for your repositories
+
+Choose a directory where your repositories will be stored. For this guide, we are using `/opt/git/`:
 
 ```bash
 sudo mkdir -p /opt/git/myrepo.git
 ```
 
-2. Move to the Directory:
+This command creates the directory structure for your repository.
+
+#### II. Move to the Directory
+
+Navigate to the newly created directory:
 
 ```bash
 cd /opt/git/myrepo.git
 ```
 
-3. Initilize as a Bare Repository:
+This changes your current directory to the location where you will set up your repository.
+
+#### III. Initialize as a Bare Repository
+
+Set up the repository as a bare repository, which is suitable for sharing:
 
 ```bash
 sudo git init --bare
 ```
 
+A bare repository does not have a working directory and is used for remote repository access.
+
 ### Configuring User Access
 
-For security, it's recommended to have a dedicated git user:
+For enhanced security, it is recommended to use a dedicated `git` user.
 
-1. Create the Git User:
+#### I. Create the Git User
+
+Create a new user named `git`:
 
 ```bash
-sudo a
-adduser git
+sudo adduser git
 ```
 
-2. Assign a Password:
+This command creates a new user account named `git`.
+
+#### II. Assign a Password
+
+Set a password for the `git` user:
 
 ```bash
 sudo passwd git
 ```
 
-3. Prepare SSH for the Git User:
+Follow the prompts to set and confirm the password.
+
+#### III. Prepare SSH for the Git User
+
+To enable SSH access for the `git` user, perform the following steps:
 
 ```bash
 sudo su git
@@ -88,13 +111,21 @@ touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 ```
 
-4. Add Authorized Users:
+- `sudo su git` switches to the `git` user.
+- `mkdir ~/.ssh` creates the `.ssh` directory in the `git` user's home directory.
+- `chmod 700 ~/.ssh` sets the appropriate permissions for the `.ssh` directory.
+- `touch ~/.ssh/authorized_keys` creates the `authorized_keys` file.
+- `chmod 600 ~/.ssh/authorized_keys` sets the appropriate permissions for the `authorized_keys` file.
+
+#### IV. Add Authorized Users
+
+Add the public SSH keys of users who are allowed to access the repository:
 
 ```bash
 echo "public_key_content" >> ~/.ssh/authorized_keys
 ```
 
-Replace public_key_content with the actual public SSH key from the user's client machine.
+Replace `public_key_content` with the actual public SSH key from the user's client machine. This allows the specified users to authenticate via SSH.
 
 ## Using the Repository
 

@@ -72,13 +72,10 @@ The `.git` directory transforms a simple directory into a fully functional Git r
 
 The `.git` directory contains the following key elements:
 
-* **Blobs**: A blob symbolizes a file version in the Git environment. Each unique version of a file is stored as a separate blob.
-
-* **Trees**: In Git terminology, a tree is akin to a directory listing. It signifies a directory and encompasses blobs and other trees (subdirectories).
-
-* **Commits**: A commit object includes metadata for each change set, such as the author, date, commit message, and pointers to the tree object that corresponds to the top directory of the stored snapshot, as well as parent commits if they exist.
-
-* **Refs**: References, or refs, function as pointers to commit objects.
+- A **blob** symbolizes a file version. Each unique version of a file is stored as a separate blob, ensuring that changes are tracked at the file level.
+- A **tree** is akin to a directory listing. It signifies a directory and encompasses blobs and other trees, which can be seen as subdirectories, allowing for a hierarchical representation of the file system.
+- A **commit** object includes metadata for each change set. This metadata typically consists of the author, date, commit message, and pointers to the tree object that corresponds to the top directory of the stored snapshot. Additionally, commit objects may include pointers to parent commits if they exist, which helps in maintaining the history of changes.
+- References, or **refs**, function as pointers to commit objects. These refs are used to track branches, tags, and other important points in the repository, allowing users to easily navigate and manage different states and versions of their project.
 
 Together, all these things make a kind of map that we can follow to see how a project has changed over time, using Git's powerful tools for keeping track of different versions.
 

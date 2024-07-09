@@ -52,10 +52,6 @@ Saved working directory and index state WIP on feature: abcdefg Work in progress
 HEAD is now at abcdefg Add new feature
 ```
 
-Sure, here’s a more comprehensive expansion of those sections on Git:
-
----
-
 ## Viewing Stashed Changes
 
 Stashing in Git allows you to save your uncommitted changes temporarily without committing them to your repository. This is useful when you need to switch branches or work on something else without losing your current progress. To manage and view your stashed changes, Git provides several commands.
@@ -72,6 +68,7 @@ stash@{2}: WIP on refactor: 89abcde Started refactoring codebase
 ```
 
 In the output above:
+
 - `stash@{0}`, `stash@{1}`, `stash@{2}` are references to specific stashes.
 - The description after the reference provides context about the stashed changes.
 

@@ -18,24 +18,24 @@ A monorepo is a single repository that contains all the code for a project, incl
 
 ### Advantages
 
-1. **Centralized Collaboration**: All code is in one place, promoting seamless cooperation and code reuse. Teams can easily collaborate on changes without having to juggle multiple repositories.
-2. **Unified Dependency Management**: Changes to shared dependencies are made just once, eliminating the inconsistencies of managing them across several repositories.
-3. **Facilitated Refactoring**: As the code is centralized, global changes or refactors can be executed more efficiently, with a clear understanding of potential side effects.
-4. **Optimized Build and Test Times**: With everything in one location, build and test pipelines can be more efficiently organized, potentially leading to quicker integrations.
+- One key advantage is centralized collaboration, which means all code is stored in a single repository. This promotes seamless cooperation and code reuse among team members.
+- Another benefit is unified dependency management. By having all dependencies in one place, any changes to shared dependencies are made only once, reducing inconsistencies that can arise when managing them across multiple repositories.
+- Refactoring becomes easier and more efficient with a centralized codebase. Global changes or refactors can be executed with a clear understanding of potential side effects, enhancing code maintainability.
+- Build and test times can be optimized when everything is located in one repository. This allows for more efficient organization of build and test pipelines, potentially leading to quicker integrations.
 
 ### Disadvantages
 
-1. **Potential Git Slowdowns**: As the repository grows, Git operations (like cloning or fetching updates) may become slower, especially for developers without a fresh copy.
-2. **Complexity of Branch Management**: Maintaining clarity among numerous branches can become challenging, increasing the risk of merge conflicts and integration issues.
-3. **Tight Coupling Risk**: The ease of code sharing might inadvertently promote tight coupling between components or services that should remain loosely coupled.
-4. **Steep Learning Curve**: New team members might find it daunting to navigate and understand a vast monorepo, potentially hampering their onboarding process.
-5. **Advanced CI/CD Needed**: Given the extensive codebase, continuous integration and delivery tools might require more sophisticated configurations to handle the monorepo efficiently.
-6. **Risks with Force Pushes**: An accidental force push or a corrupted master/main branch can have far-reaching implications, affecting every part of the project.
+- One disadvantage is the potential for Git slowdowns as the repository grows. Operations like cloning or fetching updates may become slower, especially for developers who do not have a fresh copy.
+- The complexity of branch management increases with a large repository. Maintaining clarity among numerous branches can become challenging, raising the risk of merge conflicts and integration issues.
+- There is a risk of tight coupling when code is easily shared across components. This can inadvertently promote tight coupling between components or services that should ideally remain loosely coupled.
+- New team members may face a steep learning curve when trying to navigate and understand a vast monorepo. This can potentially hamper their onboarding process and productivity.
+- Advanced CI/CD configurations are often needed to handle the extensive codebase of a monorepo. Continuous integration and delivery tools may require more sophisticated setups to manage the repository efficiently.
+- There are significant risks associated with force pushes in a monorepo. An accidental force push or a corrupted master/main branch can have far-reaching implications, affecting every part of the project.
 
 ### When to Use
 
-- **Large, Cohesive Projects**: A monorepo might be apt for expansive, monolithic projects that benefit from tight integration and collaboration.
-- **Unified Team Structure**: Monorepos can be advantageous when a singular team or closely-knit teams manage the entirety of the code, ensuring consistent code quality and practices.
+- A monorepo can be ideal for large, single-project setups where everything needs to work closely together and team collaboration is essential.
+- Monorepos work well when one team, or several tightly coordinated teams, handle all the code, ensuring everyone follows the same quality standards and practices.
 
 ## Multirepos
 
@@ -57,19 +57,19 @@ A multirepo is a repository for each project, with each repository containing th
 
 ### Advantages
 
-1. **Clear Versioning**: Each service or component can be versioned independently, allowing for detailed tracking of changes and easier dependency management.
-2. **Enhanced Git Performance**: Individual code checkouts and pulls remain lean, ensuring swift Git operations regardless of the overall project size.
-3. **Facilitated Team Autonomy**: Teams can focus on their specific components without the need to navigate or understand the entire codebase, leading to potential productivity boosts.
-4. **Increased Flexibility**: With autonomy comes the freedom for teams to make decisions tailored to their component, potentially resulting in innovative solutions and faster development cycles.
+- Clear versioning is a significant advantage, as each service or component can be versioned independently. This allows for detailed tracking of changes and easier dependency management.
+- Git performance is enhanced because individual code checkouts and pulls remain lean, ensuring swift Git operations regardless of the overall project size.
+- Team autonomy is facilitated in this setup, allowing teams to focus on their specific components without needing to navigate or understand the entire codebase. This can lead to potential productivity boosts.
+- Increased flexibility is another benefit, as teams have the freedom to make decisions tailored to their component. This autonomy can result in innovative solutions and faster development cycles.
 
 ### Disadvantages
 
-1. **Dependency Coordination**: It becomes crucial to harmonize dependencies and libraries used across distinct services or components, which can be challenging.
-2. **Risk of Siloed Development**: Separate repositories can sometimes lead to teams working too independently, potentially leading to code redundancies and a reduction in cross-team collaboration.
-3. **Code Reuse Challenges**: Sharing common code or utilities across different repositories often requires added effort, potentially slowing down the development process.
-4. **Complex Deployment Orchestration**: Deploying interconnected services from different repositories demands more sophisticated coordination, possibly complicating release processes.
+- Dependency coordination is crucial in this setup, as harmonizing dependencies and libraries used across distinct services or components can be challenging.
+- There is a risk of siloed development with separate repositories, which can lead to teams working too independently. This might result in code redundancies and a reduction in cross-team collaboration.
+- Code reuse can be challenging when sharing common code or utilities across different repositories. This often requires added effort, potentially slowing down the development process.
+- Complex deployment orchestration is required when deploying interconnected services from different repositories. This demands more sophisticated coordination, possibly complicating the release processes.
 
 ### When to Use
 
-- **Modular Projects**: Multirepo setups thrive in projects segmented into multiple, independent components or services that might evolve at their own pace.
-- **Diverse Team Structures**: Projects with multiple teams, each focusing on different aspects or components, might benefit from a multirepo approach. This is especially true when different parts of a project demand their own deployment cycles.
+- Multirepo setups thrive in modular projects that are segmented into multiple, independent components or services. This is beneficial when components might evolve at their own pace.
+- Diverse team structures can benefit from a multirepo approach, especially in projects with multiple teams, each focusing on different aspects or components. This is particularly advantageous when different parts of a project demand their own deployment cycles.

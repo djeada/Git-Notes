@@ -1,4 +1,4 @@
-## Checking and Understanding Changes in Git
+## Checking and Understanding Changes
 
 Git's powerful suite of commands offers an insightful look into your codebase's progression. By probing changes, tracking progress, identifying anomalies, and fostering effective collaboration becomes easier.
 

@@ -64,7 +64,7 @@ To track changes line by line in a specific file, use the `git blame` command fo
 git blame filename
 ```
 
-Example: To audit changes in `index.html`, use:
+To audit changes in `index.html`, use:
 
 ```bash
 git blame index.html
@@ -78,7 +78,7 @@ You can use `git diff` followed by the filename to see changes in a particular f
 git diff filename
 ```
 
-Example: To view changes in `style.css`, use:
+To view changes in `style.css`, use:
 
 ```bash
 git diff style.css
@@ -122,7 +122,7 @@ To compare the differences between two specific commits, use the `git diff` comm
 git diff commit_1 commit_2
 ```
 
-Example: To compare commit `a1b2c3d4` with commit `e5f6g7h8`, you would run:
+To compare commit `a1b2c3d4` with commit `e5f6g7h8`, you would run:
 
 ```bash
 git diff a1b2c3d4 e5f6g7h8
@@ -138,7 +138,7 @@ To view the state and changes of a specific file at a particular commit, use the
 git show commit_id:filename
 ```
 
-Example: To see the state of `index.html` at commit `a1b2c3d4`, use:
+To see the state of `index.html` at commit `a1b2c3d4`, use:
 
 ```bash
 git show a1b2c3d4:index.html

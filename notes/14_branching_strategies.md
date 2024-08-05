@@ -2,8 +2,6 @@
 
 Choosing the most effective methodology for creating and merging branches in a Git repository can significantly impact your development workflow. The right branching strategy often depends on several variables, such as organizational structure, project size and complexity, as well as the team's preferences.
 
-Let's take a closer look at some prevalent branching strategies:
-
 ### Trunk-Based Development
 
 In trunk-based development, a single main branch—typically named `master` or `main`—is the focal point for all commits. Once committed, code changes on the master branch are deployed to a staging environment. Following successful acceptance testing, the changes are pushed to the production environment. This method hinges heavily on robust automated testing to verify the correct functionality of all software components.

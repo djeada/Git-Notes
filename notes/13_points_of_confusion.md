@@ -1,6 +1,6 @@
 ## Common Git Confusions
 
-Git is a powerful tool in software development, but its complexity often puzzles newcomers. Let’s break down some typical areas where users get tripped up in simpler terms:
+Git is a powerful tool, but its complexity often puzzles newcomers. Let’s break down some typical areas where users get tripped up in simpler terms:
 
 ### Git-specific Terminology
 

@@ -2,7 +2,7 @@
 
 At the core of Git are a few fundamental actions: staging changes, committing those changes, and, when necessary, undoing certain actions. These notes provide a clear overview of these basic operations and some common scenarios where they are used.
 
-Understanding these actions is crucial for effective version control. Proper staging ensures that only the desired changes are included in a commit, while committing captures the project's state at specific points. Knowing how to undo actions allows for flexibility and error correction during development.
+Understanding these actions is important for effective version control. Proper staging ensures that only the desired changes are included in a commit, committing records the project's state at specific points, and knowing how to undo actions allows for correcting mistakes during development.
 
 ### Staging Files
 

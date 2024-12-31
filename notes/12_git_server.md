@@ -1,5 +1,7 @@
 ## Git Server
 
+Setting up your own Git server allows you to manage your version control system in-house, giving you control over where repositories are stored and how access is managed. By hosting your own server, you can customize the environment to better fit your team’s workflow, implement specific security measures, and scale resources according to your needs. This approach provides a flexible foundation for collaboration, enabling you to tailor the setup to match your project requirements.
+
 Setting up your own Git server provides several benefits compared to relying on hosted platforms:
 
 - Hosting your own server provides **increased control** over repository storage locations and access configurations, allowing full ownership of your data.

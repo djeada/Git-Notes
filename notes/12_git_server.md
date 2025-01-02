@@ -100,6 +100,7 @@ Follow the prompts to configure the new user’s details.
 ```bash
 sudo passwd git
 ```
+
 You can optionally skip setting a password if you plan to rely solely on SSH keys.
 
 #### Configure SSH for the Git User

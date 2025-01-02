@@ -107,6 +107,7 @@ By default, regular `git push` commands do not push tags. To push all tags from 
 ```bash
 git push --tags
 ```
+
 This will synchronize your local tags with the remote repository, allowing other collaborators to access them.
 
 #### Pushing a Specific Tag

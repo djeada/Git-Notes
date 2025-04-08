@@ -153,16 +153,15 @@ git commit -m "Update project files"
 git push
 ```
 
-### Additional Tips for a Robust Git Server
+### Additional Tips
 
-- GitWeb or cgit can provide a **user-friendly web interface** for browsing and managing repositories efficiently.
-- Regularly backing up the repository directory, such as `/opt/git`, using **tools like rsync or tar** ensures data recovery in case of failures.
-- Git hooks allow you to **customize repository behavior**, such as implementing post-receive hooks for automated deployments or notifications.
-- Continuous Integration and Deployment (CI/CD) can be implemented using **tools like Jenkins, GitLab CI, or GitHub Actions**, which support automated testing, building, and deployment processes.
-- Monitoring server performance with **tools like htop, nagios, or prometheus** helps track resource usage and identify potential bottlenecks.
-- Reviewing system logs helps detect **suspicious activity or errors** that may affect server operations.
-- Keeping the operating system updated ensures it has the **latest security patches**, reducing vulnerabilities.
-- Using a firewall such as **ufw or iptables** helps restrict unnecessary inbound connections to improve server security.
-- SSH key-based authentication is generally **more secure than passwords** and is recommended for accessing the Git server.
-- Regularly updating Git ensures you have access to **the latest features and security fixes**, maintaining compatibility and reliability.
-
+- `GitWeb` or `cgit` can provide a *user-friendly web interface* for browsing and managing repositories efficiently.
+- Regularly backing up the repository directory, such as `/opt/git`, using *tools like rsync or tar* ensures data recovery in case of failures.
+- Git `hooks` allow you to *customize repository behavior*, such as implementing post-receive hooks for automated deployments or notifications.
+- Continuous Integration and Deployment (CI/CD) can be implemented using *tools like Jenkins, GitLab CI, or GitHub Actions*, which support automated testing, building, and deployment processes.
+- Monitoring server performance with *tools like htop, nagios, or prometheus* helps track resource usage and identify potential bottlenecks.
+- Reviewing system logs helps detect *suspicious activity or errors* that may affect server operations.
+- Keeping the operating system updated ensures it has the *latest security patches*, reducing vulnerabilities.
+- Using a firewall such as *ufw or iptables* helps restrict unnecessary inbound connections to improve server security.
+- SSH key-based authentication is generally *more secure than passwords* and is recommended for accessing the Git server.
+- Regularly updating Git ensures you have access to *the latest features and security fixes*, maintaining compatibility and reliability.

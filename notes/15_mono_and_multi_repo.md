@@ -1,6 +1,33 @@
 ## Mono and multirepo
 
-When managing software projects, organizations often choose between **monorepos** and **multirepos** to structure their codebases. A **monorepo** consolidates all projects, applications, libraries, and services into a single repository, fostering centralized collaboration and streamlined dependency management. This approach is ideal for large teams working on interconnected components that require frequent integration and unified versioning. In contrast, a **multirepo** strategy separates each project or component into its own repository, granting teams greater autonomy, improved performance, and flexibility to adopt different technologies independently. This method is well-suited for modular architectures and diverse teams aiming for isolated development and deployment cycles. Both approaches have their unique advantages and challenges, and the choice between them depends on the specific needs and structure of the organization.
+When managing software projects, organizations often need to choose between two distinct codebase structuring strategies: monorepos and multirepos. This decision isn’t just about where code lives—it affects collaboration, tooling, versioning, and even deployment practices. When you’re starting out or scaling up, it’s important to understand the strengths and trade-offs of each strategy so you can decide what fits your team and project needs.
+
+A monorepo consolidates all projects, applications, libraries, and services into a single repository. This setup encourages centralized collaboration and simplifies dependency management, making it easier for large teams working on tightly coupled, interconnected components. With a monorepo, every change is tracked in one place, and unified versioning is simpler to enforce. For example, you might run a command like this to view the structure of a monorepo:
+
+```
+$ tree -L 2
+.
+├── apps
+│   ├── app1
+│   └── app2
+├── libs
+│   ├── lib1
+│   └── lib2
+└── services
+    ├── service1
+    └── service2
+```
+
+The output above shows a clear hierarchy where all code is under one roof. This structure makes it easier to coordinate changes across projects and maintain consistency across shared components. However, it can also mean that even small changes may impact unrelated projects, so strict testing and integration practices become essential.
+
+On the other hand, a multirepo strategy divides each project or component into its own repository. This separation gives teams greater autonomy; each team can work independently, adopt different technologies, and maintain tailored workflows that suit their part of the system. Modular architectures especially benefit from this setup. An example of what the repository layout might look like is:
+
+```
+$ ls
+app1/  app2/  lib1/  service1/
+```
+
+Here, each directory is a standalone repository. This separation can lead to faster performance on version control operations and provides flexibility to deploy and scale components independently. It also reduces the complexity inherent in managing a very large codebase, as changes are isolated to specific repositories. Of course, this approach requires robust inter-repository coordination, as dependencies and shared code need to be managed separately.
 
 ### Monorepos
 

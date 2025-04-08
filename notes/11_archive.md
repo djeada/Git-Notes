@@ -1,10 +1,10 @@
-# Git Archive
+## Git Archive
 
 Git archive is a handy tool for creating compressed archives of a repository’s content. It’s designed to generate snapshots of your project at a specific state, which can then be shared, backed up, or used in deployment scenarios. Unlike simply copying files, this command ensures that only the tracked contents of your repository are included, leaving behind metadata like the `.git` folder.
 
 For instance, imagine working on a software project and needing to deliver the latest stable version to a collaborator without sharing your entire repository history. Git archive allows you to extract just the files you need, neatly packaged in an archive format such as `tar` or `zip`.
 
-Here's a visual representation of how it works:
+Here's a representation of how it works:
 
 ```
 +------------------------+                   +------------------------+

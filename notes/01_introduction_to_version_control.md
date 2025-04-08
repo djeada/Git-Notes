@@ -11,10 +11,10 @@ Git is a powerful and widely used version control system that helps you manage c
 - GitHub is a great place to show off your projects to potential employers or collaborators.
 
 ```
-   ______________________________________________________________________
-  |                                                                      |
-  |                       GIT / SOURCE CONTROL FLOW                      |
-  |______________________________________________________________________|
+.______________________________________________________________________.
+|                                                                      |
+|                       GIT / SOURCE CONTROL FLOW                      |
+|______________________________________________________________________|
 
      ( Commit #1 )        ( Commit #2 )        ( Commit #3 )
          │  │                 │  │                 │  │
@@ -178,27 +178,27 @@ If you see that message, you’ve successfully connected to GitHub via SSH. You�
 When you fork a repository on GitHub, you create your own copy that you can edit freely. Your changes stay separate from the original (“upstream”) project until you decide to share them via a pull request. This is handy if you want to propose edits or new features without risking the original codebase.
 
 ```
-   ____________________________________________________
-  |                                                    |
-  |                      FORK FLOW                     |
-  |____________________________________________________|
+.____________________________________________________.
+|                                                    |
+|                      FORK FLOW                     |
+|____________________________________________________|
 
-                          ( GitHub )
-     .---------------------------------------.
-     |            Original Repo              |
-     |---------------------------------------|        You click
-     |  Hosted under author’s account        |  ---->  "Fork"
-     |  e.g. github.com/author/repo_link     |
-     '---------------------------------------'
-                          |
-                          | (Fork creates a copy under your account)
-                          v
-     .---------------------------------------.
-     |            Your Forked Repo           |
-     |---------------------------------------|
-     |  Hosted under your_username account   |
-     |  e.g. github.com/your_username/repo   |
-     '---------------------------------------'
+                    ( GitHub )
+.---------------------------------------.
+|            Original Repo              |
+|---------------------------------------|        You click
+|  Hosted under author’s account        |  ---->  "Fork"
+|  e.g. github.com/author/repo_link     |
+'---------------------------------------'
+                    |
+                    | (Fork creates a copy under your account)
+                    v
+.---------------------------------------.
+|            Your Forked Repo           |
+|---------------------------------------|
+|  Hosted under your_username account   |
+|  e.g. github.com/your_username/repo   |
+'---------------------------------------'
 ```
 
 - **Original Repo**: The main project on GitHub that you don’t directly control.
@@ -308,32 +308,32 @@ You’ve successfully merged upstream’s changes into your local branch, and Gi
 When you’re ready to share your changes with the original project, you create a pull request (PR).
 
 ```
-   ________________________________________________________
-  |                                                        |
-  |                    PULL REQUEST FLOW                   |
-  |________________________________________________________|
+.________________________________________________________.
+|                                                        |
+|                    PULL REQUEST FLOW                   |
+|________________________________________________________|
 
-   (Local Machine)             (Your Fork)                (Original Repo)
-         │                          │                            │
-         │ git push origin          │                            │
-         │------------------------->│ (on GitHub)                │
-         │                          │                            │
-         │    [Open Pull Request]   │                            │
-         │                          │ ----> [Proposed Changes] ->│
-         │                          │                            │
-         │                          v                            v
-         │                   .------------------.          .------------------.
-         │                   |    Compare &     |          |                  |
-         │                   |   Review Changes |   <----- | Maintainers      |
-         │                   '------------------'          |  Merge or Close  |
-         │                          │                      '------------------'
-         │                          v
-         │              [Potential Merge]                    
-         │                          │                            
-         v                          v                            
-   .----------------.        .---------------.                      
-   |  Continue Dev  |        | Original Repo | <--- Updated if PR is merged
-   '----------------'        '---------------'
+(Local Machine)             (Your Fork)                (Original Repo)
+      │                          │                            │
+      │ git push origin          │                            │
+      │------------------------->│ (on GitHub)                │
+      │                          │                            │
+      │    [Open Pull Request]   │                            │
+      │                          │ ----> [Proposed Changes] ->│
+      │                          │                            │
+      │                          v                            v
+      │                   .------------------.          .------------------.
+      │                   |    Compare &     |          |                  |
+      │                   |   Review Changes |   <----- | Maintainers      |
+      │                   '------------------'          |  Merge or Close  |
+      │                          │                      '------------------'
+      │                          v
+      │              [Potential Merge]                    
+      │                          │                            
+      v                          v                            
+.----------------.        .---------------.                      
+|  Continue Dev  |        | Original Repo | <--- Updated if PR is merged
+'----------------'        '---------------'
 ```
 
 - **Local Machine**: You do your work here, commit changes, then push them to **your fork**.

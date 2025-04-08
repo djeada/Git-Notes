@@ -149,7 +149,7 @@ VI. Otherwise, if you were merging, finalize with a commit.
 
 VII. Repeat the process until all conflicts are addressed.
 
-#### Leveraging Git's Mergetool
+#### Using Mergetool
 
 - Git provides a mergetool command, which is an interactive interface to aid conflict resolution.
 - By default, it uses Vimdiff for visual comparison. However, numerous other editors are supported.

@@ -131,22 +131,23 @@ Attempt to Merge:
 
 If you encounter merge conflicts:
 
-1. Begin by reviewing the terminal's advice. Git often provides context about the nature and location of the conflict.
-  
-2. Use the `git diff` command to inspect the differences and identify the conflicting areas.
-  
-3. Edit the affected files manually to resolve the conflicts, ensuring the desired code remains while removing Git's conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
-  
-4. Once resolved, stage the changes with `git add filename`.
+I. Begin by reviewing the terminal's advice. Git often provides context about the nature and location of the conflict.
 
-5. If you were in the middle of a rebase, continue the process with:
+II. Use the `git diff` command to inspect the differences and identify the conflicting areas.
+
+III. Edit the affected files manually to resolve the conflicts, making sure the desired code remains while removing Git's conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
+
+IV. Once resolved, stage the changes with `git add filename`.
+
+V. If you were in the middle of a rebase, continue the process with:
 
 ```bash
 git rebase --continue
 ```
 
-6. Otherwise, if you were merging, finalize with a commit.
-7. Repeat the process until all conflicts are addressed.
+VI. Otherwise, if you were merging, finalize with a commit.
+
+VII. Repeat the process until all conflicts are addressed.
 
 #### Leveraging Git's Mergetool
 
@@ -165,7 +166,7 @@ Popular merge tools include:
 - meld
 - tortoisemerge
 
-Switching to another tool, e.g., meld:
+Switching to another tool, e.g., `meld`:
 
 ```bash
 git config --global merge.tool meld
@@ -178,6 +179,9 @@ git mergetool
 ```
 
 This displays a three-panel view for each conflicted file:
+
+![image](https://github.com/user-attachments/assets/ed96b7b5-7503-4815-a04e-1b6e844a97cb)
+
 - Left: Your local changes
 - Center: Merged result
 - Right: Remote changes

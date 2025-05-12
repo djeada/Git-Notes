@@ -84,9 +84,9 @@ Production deployment
 
 Once the release branch is declared stable:
 
-1. **Merge to `main` and add an annotated, immutable tag (`vX.Y.0`) for traceability.
-2. **Merge (or rebase) back into `develop` so new development includes every post-freeze fix.
-3. **Delete the release branch** (or archive it) to avoid clutter.
+1. *Merge to `main` and add an annotated, immutable tag (`vX.Y.0`) for traceability.
+2. *Merge (or rebase) back into `develop` so new development includes every post-freeze fix.
+3. *Delete the release branch* (or archive it) to avoid clutter.
 
 #### Advantages
 

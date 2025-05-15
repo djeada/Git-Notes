@@ -4,6 +4,46 @@ In Git, you might accumulate multiple small commits over the course of developin
 
 **Squashing** is the process of compressing multiple commits into a single, consolidated commit. By doing so, you ensure that the branch’s history remains clean, succinct, and more understandable to collaborators who later need to review or track changes.
 
+### Visualising a commit squash
+
+Before squashing `feature` into a single commit:
+
+```
+main branch
+│
+A──B──C          ◄─ tip of main
+    \
+     D──E──F──G  ◄─ feature (4 commits)
+```
+
+The four commits **D → G** capture one logical feature but were made in stages.
+
+One-liner to squash everything on `feature` into a single commit:
+
+```bash
+# run from the feature branch
+git reset --soft $(git merge-base main HEAD) \
+  && git commit --amend -m "feat: brief, imperative summary of the feature"
+```
+
+* `git merge-base main HEAD` finds the common ancestor (**C**) of `main` and `feature`.
+* `reset --soft` moves `HEAD` back to **C** while keeping all changes staged.
+* `commit --amend` creates the new squashed commit (**H**) with your message.
+* If the branch is already on a remote: `git push --force-with-lease`.
+
+After squashing:
+
+```
+main branch
+│
+A──B──C
+    \
+     H              ◄─ feature (single squashed commit)
+```
+
+* **H** now contains the combined changes from **D, E, F, G**.
+* Write the commit message as a concise changelog entry for the entire feature (and reference issue IDs, e.g. `(#123)`).
+
 ### Potential Advantages of Squashing
 
 - Squashing results in a **cleaner project history**, reducing the number of commits in `git log` and making it easier to understand the evolution of the project.
@@ -149,30 +189,3 @@ After squashing, ensure your project still builds and all tests pass locally. Th
 V. **Communicate with Your Team**  
 
 If you do need to force push, post a heads-up in your team’s communication channel, or coordinate a short time window for rewriting history so that no one else is pushing or pulling on that branch.
-
-### Visualizing Squashing with an Example
-
-Before Squashing:
-
-```
-master branch
-    |
-A---B---C   <--- Tip of master
-        \
-         D---E---F---G   <--- feature branch with multiple commits
-```
-
-The `feature` branch has four commits (D, E, F, G) that collectively represent the development of a single feature.
-
-After Squashing:
-
-```
-master branch
-    |
-A---B---C
-        \
-         H   <--- feature branch now has a single squashed commit
-```
-
-- Commits D, E, F, and G are now replaced by a single commit H.  
-- The resulting commit message for H should outline what was done in the entire feature.

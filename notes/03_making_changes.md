@@ -1,8 +1,12 @@
 ## Staging, Committing, and Undoing Actions
 
-At the core of Git are a few fundamental actions: staging changes, committing those changes, and, when necessary, undoing certain actions. These notes provide a clear overview of these basic operations and some common scenarios where they are used.
+The three core actions you’ll perform most often in Git are **staging**, **committing**, and **undoing changes**.
 
-Understanding these actions is important for effective version control. Proper staging ensures that only the desired changes are included in a commit, committing records the project's state at specific points, and knowing how to undo actions allows for correcting mistakes during development.
+* **Staging** decides *what* will be included in your next snapshot (commit).
+* **Committing** actually creates that snapshot in the repository’s history.
+* **Undoing** lets you roll back or adjust if you staged or committed something by mistake.
+
+Mastering these steps makes your commit history cleaner, easier to understand, and safer to work with.
 
 ### Staging Files
 

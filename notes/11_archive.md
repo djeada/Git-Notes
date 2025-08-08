@@ -45,8 +45,6 @@ This:
 2. Compresses it with `gzip`.
 3. Streams it straight to a remote server.
 
----
-
 ### Exporting Specific Files or Directories
 
 If you only need part of a repository, `git archive` can target individual files or folders.

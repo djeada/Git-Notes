@@ -3,7 +3,7 @@
 This repository contains organized notes on Git commands and concepts.
 It is intended as a quick reference and learning resource for anyone working with Git, from beginners to experienced users.
 
-![git](https://user-images.githubusercontent.com/37275728/213567462-13afed9d-a296-4a64-bb9c-68eeda4e707e.png)
+<img width="1024" height="1024" alt="git" src="https://github.com/user-attachments/assets/fca29073-7a9c-4d78-9b69-3556a5436237" />
 
 ## Topics Covered
 

@@ -6,8 +6,6 @@ The three core actions you’ll perform most often in Git are **staging**, **com
 * **Committing** actually creates that snapshot in the repository’s history.
 * **Undoing** lets you roll back or adjust if you staged or committed something by mistake.
 
-Mastering these steps makes your commit history cleaner, easier to understand, and safer to work with.
-
 ### Staging Files
 
 To prepare changes for a commit, we "stage" them. Staging involves selecting which changes in your working directory you want to include in your next commit. The staging area, also known as the index, acts as an intermediary between your working directory and your repository (commit history).

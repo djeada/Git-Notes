@@ -10,7 +10,7 @@ The three core actions you’ll perform most often in Git are **staging**, **com
 
 To prepare changes for a commit, we "stage" them. Staging involves selecting which changes in your working directory you want to include in your next commit. The staging area, also known as the index, acts as an intermediary between your working directory and your repository (commit history).
 
-Staging is a critical step because it allows you to organize your changes logically before recording them. By carefully selecting which changes to stage, you can create more meaningful and manageable commit histories, making it easier to track and understand project evolution.
+Staging allows you to organize your changes logically before recording them. By carefully selecting which changes to stage, you can create more meaningful and manageable commit histories, making it easier to track and understand project evolution.
 
 ```
 +--------------+    +--------------+     +-------------------+

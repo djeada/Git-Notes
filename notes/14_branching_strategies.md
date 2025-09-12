@@ -58,7 +58,12 @@ Treat each commit as **atomic and releasable**: it should build, pass tests, and
 
 #### Critique
 
-Critics say this model only works well when a team has excellent automated tests and very reliable CI. Without that, frequent merges to the main branch feel risky. Feature flags (used to hide unfinished work) add complexity and can accidentally expose half-built features. Big, sweeping changes are hard to slice into tiny safe steps, so they can feel awkward or slow. And if the build pipeline is flaky, everyone gets blocked. Some also find lots of small PRs reduce review depth and make the history noisy.
+* Critics say this model only works well when a team has excellent automated tests and very reliable CI.
+* Without that, frequent merges to the main branch feel risky.
+* Feature flags (used to hide unfinished work) add complexity and can accidentally expose half-built features.
+* Big, sweeping changes are hard to slice into tiny safe steps, so they can feel awkward or slow.
+* If the build pipeline is flaky, everyone gets blocked.
+* Some also find lots of small PRs reduce review depth and make the history noisy.
 
 ### Release Branches
 

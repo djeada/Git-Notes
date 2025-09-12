@@ -358,4 +358,11 @@ If rapid, continuous delivery is the goal, consider slimming the number of envir
 
 #### Critique
 
-Common complaints say this model uses Git branches for the wrong job: branches end up representing *environments* (dev/QA/staging/prod) instead of *changes to the code*, which leads to drift between branches, lots of cherry-picking, and hard-to-trace deployments. Best practice is to build **once** and promote the **same artifact** through each environment, changing only configuration; environment branches usually break that rule, so “staging” and “prod” run different commits and bugs slip through. Configuration should live outside the code (env vars, secrets, config stores), not as separate code branches, which is a core 12-factor principle. Teams also point out that per-environment branches multiply CI pipelines and make rollbacks and audits harder because you can’t point to one SHA that moved through the pipeline unchanged. These critiques show up across CD/GitOps guidance and are a big reason many call “branch-per-environment” an anti-pattern.
+Common complaints about this model include:
+
+* **Branches represent environments, not changes:** Branches end up representing *environments* (dev/QA/staging/prod) instead of *changes to the code*, which leads to drift between branches, lots of cherry-picking, and hard-to-trace deployments.
+* **Breaks artifact promotion best practices:** Best practice is to build **once** and promote the **same artifact** through each environment, changing only configuration. Environment branches usually break that rule, so “staging” and “prod” run different commits and bugs slip through.
+* **Configuration management issues:** Configuration should live outside the code (env vars, secrets, config stores), not as separate code branches, which is a core 12-factor principle.
+* **CI/CD and audit complexity:** Per-environment branches multiply CI pipelines and make rollbacks and audits harder because you can’t point to one SHA that moved through the pipeline unchanged.
+
+These critiques show up across CD/GitOps guidance and are a big reason many call “branch-per-environment” an anti-pattern.

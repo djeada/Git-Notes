@@ -143,7 +143,7 @@ A'──B'──C'──D'──E'   (secret purged from all affected commits)
 Yes—potentially **across most of history**. All clones/forks become incompatible until updated.
 
 **What else must I do?**
-Rotate any **exposed credentials**, and **force-push** rewritten branches. Inform downstreams to reclone or `fetch --all` and reset.
+Rotate any **exposed credentials**, and **force-push** rewritten branches. Inform downstreams to reclone or run `git fetch --all && git reset --hard origin/main` (replace `origin/main` with the correct branch as needed) to realign their local history.
 
 #### Advantages
 

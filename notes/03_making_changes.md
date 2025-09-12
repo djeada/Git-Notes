@@ -2,9 +2,9 @@
 
 The three core actions you’ll perform most often in Git are **staging**, **committing**, and **undoing changes**.
 
-* **Staging** decides *what* will be included in your next snapshot (commit).
-* **Committing** actually creates that snapshot in the repository’s history.
-* **Undoing** lets you roll back or adjust if you staged or committed something by mistake.
+* Staging determines *what* changes go into the next snapshot, while skipping staging means everything modified risks being included; for example, adding only updated tests to the stage keeps unrelated edits out of the commit.
+* Committing records a permanent *snapshot* in the repository history, while avoiding commits leaves work untracked and easy to lose; for example, committing code after a bug fix preserves it as part of the project timeline.
+* Undoing provides ways to *adjust* mistakes in staging or committing, while without it errors remain baked into history; for example, un-staging a file or amending a commit message fixes small slip-ups quickly.
 
 ### Staging Files
 

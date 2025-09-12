@@ -171,7 +171,7 @@ git switch master
 II. Merge the detached commit (use the **tip** commit’s hash):
 
 ```bash
-git merge b4d373k8990g2b5de30a37bn843b2f51fks2b40
+git merge b4d373c8990a2b5de30a37bf843b2f51f5c2b400
 ```
 
 This creates a merge commit tying your detached line into `master`. You’re effectively stitching that “loose thread” back into the main history. If Git reports conflicts:

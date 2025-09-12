@@ -120,17 +120,19 @@ git clone https://github.com/djeada/git.git /opt/projects
 
 This places the full repository inside `/opt/projects`. From there, you can work with it like any other folder—but because it’s a Git repo, you can commit changes locally and sync with the remote repository when needed.
 
-### Verifying a Git Repository
+### Checking if You’re in a Git Repository
 
-If you’re unsure whether your current directory is part of a Git repository, there are two straightforward ways to check.
+There are two super simple ways to check.
 
-**1. Use `git status`:**
+**I. Run `git status`**
+
+Type:
 
 ```bash
 git status
 ```
 
-* If you **are** inside a Git repository, Git will show the current branch, the remote it’s tracking, and whether there are uncommitted changes. For example:
+If you’re inside a Git repo, Git will tell you which branch you’re on, whether it’s connected to a remote, and if there are any changes. It might look like this:
 
 ```
 On branch main
@@ -139,22 +141,20 @@ Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
-* If you **aren’t** in a Git repository, you’ll see:
+If you’re *not* in a repo, Git will complain instead:
 
 ```
 fatal: not a git repository (or any of the parent directories): .git
 ```
 
-**2. Look for the `.git` folder:**
+**II. Look for the `.git` folder**
+
+Run:
 
 ```bash
 ls .git
 ```
 
-If the directory exists and contains items like `HEAD`, `config`, `objects`, and `refs`, it’s a valid Git repository:
+If the folder exists, you’ll see files like `HEAD`, `config`, `objects`, and `refs`. That means the directory is a Git repo.
 
-```
-HEAD  config  description  hooks  info  objects  refs
-```
-
-If the `.git` folder is missing, Git isn’t initialized in that directory.
+If the folder isn’t there, then Git hasn’t been initialized in that location.

@@ -374,7 +374,7 @@ You should no longer see `secret.txt` listed in any commit.
 If you want to be extra sure, try:
 
 ```bash
-git grep "secret" $(git rev-list --all)
+git grep "secret.txt" $(git rev-list --all)
 ```
 
 If nothing shows up, the file is fully removed.

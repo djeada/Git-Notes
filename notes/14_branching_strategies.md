@@ -182,7 +182,11 @@ Avoid very long-running feature branches. If a change is large, break it into in
 
 #### Critique
 
-The main complaints are about delay and drift. When branches stay open for weeks, they fall behind the main codebase and merge conflicts pile up. Pull requests can grow large, slowing reviews and hiding problems until late in the process. Rebased/updated branches burn time, CI runs are duplicated for many branches, and the PR gate can replace early, direct collaboration with a slower “throw it over the wall” review cycle. Stale branches and lingering PRs sap momentum.
+* **Delay and drift:** When branches stay open for weeks, they fall behind the main codebase and merge conflicts pile up.
+* **Large pull requests:** PRs can grow large, slowing reviews and hiding problems until late in the process.
+* **Wasted effort:** Rebasing or updating branches burns time, and CI runs are duplicated for many branches.
+* **Reduced collaboration:** The PR gate can replace early, direct collaboration with a slower “throw it over the wall” review cycle.
+* **Stale work:** Lingering branches and PRs sap momentum.
 
 ### Forking
 

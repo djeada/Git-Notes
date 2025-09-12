@@ -161,6 +161,9 @@ Rotate any **exposed credentials**, and **force-push** rewritten branches. Infor
 * On repos you control and after thorough backups.
 * Prefer `git filter-repo` or **BFG** over raw `filter-branch` for safety/speed.
 
+> **Note:** `git filter-repo` and **BFG Repo-Cleaner** are not included with Git by default.  
+> - To install `git filter-repo`, see [https://github.com/newren/git-filter-repo](https://github.com/newren/git-filter-repo) or install via `pip install git-filter-repo`.  
+> - To use BFG, download the jar from [https://rtyley.github.io/bfg-repo-cleaner/](https://rtyley.github.io/bfg-repo-cleaner/).
 ### Amend (`git commit --amend`)
 
 **Amend** replaces the **most recent commit** with a new one (e.g., fix message, add a forgotten file). The result is a **new commit ID**.

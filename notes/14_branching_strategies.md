@@ -244,8 +244,11 @@ Keep forks fresh by adding the upstream remote (`git remote add upstream <url>`)
 
 #### Critique
 
-Contributors often struggle to keep their fork in sync with the upstream project; long gaps mean ugly conflicts later. CI can be weaker on forks (secrets and internal checks may not run), so maintainers must re-run jobs, adding friction. A small maintainer team can’t review a huge PR queue quickly, so contributions sit for days or weeks. Discussion and context spread across many forks and PRs, which makes triage and coordination harder. It’s secure, but high-friction for frequent collaborators.
-
+* Contributors often struggle to keep their fork in sync with the upstream project; long gaps mean ugly conflicts later.
+* CI can be weaker on forks (secrets and internal checks may not run), so maintainers must re-run jobs, adding friction.
+* A small maintainer team can’t review a huge PR queue quickly, so contributions sit for days or weeks.
+* Discussion and context spread across many forks and PRs, which makes triage and coordination harder.
+* It’s secure, but high-friction for frequent collaborators.
 ### Git Flow
 
 **Git Flow** is a prescriptive branching model, proposed by Vincent Driessen, that assigns *named roles* to branches with clear rules for when to create, merge, and retire them.

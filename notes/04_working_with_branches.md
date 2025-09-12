@@ -1,18 +1,19 @@
 ## Git branching
 
-Git branches help you keep different versions of your codebase separate and make collaboration smoother. Think of them like parallel timelines for your project. By creating a branch, you're effectively saying, “I want to try something new without messing up the main timeline.”
-
-Below, we’ll walk through what branches are, how they work, why and when to create them, and how to manage them with some straightforward Git commands.
+Git branches are lightweight names that point to commits. Think of them as parallel timelines: you can try ideas on a branch without touching `main`, then merge back when you’re happy.
 
 ```
-     .----( feature_x )----.
-    /                       \
----A------B------C------D----E---( main )
-          \                 /
-       '----( fix_bug )-----'
+# o = commit
+
+(main)         o---o---o---------o--------o
+                        \         ^       ^
+                         \        |       |
+(feature/x)               o---o---'       |
+                          \               |
+(fix/bug)                  o---o----------'
 ```
 
-Above is a sketch showing a simplified idea: multiple branches coming off a main history and potentially rejoining it after some work.
+In this picture, both `feature/x` and `fix/bug` branch off from earlier commits, do some work, and then *rejoin* `main` via merges (the vertical joins into the main line).
 
 ### What are branches?
 

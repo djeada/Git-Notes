@@ -132,7 +132,12 @@ Once the release branch is declared stable:
 
 #### Critique
 
-People dislike the extra ceremony and slower pace. A “code freeze” on the release branch pauses new work, and fixes often have to be merged twice (into the release and back into develop), which is tedious and error-prone. When release branches live for weeks, they drift away from the main line, causing painful merge conflicts later. The workflow encourages big “all-at-once” releases instead of small, frequent ones, and keeping track of changes across many branches makes automation and debugging harder.
+* Extra ceremony and slower pace can frustrate teams.
+* “Code freeze” on the release branch pauses new work.
+* Fixes often have to be merged twice (into the release and back into develop), which is tedious and error-prone.
+* Long-lived release branches drift from the main line, causing painful merge conflicts later.
+* The workflow encourages big “all-at-once” releases instead of small, frequent ones.
+* Tracking changes across many branches makes automation and debugging harder.
 
 ### Feature Branches
 

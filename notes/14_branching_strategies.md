@@ -282,7 +282,12 @@ If you aim for *continuous delivery* or deploy many times a day, Git Flow will l
 
 #### Critique
 
-Detractors call it heavy and dated for modern CI/CD. There are many branch types to learn, which adds process and slows onboarding. The permanent develop branch feels like an extra hop, and release/* and hotfix/* branches add merge overhead and chances for divergence. Teams report slower feedback and slower releases compared with trunk-based or short-lived feature branches, plus histories cluttered with coordination merges that are hard to read.
+* Considered *heavy and dated* for modern CI/CD; detractors argue it slows down teams used to rapid iteration.
+* The *many branch types* add process and slow onboarding; new team members face a steeper learning curve.
+* The permanent `develop` branch can feel like an unnecessary extra hop, complicating the path to production.
+* `release/*` and `hotfix/*` branches add merge overhead and increase the risk of divergence; teams report painful merges when branches drift apart.
+* Teams often experience *slower feedback* and *slower releases* compared to trunk-based or short-lived feature branch workflows.
+* Histories can become cluttered with coordination merges, making it harder to read and understand the commit log.
 
 ### Environment Branching
 

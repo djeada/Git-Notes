@@ -222,7 +222,6 @@ That means:
 
 This is super useful in CI/CD pipelines for naming builds like `2.0.0+5`.
 
-This section is great — it already covers the key workflows. What’s missing is the *“feel”* of using tags day-to-day: what happens when you run the commands, how CI/CD tools react, what you’ll see in your terminal, and how to avoid the common gotchas. Let me rewrite it in a more narrative, hands-on style with the same content.
 
 ### Using Tags in Real Workflows
 

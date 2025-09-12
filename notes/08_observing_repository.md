@@ -2,8 +2,6 @@
 
 Git offers several ways to inspect and understand what has changed in your codebase. Mastering these commands helps you monitor progress, spot issues early, and keep your project history organized. Think of it like reading the "track changes" feature in a word processor—but for your entire code project.
 
-Below you’ll find practical examples and interpretations, so you can clearly see how each command works and how it helps in your day-to-day development.
-
 ### Viewing Changes
 
 Different Git commands let you look at what’s been modified, who made the changes, and exactly how your files differ now from previous versions. Having a solid grasp of these tools makes your collaboration and debugging sessions a lot more efficient.

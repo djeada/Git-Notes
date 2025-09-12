@@ -310,7 +310,7 @@ The history now looks like:
 commit i7j8k9l (HEAD -> main)
 ```
 
-And the changes from `e4f5g6h` and `a1b2c3d` are staged or unstaged in your working directory, ready to be re-committed (or edited, or discarded).
+And the changes from `e4f5g6h` and `a1b2c3d` are now unstaged in your working directory, ready to be re-committed (or edited, or discarded).
 
 #### Pushing to a remote
 

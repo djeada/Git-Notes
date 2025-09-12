@@ -35,7 +35,7 @@ git tag v2.0.0
 Tag a specific commit (using its short hash):
 
 ```bash
-git tag v2.0.0 b4d373k
+git tag v2.0.0 b4d373a
 ```
 
 Check what the tag points to:

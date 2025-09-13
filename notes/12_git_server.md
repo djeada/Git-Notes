@@ -109,9 +109,10 @@ sudo -u git chmod 600 ~git/.ssh/authorized_keys
 Authorize a developer (paste their public key):
 
 ```bash
-echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... dev@laptop" | sudo tee -a ~git/.ssh/authorized_keys
+# Example key, replace with a real developer's public key:
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFAKEKEYEXAMPLEONLY1234567890abcdefg dev@laptop" | sudo tee -a ~git/.ssh/authorized_keys
 # output:
-# ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... dev@laptop
+# ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFAKEKEYEXAMPLEONLY1234567890abcdefg dev@laptop
 ```
 
 Optional: restrict the git user to git-only commands:

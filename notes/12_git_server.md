@@ -37,7 +37,6 @@ Update packages and install Git:
 ```bash
 sudo apt update
 sudo apt install git
-# (If your distro still uses a transitional package, `git-core` works too.)
 ```
 
 Show the installed version:

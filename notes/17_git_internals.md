@@ -93,7 +93,7 @@ git cat-file -p <tree-hash>
 Make a commit that points at that tree.
 
 ```bash
-echo "first" | git commit-tree <tree-hash> -m "initial snapshot"
+git commit-tree <tree-hash> -m "initial snapshot"
 # output:
 # <commit-hash>
 

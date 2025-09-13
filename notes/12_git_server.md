@@ -521,7 +521,7 @@ II. Create the `git` user and load developer keys.
 sudo adduser --disabled-password --gecos "" git
 sudo -u git mkdir -p ~git/.ssh && sudo -u git chmod 700 ~git/.ssh
 sudo -u git touch ~git/.ssh/authorized_keys && sudo -u git chmod 600 ~git/.ssh/authorized_keys
-echo "ssh-ed25519 AAAA... dev@laptop" | sudo tee -a ~git/.ssh/authorized_keys
+echo "ssh-ed25519 <SSH-PUBLIC-KEY> dev@laptop" | sudo tee -a ~git/.ssh/authorized_keys
 ```
 
 III. Clone and push from a dev machine.

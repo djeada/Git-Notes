@@ -1,6 +1,6 @@
 ## Git Server
 
-Running your own Git server is about owning your source of truth. Your repos live where you decide, under rules you set, at a pace you control. That means you decide who can read and write, how code moves to production, and how the system grows as your team and projects grow. It’s straight-up Git under the hood—no mystery platform layers—so you get predictability, auditability, and hooks you can bend into real-world workflows like auto-deploys, mirroring, and backups. If you’ve ever wanted a quiet, dependable place for code that you can lock down, wire up, and scale out, a bare Git server is exactly that.
+Running your own Git server is about owning your source of truth. Your repos live where you decide, under rules you set, at a pace you control. That means you decide who can read and write, how code moves to production, and how the system grows as your team and projects grow. It’s pure Git under the hood—no mystery platform layers—so you get predictability, auditability, and hooks you can bend into real-world workflows like auto-deploys, mirroring, and backups. If you’ve ever wanted a quiet, dependable place for code that you can lock down, wire up, and scale out, a bare Git server is exactly that.
 
 ```
 +-------------------+              +-------------------+

@@ -62,7 +62,7 @@ git add hello.txt
 # See what’s staged and the blob ID behind it
 git ls-files -s
 # output (mode | stage | blob-hash | path):
-# 100644 0000000000000000000000000000000000000000 <hash>  hello.txt
+# 100644 <blob-hash> 0	hello.txt
 # (your hash will differ)
 ```
 

@@ -1,7 +1,10 @@
 ## Git Archive
 
-`git archive` is your clean-room packager. It snapshots exactly what Git tracks at a commit—no `.git` folder, no stray build junk, no temp files—so you can hand someone a tidy source bundle or ship code to a server without dragging history along. Think of it as a camera: you point it at a commit, click, and get a tar/zip of only the files that belong in that picture. It’s great for releases, vendor handoffs, monorepo subtrees, and “just give me the code” moments. Because the archive is created from the repository’s tree, not your working directory, it’s consistent and repeatable, which makes ops and audits much happier.
+`git archive` is your clean-room packager. It snapshots exactly what Git tracks at a commit—no `.git` folder, no stray build junk, no temp files. This means you can hand someone a tidy source bundle or ship code to a server without dragging history along.
 
+Think of it as a camera: you point it at a commit, click, and get a tar/zip of only the files that belong in that picture. It’s great for releases, vendor handoffs, monorepo subtrees, and “just give me the code” moments.
+
+Because the archive is created from the repository’s tree, not your working directory, it’s consistent and repeatable, which makes ops and audits much happier.
 ```
 +------------------------+                   +------------------------+
 |  YOUR GIT REPOSITORY   |                   |      project.tar       |

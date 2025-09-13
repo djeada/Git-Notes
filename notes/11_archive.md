@@ -185,7 +185,7 @@ Result: server gets only the tracked sources, with the exact tree from `main`.
 
 ```bash
 # List contents of a tar.gz without extracting
-tar -tzf project.tar.gz | sed -n '1,10p'
+tar -tzf project.tar.gz | head -10
 ```
 
 * Untracked or ignored files are not included. If you rely on built assets, either track them (not ideal) or build on the target machine after extracting.

@@ -1,7 +1,7 @@
 # Git Notes
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](#contributing)
 [![GitHub Stars](https://img.shields.io/github/stars/djeada/Git-Notes.svg)](https://github.com/djeada/Git-Notes/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/djeada/Git-Notes.svg)](https://github.com/djeada/Git-Notes/network)
 

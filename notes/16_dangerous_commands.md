@@ -20,9 +20,11 @@ main:    A──B──C
 ```
 
 **Does this rewrite history?**
+
 Yes. Rebased commits get **new hashes**. If others already pulled the old history, you’ll create divergence.
 
 **When is it safe?**
+
 Safe on **local/unshared** branches. If you must rebase a published branch, coordinate and use `git push --force-with-lease`.
 
 #### Advantages
@@ -67,9 +69,11 @@ branch: A──B   (HEAD)
 ```
 
 **Does this rewrite history?**
+
 Yes, the branch pointer moves. On shared branches this **rewrites public history**.
 
 **How is this different from revert?**
+
 `reset` **moves** your branch pointer; `revert` **adds a new commit** that undoes prior changes. Use `revert` on **published** history.
 
 #### Advantages
@@ -105,9 +109,11 @@ local/feature : A──B──X──Y   (HEAD)
 ```
 
 **Is it safe?**
+
 Use `--force-with-lease` to refuse overwriting new remote work you haven’t seen. **Coordinate** with teammates first.
 
 **Where is it allowed?**
+
 Generally fine on **your own feature branches**. Avoid on `main` or protected branches.
 
 #### Advantages
@@ -140,9 +146,11 @@ A'──B'──C'──D'──E'   (secret purged from all affected commits)
 ```
 
 **Will this change commit IDs?**
+
 Yes—potentially **across most of history**. All clones/forks become incompatible until updated.
 
 **What else must I do?**
+
 Rotate any **exposed credentials**, and **force-push** rewritten branches. Inform downstreams to reclone or run `git fetch --all && git reset --hard origin/main` (replace `origin/main` with the correct branch as needed) to realign their local history.
 
 #### Advantages
@@ -164,6 +172,7 @@ Rotate any **exposed credentials**, and **force-push** rewritten branches. Infor
 > **Note:** `git filter-repo` and **BFG Repo-Cleaner** are not included with Git by default.  
 > - To install `git filter-repo`, see [https://github.com/newren/git-filter-repo](https://github.com/newren/git-filter-repo) or install via `pip install git-filter-repo`.  
 > - To use BFG, download the jar from [https://rtyley.github.io/bfg-repo-cleaner/](https://rtyley.github.io/bfg-repo-cleaner/).
+
 ### Amend (`git commit --amend`)
 
 **Amend** replaces the **most recent commit** with a new one (e.g., fix message, add a forgotten file). The result is a **new commit ID**.
@@ -179,9 +188,11 @@ A──B'  (HEAD)   (B replaced with B')
 ```
 
 **Does this rewrite history?**
+
 Yes. If the old commit was pushed, you’ll need a **force push** and must coordinate.
 
 **What’s a safe workflow?**
+
 Amend **before** pushing, or amend your branch and publish with `--force-with-lease`.
 
 #### Advantages

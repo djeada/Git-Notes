@@ -112,7 +112,7 @@ We welcome contributions from the community! Please review our contribution guid
 1. **Fork** the repository to your GitHub account
 2. **Clone** your fork locally:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Git-Notes.git
+   git clone https://github.com/<your-username>/Git-Notes.git
    cd Git-Notes
    ```
 3. **Create** a feature branch:

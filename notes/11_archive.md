@@ -93,7 +93,8 @@ git archive --prefix=project-name/ -o project.zip HEAD
 Because `git archive` writes to stdout by default, you can compress and ship in one go. Great for deployments or quick backups.
 
 ```bash
-git archive main | gzip | ssh user@host "cat > /deploy/project-$(date +%F).tar.gz"
+archive_name="project-$(date +%F).tar.gz"
+git archive main | gzip | ssh user@host "cat > /deploy/$archive_name"
 # output (local):
 # (no local file created; archive landed on remote host)
 ```

@@ -354,7 +354,7 @@ git remote -v
 
 ### Optional lightweight web UI
 
-Sometimes you just want a simple window into your repos without adopting a whole platform. That’s what cgit and GitWeb give you: a fast, read-only catalog of your bare repos with clickable history, diffs, blame, and tarball downloads. They don’t change your Git workflow at all; pushes still happen over SSH, and the web UI only reads from the same `/opt/git/*.git` directories. You can put it behind HTTPS and basic auth for internal eyes, expose it read-only to CI and stakeholders, or leave it on a private network. Think of it as a static-feeling dashboard backed by your live repos—zero database, tiny surface area, and easy to back up or blow away.
+Sometimes you just want a simple window into your repos without adopting a whole platform. That’s what cgit and gitweb give you: a fast, read-only catalog of your bare repos with clickable history, diffs, blame, and tarball downloads. They don’t change your Git workflow at all; pushes still happen over SSH, and the web UI only reads from the same `/opt/git/*.git` directories. You can put it behind HTTPS and basic auth for internal eyes, expose it read-only to CI and stakeholders, or leave it on a private network. Think of it as a static-feeling dashboard backed by your live repos—zero database, tiny surface area, and easy to back up or blow away.
 
 ```
 Browser

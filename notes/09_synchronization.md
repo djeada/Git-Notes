@@ -67,7 +67,7 @@ git checkout master
 
 2. Pull the latest changes from the remote master branch to ensure you're up to date:
 
-``` bash
+```bash
 git pull origin master
 ```
 
@@ -234,6 +234,29 @@ git push --force origin branch_name
 
 Warning: Use `--force` carefully, as it can discard remote changes and lead to data loss.
 
+**Safer alternative:** `--force-with-lease` checks that the remote branch hasn’t been updated since your last fetch. If someone else pushed in the meantime, the push is rejected:
+
+```bash
+git push --force-with-lease origin branch_name
+```
+
+This is strongly recommended over `--force` for any branch others might work on.
+
+#### Cleaning Up Stale Remote References
+
+Over time, branches deleted on the remote still show up locally. Prune them:
+
+```bash
+# Remove stale remote-tracking branches
+git fetch --prune
+
+# Or set it as the default for all fetches
+git config --global fetch.prune true
+
+# See which remote branches are gone
+git branch -vv | grep ': gone]'
+```
+
 ### Keeping a Forked Repository Updated
 
 When working with forked repositories, it's common to want to synchronize your fork with the original (or "upstream") repository to ensure that your fork remains up-to-date with the latest changes. Here’s a detailed guide on how to keep your forked repository synchronized with the upstream repository:
@@ -285,3 +308,5 @@ git pull upstream master
 ```
 
 This method combines the fetch and merge operations, making it quicker and easier to synchronize your fork with the upstream repository.
+
+**GitHub shortcut:** Since 2021, GitHub provides a "Sync fork" button on your fork’s page that handles upstream synchronization automatically through the web UI, without needing command-line steps.

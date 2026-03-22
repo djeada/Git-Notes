@@ -138,15 +138,40 @@ git checkout -b new_branch
 
 That command says, “Make a new branch called `new_branch` and check it out right away.”
 
+**Modern alternative (Git 2.23+):** The `git switch` command was introduced for clarity:
+
+```bash
+# Create and switch in one step
+git switch -c new_branch
+
+# Equivalent to: git checkout -b new_branch
+```
+
 ### Switching branches
 
 Once a branch exists, you switch to it with:
 
 ```bash
 git checkout branch1
+# or (modern):
+git switch branch1
 ```
 
-Any commits you make now will belong to `branch1`. If you switch back to `master` (`git checkout master`), you’ll return to the previous state of the code in that branch.
+Any commits you make now will belong to `branch1`. If you switch back to `master` (`git checkout master` or `git switch master`), you’ll return to the previous state of the code in that branch.
+
+#### Tracking Remote Branches
+
+When you create a local branch from a remote one, set up tracking so `git pull` and `git push` work without extra arguments:
+
+```bash
+# Check out a remote branch and track it automatically
+git checkout --track origin/feature
+# or: git switch feature  (auto-tracks if remote branch exists)
+
+# Set upstream tracking on an existing branch
+git branch -u origin/main
+# or: git branch --set-upstream-to=origin/main
+```
 
 ### Merging branches
 
@@ -179,6 +204,34 @@ Fast-forward
 ```
 
 In the output above, Git performed a **fast-forward** merge, which just moves the branch pointer forward because `master` was directly behind `new_branch`.
+
+#### Understanding Fast-Forward vs. Three-Way Merges
+
+A **fast-forward** merge happens when the target branch has no new commits since you branched:
+
+```
+Before: main ──A──B──C   feature ──D──E
+After:  main ──A──B──C──D──E
+        (pointer moved forward; no merge commit)
+```
+
+A **three-way merge** happens when both branches have diverged:
+
+```
+Before: main ──A──B──C──F   feature ──D──E
+After:  main ──A──B──C──F──M
+                         \      /
+                          D──E
+        (M is a merge commit with two parents)
+```
+
+To **always** create a merge commit (even when fast-forward is possible), use:
+
+```bash
+git merge --no-ff branch_name
+```
+
+Many teams prefer `--no-ff` because the merge commit documents when and why branches were combined.
 
 ### Deleting branches
 

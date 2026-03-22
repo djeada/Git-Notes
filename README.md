@@ -65,6 +65,8 @@ This repository provides structured, comprehensive documentation covering Git ve
 | [Common Points of Confusion](notes/13_points_of_confusion.md) | Troubleshooting and misconceptions | All Levels |
 | [Branching Strategies](notes/14_branching_strategies.md) | Team workflow methodologies | Advanced |
 | [Monorepo vs. Multirepo](notes/15_mono_and_multi_repo.md) | Repository architecture decisions | Advanced |
+| [Dangerous Commands](notes/16_dangerous_commands.md) | High-risk operations and safeguards | Advanced |
+| [Git Internals](notes/17_git_internals.md) | Object model and internal storage | Advanced |
 
 ## 🚀 Getting Started
 
@@ -78,6 +80,17 @@ This repository provides structured, comprehensive documentation covering Git ve
 2. **Need specific commands?** Use the search function or browse by topic
 3. **Working on a team?** Review [Branching Strategies](notes/14_branching_strategies.md)
 4. **Troubleshooting?** Check [Common Points of Confusion](notes/13_points_of_confusion.md)
+
+### Quick Reference by Task
+
+| Task | Where to Look |
+|------|---------------|
+| Getting started with Git | [01 Introduction](notes/01_introduction_to_version_control.md) → [02 Create Repository](notes/02_create_repository.md) → [03 Making Changes](notes/03_making_changes.md) |
+| Working on a team | [09 Synchronization](notes/09_synchronization.md) → [14 Branching Strategies](notes/14_branching_strategies.md) |
+| Made a mistake? | [03 Undoing Commits](notes/03_making_changes.md) → [16 Dangerous Commands](notes/16_dangerous_commands.md) |
+| Understanding Git deeply | [17 Git Internals](notes/17_git_internals.md) → [05 HEAD](notes/05_head.md) |
+| Preparing a release | [06 Tags](notes/06_tags.md) → [10 Squashing Commits](notes/10_squashing_commits.md) → [11 Archive](notes/11_archive.md) |
+| Setting up infrastructure | [12 Git Server](notes/12_git_server.md) → [15 Mono vs Multi Repo](notes/15_mono_and_multi_repo.md) |
 
 ## 🛠️ Best Practices
 

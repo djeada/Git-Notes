@@ -210,3 +210,50 @@ Amend **before** pushing, or amend your branch and publish with `--force-with-le
 * Local changes not yet pushed.
 * Minor corrections to your own branch (with coordinated force push).
 * Avoid on shared/protected branches; add a new commit instead.
+
+### Recovery Cheat Sheet
+
+When things go wrong, these commands can help you recover:
+
+| Situation | Recovery Command |
+|-----------|-----------------|
+| Accidentally reset commits | `git reflog` → find the commit → `git reset --hard <hash>` |
+| Lost commits from detached HEAD | `git reflog` → `git branch recovery <hash>` |
+| Bad merge you want to undo | `git reset --hard ORIG_HEAD` (immediately after merge) |
+| Need to undo a rebase | `git reflog` → `git reset --hard <pre-rebase-hash>` |
+| Accidentally deleted a branch | `git reflog` → `git branch <name> <hash>` |
+| Force pushed and lost remote work | Ask teammates for their local copy, or check `git reflog` on the server |
+
+```bash
+# The reflog is your safety net — always check it first
+git reflog
+
+# Example: recover from a bad reset
+git reflog
+# output:
+# a1b2c3d HEAD@{0}: reset: moving to HEAD~3
+# e4f5a6b HEAD@{1}: commit: Important feature
+# ...
+
+# Restore to before the reset
+git reset --hard e4f5a6b
+```
+
+### Pre-Push Safety Checklist
+
+Before running any dangerous command on a shared branch, walk through this checklist:
+
+1. **Back up your branch first:** `git branch backup-$(date +%Y%m%d) HEAD`
+2. **Check what you’re about to change:** `git log --oneline HEAD~5..HEAD`
+3. **Verify no one else is working on the branch:** check with your team
+4. **Use `--force-with-lease` instead of `--force`:** it refuses to push if the remote has unseen changes
+5. **After the operation:** run `git log` and `git diff` to verify the result is what you expected
+6. **Communicate:** let your team know if you rewrote shared history
+
+```bash
+# Safe force push workflow
+git branch backup-$(date +%Y%m%d)    # step 1: backup
+git log --oneline -10                 # step 2: review
+git push --force-with-lease           # step 4: safe push
+git log --oneline -10                 # step 5: verify
+```

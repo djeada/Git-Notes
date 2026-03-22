@@ -12,14 +12,50 @@ Git is a powerful tool, but its complexity often puzzles newcomers. Let’s brea
 ### Branching and Merging
 
 - The term **merge conflicts** refers to a situation where two branches contain conflicting changes, and Git is unable to automatically combine them. This requires manual intervention to resolve the conflicts, much like you would reconcile differences in a document that multiple people have edited. For instance, if two team members modify the same line of code in different ways, Git will flag this as a conflict, and you will need to decide which change to keep or how to integrate both changes effectively.
+- Understanding conflict markers is essential. When Git finds conflicting changes, it marks them in the file:
+
+```
+<<<<<<< HEAD
+Your version of this line
+=======
+Their version of this line
+>>>>>>> feature-branch
+```
+
+To resolve: edit the file to keep the right version (or combine both), remove the markers, then `git add` the file and commit.
+
 - Following **best practices** can significantly reduce the occurrence of merge conflicts and streamline the development process. One such practice is to regularly pull changes from the main branch into your feature branch. This ensures that your branch is up to date with the latest changes and minimizes the differences that need to be resolved later. Additionally, committing smaller, logical changes rather than large, sweeping updates can make it easier to track and manage modifications. These incremental commits provide clearer context and make it simpler to pinpoint and resolve issues, ultimately leading to a smoother merging process.
 
 ### Using the Command-Line Interface
 
 - The **learning curve** for Git can be steep, especially because it relies heavily on command-line instructions. For users who are more familiar with graphical interfaces, this can initially seem daunting. However, investing time in learning these commands can be highly beneficial. Mastering the command line provides powerful control and flexibility over your Git operations, enabling you to perform tasks more efficiently and automate repetitive actions.
-- While mastering the command line is advantageous, there are also numerous **graphical tools** available for Git. These GUI tools offer a more visual and intuitive way to handle Git operations, making it easier for those who prefer not to use the command line. Tools like GitHub Desktop, Sourcetree, and GitKraken provide user-friendly interfaces that simplify tasks such as committing changes, branching, and merging, thereby catering to a wider range of users with different preferences and skill levels.
+- While mastering the command line is advantageous, there are also numerous **graphical tools** available for Git. These GUI tools offer a more visual and intuitive way to handle Git operations, making it easier for those who prefer not to use the command line:
+
+  - **GitHub Desktop** – Simplest option, great for GitHub-focused workflows
+  - **GitKraken** – Feature-rich with beautiful visualizations
+  - **Sourcetree** – Detailed, supports advanced operations
+  - **VS Code Source Control** – Integrated into your editor, minimal learning curve
+  - **lazygit** / **gitui** – Terminal-based UIs for those who prefer staying in the terminal
+
+  A good learning approach: start with CLI basics to understand what Git does, then adopt a GUI for visualization (commit graphs, complex diffs). When the GUI does something unexpected, check `git log` or `git status` in the terminal to see what actually happened.
 
 ### Undoing Changes
+
+Here is a quick comparison of the three main undo strategies:
+
+| Strategy | History | Safety | Best For |
+|----------|---------|--------|----------|
+| `git revert` | Preserved (adds new commit) | Safe for shared branches | Undoing published changes |
+| `git reset` | Rewritten (moves branch pointer) | Dangerous on shared branches | Undoing local mistakes |
+| `git checkout`/`restore` | Unchanged | Safe | Discarding working directory changes |
+
+```
+git revert:  A──B──C──D──D'   (D' undoes D; history preserved)
+
+git reset:   A──B──C           (D removed from history)
+
+git restore: Working directory changes discarded, commits untouched
+```
 
 - The **revert** command is a safe and non-destructive way to undo changes made by a previous commit. When you revert a commit, Git creates a new commit that negates the changes introduced by the specified commit. This means the project history remains intact, preserving the record of all changes while effectively undoing the specific modifications. This method is particularly useful in a shared repository where preserving the history is crucial.
 - In contrast, the **reset** command is more powerful and potentially destructive, as it can alter the project history. Using reset, you can move the current branch back to a previous state, effectively discarding any commits made after that point. This can be useful for undoing mistakes, but it should be used with caution, especially in a shared repository, as it can remove changes that other collaborators might rely on. There are different types of resets, such as soft, mixed, and hard, each offering varying levels of impact on your working directory and staging area.

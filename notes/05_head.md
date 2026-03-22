@@ -5,6 +5,30 @@
 * Under the hood, `HEAD` is a tiny text file: `.git/HEAD`. Running `cat .git/HEAD` might show `ref: refs/heads/master`, meaning `HEAD` points to the branch named `master`. If it shows a raw commit hash instead, `HEAD` is detached (explained below).
 * Switching branches (via `git switch` or `git checkout`) moves `HEAD` to point at the target branch. Knowing where `HEAD` points makes branching, merging, and navigating history far more predictable.
 
+### HEAD Notation Shortcuts
+
+Git provides shorthand for referencing commits relative to `HEAD`:
+
+| Notation | Meaning | Example Use |
+|----------|---------|-------------|
+| `HEAD` | Current commit | `git show HEAD` |
+| `HEAD~1` | Parent of current commit | `git diff HEAD~1 HEAD` |
+| `HEAD~N` | N commits back | `git reset HEAD~3` |
+| `HEAD^` | First parent (same as `~1`) | `git show HEAD^` |
+| `HEAD^2` | Second parent (for merge commits) | `git show HEAD^2` |
+| `HEAD@{N}` | Nth previous position in reflog | `git show HEAD@{1}` |
+
+```bash
+# View commit 3 generations back
+git show HEAD~3
+
+# Compare current commit with its parent
+git diff HEAD~1 HEAD
+
+# Reset last 2 commits but keep changes staged
+git reset --soft HEAD~2
+```
+
 ```
 Time →                                                     (commits left→right)
 
@@ -37,7 +61,25 @@ Legend:
 A **detached HEAD** is when `HEAD` points **directly to a commit** instead of to a branch tip—usually after checking out a specific commit hash or a tag.
 
 * In a detached state, any new commits aren’t on a named branch. They’re easy to lose if you move `HEAD` elsewhere because nothing points to them.
-* If you commit while detached and want to keep that work, attach it to a branch: create one at that commit (`git switch -c my-work`) or merge/cherry-pick it into an existing branch. (You can often recover recent detached commits with `git reflog` if you move away accidentally.)
+* If you commit while detached and want to keep that work, attach it to a branch: create one at that commit (`git switch -c my-work`) or merge/cherry-pick it into an existing branch.
+
+#### Recovering Lost Commits with Reflog
+
+If you accidentally switch away from a detached HEAD without saving your work, `git reflog` is your safety net. It records every position `HEAD` has been in:
+
+```bash
+git reflog
+# output example:
+# a1b2c3d HEAD@{0}: checkout: moving to main
+# e4f5a6b HEAD@{1}: commit: Important work I did while detached
+# c7d8e9f HEAD@{2}: checkout: moving from main to c7d8e9f
+
+# Create a branch to save the lost commit
+git branch recovery-branch e4f5a6b
+git switch recovery-branch
+```
+
+⚠️ **Important:** Reflog entries expire after ~90 days by default. Don’t rely on reflog as a long-term backup—always create a branch for work you want to keep.
 
 This is what it looks like when you check out a specific commit:
 
@@ -68,19 +110,19 @@ Commit **F** is **not** on `master`. If you switch back to `master`, there’s n
 You enter a detached HEAD state by checking out a commit hash or tag. For example:
 
 ```bash
-git switch b4d373k8990g2b5de30a37bn843b2f51fks2b40
+git switch b4d373a8990c2b5de30a37bf843b2f51fae2b40
 ```
 
 Or equivalently:
 
 ```bash
-git checkout b4d373k8990g2b5de30a37bn843b2f51fks2b40
+git checkout b4d373a8990c2b5de30a37bf843b2f51fae2b40
 ```
 
 `HEAD` now points to that exact commit rather than a branch tip. Git will say:
 
 ```
-Note: switching to 'b4d373k8990g2b5de30a37bn843b2f51fks2b40'.
+Note: switching to 'b4d373a8990c2b5de30a37bf843b2f51fae2b40'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
@@ -117,6 +159,8 @@ F is no longer “floating”; it’s anchored to the new_branch branch.
 
 *Tip:* You can do this in one step with `git switch -c new_branch`. Verify where you are with `git status` or `git branch --show-current`.
 
+⚠️ **Critical:** If you leave a commit detached without a branch and switch away, Git will eventually garbage-collect it (typically after 30 days). Always create a branch immediately if you made important commits while detached.
+
 ### Preventing a Detached HEAD State
 
 It’s cleaner to avoid a detached `HEAD` unless you’re only **looking**. If you intend to make changes, create a branch at that commit first so new work has a name and a home.
@@ -126,7 +170,7 @@ It’s cleaner to avoid a detached `HEAD` unless you’re only **looking**. If y
 I. Create a branch named `old_version` at that commit:
 
 ```bash
-git branch old_version b4d373k8990g2b5de30a37bn843b2f51fks2b40
+git branch old_version b4d373a8990c2b5de30a37bf843b2f51fae2b40
 ```
 
 II. Switch to `old_version`:
@@ -137,7 +181,7 @@ git switch old_version
 
 Now, any commits you make stay on `old_version`—no work drifts unreferenced.
 
-*Tip:* One-step variant: `git switch -c old_version b4d373k8990g2b5de30a37bn843b2f51fks2b40`.
+*Tip:* One-step variant: `git switch -c old_version b4d373a8990c2b5de30a37bf843b2f51fae2b40`.
 
 ### Switching Back to a Branch from a Detached HEAD
 

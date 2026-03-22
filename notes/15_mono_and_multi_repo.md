@@ -183,3 +183,44 @@ If different teams are responsible for distinct parts of the system, possibly us
 - **Frequent, Isolated Releases**  
 
 Ideal if each service or component has its own release cycle, reducing the need for a single repository to coordinate all updates.
+
+### Quick Decision Matrix
+
+| Question | Monorepo | Multirepo |
+|----------|----------|-----------|
+| How tightly coupled are your projects? | High coupling → monorepo | Low coupling → multirepo |
+| Do changes often span multiple projects? | Frequent cross-project changes | Rare cross-project changes |
+| How large is the codebase? | Manageable with tooling | Very large codebases split naturally |
+| Do teams need different workflows? | Shared conventions preferred | Team autonomy preferred |
+| How complex is your CI/CD? | Centralized pipeline | Independent pipelines per repo |
+
+### Tooling
+
+#### Monorepo Tools
+
+- **Nx** (JavaScript/TypeScript) – Smart build caching, affected-only testing, dependency graphs
+- **Turborepo** (JavaScript/TypeScript) – Incremental builds with remote caching
+- **Bazel** (polyglot) – Google’s build system for massive monorepos
+- **Lerna** (JavaScript) – Manages multi-package repos with versioning
+
+#### Multirepo Tools
+
+- **Git Submodules** – Built-in Git feature for nesting repositories; can be complex to manage
+- **Git Subtree** – Merges external repo history into a subdirectory; simpler than submodules
+- **Package Managers** (npm, Maven, PyPI) – Publish shared libraries as versioned packages
+
+#### Git Performance for Large Repos
+
+For monorepos that grow large, Git offers performance features:
+
+```bash
+# Sparse checkout: only check out the directories you need
+git sparse-checkout init --cone
+git sparse-checkout set services/payments libs/common
+
+# Partial clone: skip downloading all blobs upfront
+git clone --filter=blob:none <url>
+
+# Scalar: Microsoft's tool for managing very large repos
+# (used for the Windows OS monorepo)
+```

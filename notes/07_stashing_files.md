@@ -165,3 +165,54 @@ git stash clear
 ```
 
 This will permanently remove all stashes from the stash list and cannot be undone.
+
+## Creating a Branch from a Stash
+
+If you stashed some work and later decide it deserves its own branch, you can create one directly from a stash. This applies the stash to a new branch based on the commit where the stash was originally created:
+
+```bash
+$ git stash branch new-feature-branch stash@{0}
+Switched to a new branch 'new-feature-branch'
+On branch new-feature-branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+modified:   app.js
+```
+
+This is especially useful when applying a stash to the current branch would cause conflicts—the new branch starts from a clean state.
+
+## Stashing Selectively with `--patch`
+
+Sometimes you only want to stash *part* of your changes. The `--patch` (or `-p`) flag lets you interactively choose which hunks to stash:
+
+```bash
+$ git stash push --patch
+diff --git a/app.js b/app.js
+...
+Stash this hunk [y,n,q,a,d,/,s,e,?]?
+```
+
+- `y` – stash this hunk
+- `n` – skip this hunk
+- `s` – split into smaller hunks
+- `q` – quit (stash what you selected so far)
+
+This is useful when you have mixed changes in a file and only need to set some aside.
+
+## Stashing Untracked and Ignored Files
+
+By default, `git stash` only saves tracked files. To include untracked files:
+
+```bash
+git stash push --include-untracked
+# or shorter:
+git stash push -u
+```
+
+To also include ignored files (rarely needed):
+
+```bash
+git stash push --all
+# or shorter:
+git stash push -a
+```

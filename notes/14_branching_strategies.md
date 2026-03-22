@@ -71,7 +71,7 @@ In the **release-branching** workflow, each upcoming version is stabilised on it
 
 * `main` (or `master`) – holds production-ready code and immutable version tags (e.g., `v2.3.0`).
 * `develop` – the integration branch for day-to-day feature work.
-* *Release branch* – cut from `develop` when you declare the next version feature-complete; only bug fixes, documentation tweaks, and release housekeeping (version bumps, build scripts, localisation strings, etc.) are allowed.
+* *Release branch* – cut from `develop` when you declare the next version feature-complete; only bug fixes, documentation tweaks, and release housekeeping (version bumps, build scripts, localization strings, etc.) are allowed.
 * *Hotfix branch* – cut directly from `main` to address critical production issues; merge back into both `main` *and* `develop` (or the active release branch) to prevent regressions.
 
 ```
@@ -179,6 +179,28 @@ main
 * Organisations not yet ready for *trunk-based development* can reduce risk with scoped branches; teams already practising trunk-based merges may not need them.
 
 Avoid very long-running feature branches. If a change is large, break it into incremental slices or use *branch-by-abstraction* so you can merge to trunk early and often.
+
+#### Preventing Integration Drift
+
+If your branch lasts more than a few days, integrate frequently to avoid massive conflicts at merge time. Make it part of your routine (e.g., first thing each morning or before each coding session):
+
+```bash
+# Rebase onto the latest integration branch
+git fetch origin develop
+git rebase origin/develop
+
+# This keeps your branch close to the main line
+# Conflicts stay small and manageable
+```
+
+**Or use merge commits** if your team prefers preserving branch topology:
+
+```bash
+git fetch origin develop
+git merge origin/develop
+```
+
+**Anti-pattern to avoid:** Working for weeks in isolation, then facing a massive merge with dozens of conflicts at the end.
 
 #### Critique
 
@@ -305,6 +327,18 @@ If you aim for *continuous delivery* or deploy many times a day, Git Flow will l
 * `release/*` and `hotfix/*` branches add merge overhead and increase the risk of divergence; teams report painful merges when branches drift apart.
 * Teams often experience *slower feedback* and *slower releases* compared to trunk-based or short-lived feature branch workflows.
 * Histories can become cluttered with coordination merges, making it harder to read and understand the commit log.
+
+#### Choosing the Right Strategy
+
+| Factor | Trunk-Based | Feature Branches | Git Flow | Forking |
+|--------|-------------|-----------------|----------|---------|
+| Team size | Small–medium | Any | Medium–large | Any (esp. open source) |
+| Release cadence | Continuous | Days–weeks | Scheduled (monthly+) | Varies |
+| CI/CD maturity | High | Medium | Low–medium | Varies |
+| Multiple versions | No | No | Yes | No |
+| External contributors | Rare | Rare | Rare | Common |
+
+**Hybrid approaches are common:** many teams use feature branches with trunk-based merge frequency, or Git Flow concepts without the full ceremony. Choose what fits your team’s reality and evolve the strategy as your needs change.
 
 ### Environment Branching
 

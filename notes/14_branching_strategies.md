@@ -182,10 +182,10 @@ Avoid very long-running feature branches. If a change is large, break it into in
 
 #### Preventing Integration Drift
 
-If your branch lasts more than a few days, integrate frequently to avoid massive conflicts at merge time:
+If your branch lasts more than a few days, integrate frequently to avoid massive conflicts at merge time. Make it part of your routine (e.g., first thing each morning or before each coding session):
 
 ```bash
-# Daily: rebase onto the latest integration branch
+# Rebase onto the latest integration branch
 git fetch origin develop
 git rebase origin/develop
 

@@ -64,8 +64,6 @@ If the `.git` folder is removed, Git no longer treats the folder as a repository
 
 For a deep dive into what `.git` contains and how Git stores data, see [Git Internals](17_git_internals.md).
 
-For a deep dive into what `.git` contains and how Git stores data, see [Git Internals](17_git_internals.md).
-
 ### What happens behind the scenes?
 
 When you run `git init`, Git sets up the internal database it uses to track files, changes, and relationships between changes.

@@ -68,19 +68,19 @@ Commit **F** is **not** on `master`. If you switch back to `master`, there’s n
 You enter a detached HEAD state by checking out a commit hash or tag. For example:
 
 ```bash
-git switch b4d373k8990g2b5de30a37bn843b2f51fks2b40
+git switch b4d373a8990c2b5de30a37bf843b2f51fae2b40
 ```
 
 Or equivalently:
 
 ```bash
-git checkout b4d373k8990g2b5de30a37bn843b2f51fks2b40
+git checkout b4d373a8990c2b5de30a37bf843b2f51fae2b40
 ```
 
 `HEAD` now points to that exact commit rather than a branch tip. Git will say:
 
 ```
-Note: switching to 'b4d373k8990g2b5de30a37bn843b2f51fks2b40'.
+Note: switching to 'b4d373a8990c2b5de30a37bf843b2f51fae2b40'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
@@ -126,7 +126,7 @@ It’s cleaner to avoid a detached `HEAD` unless you’re only **looking**. If y
 I. Create a branch named `old_version` at that commit:
 
 ```bash
-git branch old_version b4d373k8990g2b5de30a37bn843b2f51fks2b40
+git branch old_version b4d373a8990c2b5de30a37bf843b2f51fae2b40
 ```
 
 II. Switch to `old_version`:
@@ -137,7 +137,7 @@ git switch old_version
 
 Now, any commits you make stay on `old_version`—no work drifts unreferenced.
 
-*Tip:* One-step variant: `git switch -c old_version b4d373k8990g2b5de30a37bn843b2f51fks2b40`.
+*Tip:* One-step variant: `git switch -c old_version b4d373a8990c2b5de30a37bf843b2f51fae2b40`.
 
 ### Switching Back to a Branch from a Detached HEAD
 

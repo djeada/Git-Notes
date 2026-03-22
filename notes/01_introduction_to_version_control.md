@@ -3,11 +3,11 @@
 Git is a powerful and widely used version control system that helps you manage code changes, work with others, and keep projects safe. Think of it as a digital timeline you can jump back to whenever something goes wrong. Here are some straightforward reasons to learn Git:
 
 - Most software teams rely on Git. It’s a skill that employers actively look for.
-- By pushing to an external server (like GitHub), you’ll have a safe backup of your function.
+- By pushing to an external server (like GitHub), you’ll have a safe backup of your codebase.
 - Every version of your project is saved. You can always rewind to a point where your code functioned correctly.
 - If you break something, you can revert to a stable commit and troubleshoot from there.
 - For those using multiple machines or virtual environments, Git keeps everything in sync.
-- Git lets multiple people function on the same codebase, handling merge conflicts and version tracking.
+- Git lets multiple people work on the same codebase, handling merge conflicts and version tracking.
 - GitHub is a great place to show off your projects to potential employers or collaborators.
 
 ```
@@ -115,8 +115,8 @@ ls -al ~/.ssh
 Expected output (example):
 
 ```
-- 32 id_rsa
-- 32 id_rsa.pub
+-rw------- 1 user user 1679 Jan  1 00:00 id_rsa
+-rw-r--r-- 1 user user  400 Jan  1 00:00 id_rsa.pub
 ```
 
 - `id_rsa` is your private key.  

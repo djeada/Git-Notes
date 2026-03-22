@@ -66,7 +66,7 @@ index f7c2963..3e0f18e 100644
 
 #### See Staged but Uncommitted Changes
 
-To see staged but uncomitted changes, use:
+To see staged but uncommitted changes, use:
 
 ```bash
 git diff --cached
@@ -153,7 +153,7 @@ a4d6e439 (Alice   2025-04-01 10:12:56) </header>
 
 #### Viewing Changes in a Specific File
 
-To viewing changes in a specific file, use:
+To view changes in a specific file, use:
 
 ```bash
 git diff filename

@@ -67,7 +67,7 @@ git checkout master
 
 2. Pull the latest changes from the remote master branch to ensure you're up to date:
 
-``` bash
+```bash
 git pull origin master
 ```
 

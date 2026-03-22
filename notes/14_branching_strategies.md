@@ -71,7 +71,7 @@ In the **release-branching** workflow, each upcoming version is stabilised on it
 
 * `main` (or `master`) – holds production-ready code and immutable version tags (e.g., `v2.3.0`).
 * `develop` – the integration branch for day-to-day feature work.
-* *Release branch* – cut from `develop` when you declare the next version feature-complete; only bug fixes, documentation tweaks, and release housekeeping (version bumps, build scripts, localisation strings, etc.) are allowed.
+* *Release branch* – cut from `develop` when you declare the next version feature-complete; only bug fixes, documentation tweaks, and release housekeeping (version bumps, build scripts, localization strings, etc.) are allowed.
 * *Hotfix branch* – cut directly from `main` to address critical production issues; merge back into both `main` *and* `develop` (or the active release branch) to prevent regressions.
 
 ```

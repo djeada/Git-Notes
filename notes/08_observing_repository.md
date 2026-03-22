@@ -263,6 +263,70 @@ Example Output:
 - The `*` symbols and lines illustrate how branches diverged and merged.
 - It’s a quick way to see which commits belong to which branch and how they tie together.
 
+#### Compact and Customized Log Output
+
+Git offers many formatting options to tailor log output:
+
+```bash
+# Show one commit per line
+git log --oneline
+
+# Show the last 5 commits
+git log -5
+
+# Show commits since a date
+git log --since="2025-01-01"
+
+# Show commits by a specific author
+git log --author="Alice"
+
+# Custom format (hash, author, date, message)
+git log --pretty=format:"%h %an %ad %s" --date=short
+```
+
+Example output of `--pretty=format`:
+
+```
+5f86bc9 Alice 2025-04-02 Add new feature to handle user input
+a37c3bd Bob   2025-03-31 Fix layout issue on homepage
+```
+
+#### Summarize Contributions with `git shortlog`
+
+To see a summary of commits grouped by author:
+
+```bash
+git shortlog -sn
+```
+
+Example output:
+
+```
+    42  Alice
+    31  Bob
+    17  Charlie
+```
+
+The `-s` flag shows counts only, and `-n` sorts by number of commits (most active first).
+
+#### Inspect Recent HEAD Movements with `git reflog`
+
+The reflog records every time `HEAD` moves—checkouts, commits, rebases, resets:
+
+```bash
+git reflog
+```
+
+Example output:
+
+```
+a1b2c3d HEAD@{0}: commit: Fix login bug
+e4f5a6b HEAD@{1}: checkout: moving from feature to main
+c7d8e9f HEAD@{2}: commit: Add search feature
+```
+
+This is your safety net for recovering lost commits or undoing mistakes. See [Understanding HEAD](05_head.md) for more detail.
+
 #### Contrast Two Specific Commits
 
 To contrast two specific commits, use:

@@ -62,6 +62,10 @@ $ ls -a
 
 If the `.git` folder is removed, Git no longer treats the folder as a repository.
 
+For a deep dive into what `.git` contains and how Git stores data, see [Git Internals](17_git_internals.md).
+
+For a deep dive into what `.git` contains and how Git stores data, see [Git Internals](17_git_internals.md).
+
 ### What happens behind the scenes?
 
 When you run `git init`, Git sets up the internal database it uses to track files, changes, and relationships between changes.
@@ -120,6 +124,19 @@ git clone https://github.com/djeada/git.git /opt/projects
 
 This places the full repository inside `/opt/projects`. From there, you can work with it like any other folder—but because it’s a Git repo, you can commit changes locally and sync with the remote repository when needed.
 
+#### Clone Options for Specific Scenarios
+
+| Option | Purpose | Example |
+|--------|---------|---------|
+| `--depth N` | Shallow clone with last N commits only | `git clone --depth 1 <url>` |
+| `--single-branch` | Fetch only the default branch | `git clone --single-branch <url>` |
+| `--bare` | Clone without a working directory | `git clone --bare <url>` |
+| `-b <branch>` | Clone and check out a specific branch | `git clone -b develop <url>` |
+| `--mirror` | Full mirror including all refs | `git clone --mirror <url>` |
+| `--recurse-submodules` | Also clone submodules | `git clone --recurse-submodules <url>` |
+
+**When to use shallow clones:** CI/CD pipelines where you only need the latest code, bandwidth-limited environments, or initial exploration of very large repositories.
+
 ### Checking if You’re in a Git Repository
 
 There are two super simple ways to check.
@@ -158,3 +175,15 @@ ls .git
 If the folder exists, you’ll see files like `HEAD`, `config`, `objects`, and `refs`. That means the directory is a Git repo.
 
 If the folder isn’t there, then Git hasn’t been initialized in that location.
+
+**III. Check from a script**
+
+For scripts or aliases, use `git rev-parse`:
+
+```bash
+git rev-parse --is-inside-work-tree
+# output: true  (if inside a repo)
+# output: fatal: not a git repository  (if not)
+```
+
+This is more reliable than checking for `.git` because it handles nested repositories and worktrees correctly.

@@ -49,7 +49,7 @@ Example output:
 ```
 tag v2.0.0
 Tagger: (none - lightweight tag)
-commit b4d373k8990g2...
+commit b4d373a8990c2...
 Author: Jane Dev <jane@example.com>
 Date:   Mon Sep 1 12:34:56 2025 +0000
 
@@ -71,7 +71,7 @@ git tag -a v2.0.0 -m "v2.0.0: usage-based billing, new invoices"
 At a specific commit:
 
 ```bash
-git tag -a v2.0.0 -m "v2.0.0: ..." b4d373k
+git tag -a v2.0.0 -m "v2.0.0: ..." b4d373a
 ```
 
 Inspect it:
@@ -89,7 +89,7 @@ Date:   Mon Sep 1 12:45:00 2025 +0000
 
 v2.0.0: usage-based billing, new invoices
 
-commit b4d373k8990g2...
+commit b4d373a8990c2...
 Author: Jane Dev <jane@example.com>
 Date:   Mon Sep 1 12:34:56 2025 +0000
 

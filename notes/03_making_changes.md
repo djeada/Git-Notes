@@ -133,6 +133,28 @@ git commit -m "Added new feature to enhance user interface"
 
 A clear commit message is essential for maintaining a readable and understandable project history, especially when collaborating with others.
 
+**Commit message best practices:**
+
+- Write in the **imperative mood**: "Add feature" not "Added feature"
+- Keep the first line under 50 characters
+- Separate subject from body with a blank line
+- Use the body to explain *what* and *why*, not *how*
+
+Many teams follow [Conventional Commits](https://www.conventionalcommits.org/) format:
+
+```
+type(scope): brief summary
+
+Detailed explanation of what changed and why.
+
+feat(auth): add OAuth2 login support
+
+Added Google and GitHub OAuth2 providers to the
+login page. Closes #142.
+```
+
+Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
+
 II. **Push Your Commits to a Remote Repository (like GitHub):**
 
 After committing your changes locally, you often need to push them to a remote repository to share them with others or back them up. Use the `git push` command to accomplish this.
@@ -214,6 +236,12 @@ To change the commit message of the most recent commit, use the `git commit --am
 ```bash
 git commit --amend -m "New, improved message"
 git push --force
+```
+
+⚠️ **Safer alternative:** Use `--force-with-lease` instead of `--force`. It refuses to push if the remote has commits you haven’t fetched, protecting teammates’ work:
+
+```bash
+git push --force-with-lease
 ```
 
 Example: If you want to update the most recent commit message to "Fixed bug in user authentication," you would run:
@@ -390,3 +418,17 @@ git push origin main --force
 ⚠️ Warning: this will cause problems for anyone else using the repo — they’ll have to re-clone or reset their local copy.
 
 That’s the full cleanup process. It’s a bit heavy-handed, but it’s the standard way to remove a file from Git’s history.
+
+⚠️ **Modern alternative:** `git filter-branch` is considered legacy. For removing secrets or large files, prefer **`git filter-repo`** which is faster and safer:
+
+```bash
+pip install git-filter-repo
+
+# Remove a file from all history
+git filter-repo --invert-paths --path secret.txt
+
+# Remove all files larger than 10MB
+git filter-repo --strip-blobs-bigger-than 10M
+```
+
+See [github.com/newren/git-filter-repo](https://github.com/newren/git-filter-repo) for details.

@@ -102,6 +102,38 @@ You’ll see Git settings like `user.name` and `user.email`. If they match what 
 
 If you need different credentials for a single project, omit `--global` to apply the settings only to that repository.
 
+#### Configuration Scopes
+
+Git stores configuration at three levels, from lowest to highest precedence:
+
+1. **System** (`--system`): Applies to every user on the machine. Stored in `/etc/gitconfig`.
+2. **Global** (`--global`): Applies to your user account. Stored in `~/.gitconfig`.
+3. **Local** (`--local`): Applies only to a single repository. Stored in `.git/config`.
+
+A local setting always wins over global, which wins over system. To inspect each level:
+
+```bash
+git config --system --list    # system-wide settings
+git config --global --list    # your user settings
+git config --local --list     # this repo only
+```
+
+#### Useful Configuration Options
+
+```bash
+# Set your default branch name for new repos (modern standard)
+git config --global init.defaultBranch main
+
+# Enable colored output
+git config --global color.ui auto
+
+# Set your preferred editor (e.g., vim, nano, code --wait)
+git config --global core.editor "vim"
+
+# Store credentials so you don't retype passwords
+git config --global credential.helper cache
+```
+
 ### Setting Up SSH
 
 Using SSH with Git is more secure and saves you from typing your credentials every time you push or pull. Below is a step-by-step guide:
@@ -138,7 +170,24 @@ Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 ```
 
-Press Enter to accept the default file location, and optionally type a passphrase for extra security. When complete, you’ll have `id_rsa` (private) and `id_rsa.pub` (public) in `~/.ssh`.
+Press Enter to accept the default file location, and optionally type a passphrase for extra security. When complete, you'll have `id_rsa` (private) and `id_rsa.pub` (public) in `~/.ssh`.
+
+**Modern recommendation:** ED25519 keys are shorter, faster, and more secure than RSA. If your systems support it (most do since OpenSSH 6.5+), prefer:
+
+```bash
+ssh-keygen -t ed25519 -C "you@example.com"
+```
+
+This creates `id_ed25519` and `id_ed25519.pub` in `~/.ssh`.
+
+**Using SSH Agent (avoid retyping passphrases):**
+
+If you protected your key with a passphrase (recommended), add it to `ssh-agent` so you type it once per session:
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
 
 III. View your public key:
 

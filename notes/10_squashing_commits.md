@@ -102,14 +102,24 @@ pick m3n4o5p6 Fourth commit message
 
 - Change `pick` to `squash` (or `s` for short) for the commits you want to squash **into** the commit above it.
 - If you want to end up with just **one** commit, you typically mark the first commit as `pick` and the rest as `squash`.
+- Use `fixup` (or `f`) instead of `squash` to discard a commit’s message and keep only the first commit’s message—saves you from editing the combined message.
 
-**Example**:
+**Example (squash – combine messages):**
 
 ```
 pick a1b2c3d4 First commit message
-squash e5f6g7h8 Second commit message
-squash i9j0k1l2 Third commit message
-squash m3n4o5p6 Fourth commit message
+squash e5f6a7b8 Second commit message
+squash c9d0e1f2 Third commit message
+squash a3b4c5d6 Fourth commit message
+```
+
+**Example (fixup – keep only first message):**
+
+```
+pick a1b2c3d4 Add user authentication
+fixup e5f6a7b8 Fix typo in auth module
+fixup c9d0e1f2 Add missing test
+fixup a3b4c5d6 Update error message
 ```
 
 IV. **Save and Close the Editor**:
@@ -161,10 +171,10 @@ Now you have a single commit that represents all the changes from the last N com
 If the commits you have squashed were already **pushed** to a remote repository, you will need to **force push** your rewritten history:
 
 ```bash
-git push origin your-branch --force
+git push origin your-branch --force-with-lease
 ```
 
-Force pushing effectively replaces the remote branch with your local branch’s new commit structure. This can cause major confusion for anyone who has already pulled those original commits. They may encounter merge conflicts or will need to rebase their work.
+The `--force-with-lease` flag is safer than `--force` because it refuses to overwrite the remote branch if someone else has pushed changes you haven’t fetched yet. Force pushing effectively replaces the remote branch with your local branch’s new commit structure. This can cause major confusion for anyone who has already pulled those original commits. They may encounter merge conflicts or will need to rebase their work.
 
 **Therefore**, always coordinate with your team or ensure that no one else depends on the commit history you are about to rewrite. It might be safer to create a new branch that contains your squashed commit, then open a pull request from that branch, so you don’t disrupt existing references on the remote repository.
 
@@ -186,6 +196,24 @@ IV. **Check Local Testing Before Force Pushing**
 
 After squashing, ensure your project still builds and all tests pass locally. The squashing itself shouldn’t break code, but always confirm to avoid introducing subtle errors or regressions.
 
-V. **Communicate with Your Team**  
+V. **Use `--autosquash` for Faster Cleanup**
+
+If you name your commits with `fixup!` or `squash!` prefixes during development, Git can automatically reorder them during interactive rebase:
+
+```bash
+# During development, mark fixup commits
+git commit -m "fixup! Add user authentication"
+
+# Later, rebase with autosquash
+git rebase -i --autosquash HEAD~5
+```
+
+Git will automatically place `fixup!` commits after their target and mark them as `fixup`. To enable this by default:
+
+```bash
+git config --global rebase.autoSquash true
+```
+
+VI. **Communicate with Your Team**  
 
 If you do need to force push, post a heads-up in your team’s communication channel, or coordinate a short time window for rewriting history so that no one else is pushing or pulling on that branch.

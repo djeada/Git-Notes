@@ -15,8 +15,7 @@ main:    A──B──C
 feature:        D──E
 
 AFTER
-main:    A──B──C
-                 └──D'──E'   (D,E replayed; new hashes)
+main:    A──B──C──D'──E'   (D,E replayed; new hashes)
 ```
 
 **Does this rewrite history?**
@@ -50,22 +49,54 @@ Safe on **local/unshared** branches. If you must rebase a published branch, coor
 **Reset** moves the current branch (and possibly your index and working tree) to another commit. Mode determines what happens to your files: `--soft` keeps changes staged, `--mixed` (default) keeps changes unstaged, `--hard` discards them.
 
 ```
-Visual — before → after (moving HEAD from C to B)
+Move HEAD from C → B (git reset)
 
-BEFORE
-branch: A──B──C   (HEAD)
+──────────────── BEFORE ────────────────
 
-AFTER --soft
-branch: A──B   (HEAD)
-        └─ changes from C kept **staged**
+COMMITS (history)
+  A ── B ── C   ← HEAD
 
-AFTER --mixed (default)
-branch: A──B   (HEAD)
-        └─ changes from C kept **unstaged**
+STAGING AREA (index)
+  matches C
 
-AFTER --hard
-branch: A──B   (HEAD)
-        (changes from C **discarded**)
+WORKING DIRECTORY
+  matches C
+
+
+──────────────── AFTER --soft ──────────
+
+COMMITS (history)
+  A ── B        ← HEAD
+
+STAGING AREA (index)
+  changes from C (STAGED)
+
+WORKING DIRECTORY
+  changes from C (same as index)
+
+
+──────────────── AFTER --mixed (default)
+
+COMMITS (history)
+  A ── B        ← HEAD
+
+STAGING AREA (index)
+  matches B
+
+WORKING DIRECTORY
+  changes from C (UNSTAGED)
+
+
+──────────────── AFTER --hard ──────────
+
+COMMITS (history)
+  A ── B        ← HEAD
+
+STAGING AREA (index)
+  matches B
+
+WORKING DIRECTORY
+  matches B (changes from C DISCARDED)
 ```
 
 **Does this rewrite history?**

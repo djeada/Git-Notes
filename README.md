@@ -5,7 +5,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/djeada/Git-Notes.svg)](https://github.com/djeada/Git-Notes/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/djeada/Git-Notes.svg)](https://github.com/djeada/Git-Notes/network)
 
-A comprehensive curated collection of Git documentation, commands, and best practices designed to serve as both a learning resource and quick reference guide for developers at all skill levels.
+A comprehensive curated collection of Git documentation, commands, and best practices designed to serve as both a learning resource and quick reference guide.
 
 <div align="center">
   <img width="512" height="512" alt="Git Version Control System" src="https://github.com/user-attachments/assets/fca29073-7a9c-4d78-9b69-3556a5436237" />

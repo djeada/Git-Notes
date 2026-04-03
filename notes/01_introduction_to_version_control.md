@@ -11,36 +11,23 @@ Git is a powerful and widely used version control system that helps you manage c
 - GitHub is a great place to show off your projects to potential employers or collaborators.
 
 ```
-.______________________________________________________________________.
-|                                                                      |
-|                       GIT / SOURCE CONTROL FLOW                      |
-|______________________________________________________________________|
+┌──────────────────────────────────────────────────────────────────────┐
+│                    GIT / SOURCE CONTROL FLOW                         │
+└──────────────────────────────────────────────────────────────────────┘
 
-     ( Commit #1 )        ( Commit #2 )        ( Commit #3 )
-         │  │                 │  │                 │  │
-         v  │                 v  │                 v  │
-   .-----------.          .-----------.          .-----------.
-   |           |          |           |          |           |
-   |  COMMIT   |  ----->  |  COMMIT   |  ----->  |  COMMIT   |
-   |    #1     |          |    #2     |          |    #3     |
-   '-----------'          '-----------'          '-----------'
-          │                     │                     │
-          │    <Branch off>     │                     v
-          │                     │
-          v                     │
-     .-----------.              │
-     |           |              │
-     | COMMIT #2a|              │
-     | (Feature) |   < Merge >  │
-     '-----------'              │
-          │                     │
-          v                     v
-     .-----------.          .-----------.
-     |           |          |           |
-     | MERGED    |          |  LATEST   |
-     |  CODE     | <------  |  COMMIT   |
-     '-----------'          '-----------'
+main branch
+───────────
 
+   ┌──────────┐     ┌──────────┐                      ┌──────────────┐
+   │ Commit 1 │ ──▶ │ Commit 2 │ ───────────────────▶ │ Merge commit │ ──▶ Latest
+   └──────────┘     └──────────┘                      └──────────────┘
+                         │                                   ▲
+                         │ branch                            │ merge back
+                         ▼                                   │
+                   ┌──────────────┐                          │
+                   │ Commit 2a    │ ─────────────────────────┘
+                   │ (feature)    │
+                   └──────────────┘
 ```
 
 - Each **box** (e.g., `COMMIT #1`) represents a snapshot of the project at a certain point in time.

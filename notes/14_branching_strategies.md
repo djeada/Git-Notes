@@ -271,6 +271,7 @@ Keep forks fresh by adding the upstream remote (`git remote add upstream <url>`)
 * A small maintainer team can’t review a huge PR queue quickly, so contributions sit for days or weeks.
 * Discussion and context spread across many forks and PRs, which makes triage and coordination harder.
 * It’s secure, but high-friction for frequent collaborators.
+
 ### Git Flow
 
 **Git Flow** is a prescriptive branching model, proposed by Vincent Driessen, that assigns *named roles* to branches with clear rules for when to create, merge, and retire them.

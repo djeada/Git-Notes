@@ -44,13 +44,15 @@ This will save your changes and leave your working directory clean, allowing you
 
 ## Stashing with a message
 
-You can also provide a message when stashing your changes, which can be helpful for keeping track of what you were working on. To do this, use the git stash save command followed by the message. For example:
+You can also provide a message when stashing your changes, which can be helpful for keeping track of what you were working on. To do this, use the `git stash push -m` command followed by the message. For example:
 
 ```bash
-$ git stash save "Work in progress on new feature"
+$ git stash push -m "Work in progress on new feature"
 Saved working directory and index state WIP on feature: abcdefg Work in progress on new feature
 HEAD is now at abcdefg Add new feature
 ```
+
+Note: The older `git stash save "message"` syntax still works but has been deprecated since Git 2.16 in favour of `git stash push -m "message"`.
 
 ## Viewing Stashed Changes
 

@@ -2,7 +2,7 @@
 
 Git is a version control system (VCS) created by Linus Torvalds, the same person who developed the Linux kernel. It’s a tool for tracking changes to files over time, mainly used in software development but useful for any project that involves evolving files.
 
-The simplest way to think about Git is like a time machine for your project—it takes snapshots of your files at different points in time. You can revisit any of those snapshots later, compare them, or restore them if something breaks.
+The simplest way to think about Git is like a time machine for your project, it takes snapshots of your files at different points in time. You can revisit any of those snapshots later, compare them, or restore them if something breaks.
 
 Git also helps teams work together without overwriting each other’s work. Two people can edit different parts of the same file at the same time, and Git can merge those changes into a single, consistent version.
 
@@ -11,13 +11,13 @@ In short, Git:
 * **Keeps backups** by storing the history of your project so you can recover from mistakes or lost files.
 * **Supports simultaneous work** so multiple people can edit without interfering with each other’s changes.
 * **Merges different lines of work** in a controlled way, keeping your history organized.
-* **Records detailed history** of changes—who made them, when, and why.
+* **Records detailed history** of changes, who made them, when, and why.
 
 Branches in Git let you work on multiple versions of your project in parallel. For example, you might fix a bug on one branch while developing a new feature on another, switching between them as needed.
 
 ### What is a repository?
 
-A Git repository (often called a “repo”) is where Git stores your project files along with all the historical data that makes version control possible. This history lives inside a hidden `.git` folder. Without it, the directory is just a regular folder—Git won’t know it’s a repository.
+A Git repository (often called a “repo”) is where Git stores your project files along with all the historical data that makes version control possible. This history lives inside a hidden `.git` folder. Without it, the directory is just a regular folder, Git won’t know it’s a repository.
 
 There are two main kinds of repositories:
 
@@ -102,7 +102,7 @@ These pieces form a chain of snapshots. Git’s history browsing commands simply
 
 ### Cloning an Existing Repository
 
-To make a full local copy of a repository—its files, commit history, and configuration—you use the **clone** command. This is the standard way to download a project from a hosting service like GitHub, GitLab, or Bitbucket onto your own machine:
+To make a full local copy of a repository, its files, commit history, and configuration, you use the **clone** command. This is the standard way to download a project from a hosting service like GitHub, GitLab, or Bitbucket onto your own machine:
 
 ```bash
 git clone https://github.com/djeada/git.git
@@ -120,7 +120,7 @@ If you want to clone the repository into a specific directory rather than the de
 git clone https://github.com/djeada/git.git /opt/projects
 ```
 
-This places the full repository inside `/opt/projects`. From there, you can work with it like any other folder—but because it’s a Git repo, you can commit changes locally and sync with the remote repository when needed.
+This places the full repository inside `/opt/projects`. From there, you can work with it like any other folder, but because it’s a Git repo, you can commit changes locally and sync with the remote repository when needed.
 
 #### Clone Options for Specific Scenarios
 

@@ -293,7 +293,7 @@ This process ensures that your commit history remains clean and that older commi
 
 ### Removing Commits in Git
 
-Sometimes you realize you committed something by mistake — maybe the wrong file, maybe an incomplete feature. Git gives you a couple of ways to remove commits from your history.
+Sometimes you realize you committed something by mistake ,  maybe the wrong file, maybe an incomplete feature. Git gives you a couple of ways to remove commits from your history.
 
 #### Removing the last `N` commits
 
@@ -314,7 +314,7 @@ So if you want to remove the last two commits, you’d run:
 git reset HEAD~2
 ```
 
-At this point, Git has moved the branch pointer back in time. The commits are no longer part of your branch history. But the actual *changes* from those commits are still sitting in your working directory — as if you had just made them but hadn’t committed yet.
+At this point, Git has moved the branch pointer back in time. The commits are no longer part of your branch history. But the actual *changes* from those commits are still sitting in your working directory ,  as if you had just made them but hadn’t committed yet.
 
 #### What this looks like
 
@@ -350,11 +350,11 @@ git push origin +HEAD
 
 The `+` sign tells Git you really want to replace the remote branch with your local branch, even though the histories don’t match anymore.
 
-⚠️ Be careful with this — if anyone else has already pulled those commits, this will cause conflicts for them.
+⚠️ Be careful with this ,  if anyone else has already pulled those commits, this will cause conflicts for them.
 
 ### Cleaning Up Your Commit History
 
-Every now and then, you might commit something you regret — a password, an API key, or maybe a massive file that doesn’t belong in Git. The tricky part is that even if you delete the file in a later commit, it’s still hanging around in the *history*. Anyone who digs into past commits (or clones the repo) can still find it.
+Every now and then, you might commit something you regret ,  a password, an API key, or maybe a massive file that doesn’t belong in Git. The tricky part is that even if you delete the file in a later commit, it’s still hanging around in the *history*. Anyone who digs into past commits (or clones the repo) can still find it.
 
 That’s where `git filter-branch` comes in. This command lets you rewrite the history of your repo and strip out files completely. Think of it as a “surgical cleanup.” But use it carefully: since it rewrites history, it can mess with collaborators’ repos if they’ve already pulled from yours.
 
@@ -415,7 +415,7 @@ If this repo is on a remote (like GitHub), you’ll need to force-push, since yo
 git push origin main --force
 ```
 
-⚠️ Warning: this will cause problems for anyone else using the repo — they’ll have to re-clone or reset their local copy.
+⚠️ Warning: this will cause problems for anyone else using the repo ,  they’ll have to re-clone or reset their local copy.
 
 That’s the full cleanup process. It’s a bit heavy-handed, but it’s the standard way to remove a file from Git’s history.
 

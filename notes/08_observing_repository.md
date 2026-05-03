@@ -1,6 +1,6 @@
 ## Checking and Understanding Changes
 
-Git offers several ways to inspect and understand what has changed in your codebase. Mastering these commands helps you monitor progress, spot issues early, and keep your project history organized. Think of it like reading the "track changes" feature in a word processor—but for your entire code project.
+Git offers several ways to inspect and understand what has changed in your codebase. Mastering these commands helps you monitor progress, spot issues early, and keep your project history organized. Think of it like reading the "track changes" feature in a word processor, but for your entire code project.
 
 ### Viewing Changes
 
@@ -311,7 +311,7 @@ The `-s` flag shows counts only, and `-n` sorts by number of commits (most activ
 
 #### Inspect Recent HEAD Movements with `git reflog`
 
-The reflog records every time `HEAD` moves—checkouts, commits, rebases, resets:
+The reflog records every time `HEAD` moves, checkouts, commits, rebases, resets:
 
 ```bash
 git reflog

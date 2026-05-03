@@ -281,11 +281,13 @@ git fetch upstream
 
 III. **Merging Changes from Upstream**
 
-After fetching the updates from the upstream repository, the next step is to merge those updates into your current branch. This applies the changes from the upstream repository’s master branch to your current branch.
+After fetching the updates from the upstream repository, the next step is to merge those updates into your current branch. This applies the changes from the upstream repository’s default branch to your current branch.
 
 ```bash
-git merge upstream/master
+git merge upstream/main
 ```
+
+Replace `main` with the upstream’s actual default branch name if it differs (e.g., `master`).
 
 You may need to resolve any merge conflicts that arise during this step.
 
@@ -301,12 +303,12 @@ Replace `branch_name` with the name of the branch you are working on (e.g., `mai
 
 V. **Fetch and Merge in a Single Step**
 
-Alternatively, you can fetch and merge the upstream repository’s master branch into your current branch in a single step using the `git pull` command. This command is a shorthand for `git fetch` followed by `git merge`.
+Alternatively, you can fetch and merge the upstream repository’s default branch into your current branch in a single step using the `git pull` command. This command is a shorthand for `git fetch` followed by `git merge`.
 
 ```bash
-git pull upstream master
+git pull upstream main
 ```
 
-This method combines the fetch and merge operations, making it quicker and easier to synchronize your fork with the upstream repository.
+Replace `main` with the upstream’s actual default branch name if it differs. This method combines the fetch and merge operations, making it quicker and easier to synchronize your fork with the upstream repository.
 
 **GitHub shortcut:** Since 2021, GitHub provides a "Sync fork" button on your fork’s page that handles upstream synchronization automatically through the web UI, without needing command-line steps.

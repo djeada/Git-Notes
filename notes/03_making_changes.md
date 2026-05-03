@@ -244,10 +244,10 @@ git push --force
 git push --force-with-lease
 ```
 
-Example: If you want to update the most recent commit message to "Fixed bug in user authentication," you would run:
+Example: If you want to update the most recent commit message to "Fix bug in user authentication," you would run:
 
 ```bash
-git commit --amend -m "Fixed bug in user authentication"
+git commit --amend -m "Fix bug in user authentication"
 git push --force
 ```
 

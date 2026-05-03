@@ -285,7 +285,7 @@ There’s no output unless the folder doesn’t exist. If you see an error, doub
 II. Add the upstream remote:
 
 ```bash
-git remote add upstream git://github.com/author/repo_link
+git remote add upstream https://github.com/author/repo_link
 ```
 
 Usually, there is no output if successful. If you see an error like `fatal: remote upstream already exists.`, it means the remote name “upstream” is already taken or was added before.
@@ -419,7 +419,7 @@ cd path/to/your/local/repo
 II. Add the contributor’s repo as a remote:
 
 ```bash
-git remote add other_user git://github.com/other_user/repo_link
+git remote add other_user https://github.com/other_user/repo_link
 ```
 
 No output if successful. If you see `fatal: remote other_user already exists.`, pick a different remote name.

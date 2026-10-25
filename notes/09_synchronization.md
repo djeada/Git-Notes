@@ -16,7 +16,7 @@ git fetch
 
 II. **Pull:**
 
-The `git pull` command combines `fetch` and `merge` in a single step. It downloads the changes and immediately merges them into your current branch. This is useful when you want to update your branch quickly.
+The `git pull` command combines `fetch` and `merge` in a single step. It downloads the changes and immediately merges them into your current branch. This is useful when you want to update your branch quickly. If your branch and the remote branch have diverged and you have not set `pull.rebase` (or passed `--rebase`, `--no-rebase` or `--ff-only`), current Git versions refuse with `fatal: Need to specify how to reconcile divergent branches.` and ask you to choose.
 
 ```bash
 git pull

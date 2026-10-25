@@ -11,11 +11,13 @@ Visual — before → after (rebasing feature onto main)
 
 BEFORE
 main:    A──B──C
-               \
-feature:        D──E
+            \
+feature:     D──E
 
 AFTER
-main:    A──B──C──D'──E'   (D,E replayed; new hashes)
+main:    A──B──C
+               \
+feature:        D'──E'   (D,E replayed onto C; new hashes)
 ```
 
 **Does this rewrite history?**
@@ -172,8 +174,8 @@ Visual — before → after (remove a secret added in C)
 BEFORE
 A──B──C[secret]──D──E
 
-AFTER (new hashes)
-A'──B'──C'──D'──E'   (secret purged from all affected commits)
+AFTER (new hashes from C onward)
+A──B──C'──D'──E'   (A and B unchanged; secret purged from C and every later commit)
 ```
 
 **Will this change commit IDs?**
@@ -253,7 +255,7 @@ When things go wrong, these commands can help you recover:
 | Bad merge you want to undo | `git reset --hard ORIG_HEAD` (immediately after merge) |
 | Need to undo a rebase | `git reflog` → `git reset --hard <pre-rebase-hash>` |
 | Accidentally deleted a branch | `git reflog` → `git branch <name> <hash>` |
-| Force pushed and lost remote work | Ask teammates for their local copy, or check `git reflog` on the server |
+| Force pushed and lost remote work | Ask teammates for their local copy, or run `git reflog show origin/<branch>` in a clone that had fetched the old tip (bare server repos keep no reflog by default) |
 
 ```bash
 # The reflog is your safety net — always check it first

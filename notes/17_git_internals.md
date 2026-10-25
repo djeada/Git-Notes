@@ -1,6 +1,6 @@
 ## Git Internals
 
-Git stores your project as a graph of immutable objects. Instead of storing changes as a sequence of file diffs, Git stores snapshots of your project. Each snapshot is built from content-addressed objects, meaning each object is identified by a hash of its contents.
+Git stores your project as a graph of immutable objects. Instead of storing changes as a sequence of file diffs, Git stores snapshots of your project. Each snapshot is built from content-addressed objects, meaning each object is identified by a hash of its contents (more precisely, a hash of a short header with the object type and size, followed by the contents; `echo "hello world" | git hash-object --stdin` equals the SHA-1 of `blob 12\0hello world\n`).
 
 At the bottom are **blobs**. A blob stores raw file contents only. It does not store the file name, path, permissions, or history.
 
@@ -737,7 +737,7 @@ Tags give names to important points in history, often releases.
 
 There are two main tag types.
 
-## Lightweight Tag
+#### Lightweight Tag
 
 A lightweight tag is just a ref pointing directly to a commit.
 
@@ -805,7 +805,7 @@ $ git cat-file -s HEAD
 
 $ git cat-file -p HEAD
 tree 7b3f9a1c5d3e8f6a2b0c9d4e1f8a6b7c9d0e1f2a
-parent 2a4c6e8f1b3d5a7c9e0f2a4b6d8e1c3f5a7b9d0
+parent 2a4c6e8f1b3d5a7c9e0f2a4b6d8e1c3f5a7b9d01
 author Alex Example <alex@example.com> 1777808400 +0200
 committer Alex Example <alex@example.com> 1777808400 +0200
 
@@ -834,7 +834,7 @@ Example output:
 ```text
 commit 9fceb02d0ae598e95dc970b74767f19372d61af8
 tree 7b3f9a1c5d3e8f6a2b0c9d4e1f8a6b7c9d0e1f2a
-parent 2a4c6e8f1b3d5a7c9e0f2a4b6d8e1c3f5a7b9d0
+parent 2a4c6e8f1b3d5a7c9e0f2a4b6d8e1c3f5a7b9d01
 author Alex Example <alex@example.com> 1777808400 +0200
 committer Alex Example <alex@example.com> 1777808400 +0200
 
@@ -868,14 +868,14 @@ Example output:
 ```text
 $ git ls-tree HEAD
 100644 blob e965047ad7c57865823c7d992b1d046ea66edf78    hello.txt
-040000 tree 3b18e512dba79e4c8300dd08aeb37f8e728b8dad    src
+040000 tree 4f2e8c1a9b7d3e5f6a0c2b4d8e1f3a5c7b9d0e2f    src
 
 $ git ls-tree -r HEAD
 100644 blob e965047ad7c57865823c7d992b1d046ea66edf78    hello.txt
 100644 blob a3f5c7d9e1b2a4c6e8f0d3b5a7c9e1f2d4b6a8c0    src/main.py
 
 $ git ls-tree -r --long HEAD
-100644 blob e965047ad7c57865823c7d992b1d046ea66edf78       14    hello.txt
+100644 blob e965047ad7c57865823c7d992b1d046ea66edf78        6    hello.txt
 100644 blob a3f5c7d9e1b2a4c6e8f0d3b5a7c9e1f2d4b6a8c0      128    src/main.py
 ```
 
@@ -956,7 +956,7 @@ This command reads a file directly from a commit without checking out that commi
 Example output:
 
 ```text
-Hello, Git!
+Hello
 ```
 
 Explanation:

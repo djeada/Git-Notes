@@ -70,7 +70,7 @@ If you accidentally switch away from a detached HEAD without saving your work, `
 ```bash
 git reflog
 # output example:
-# a1b2c3d HEAD@{0}: checkout: moving to main
+# a1b2c3d HEAD@{0}: checkout: moving from e4f5a6b... to main
 # e4f5a6b HEAD@{1}: commit: Important work I did while detached
 # c7d8e9f HEAD@{2}: checkout: moving from main to c7d8e9f
 
@@ -110,8 +110,10 @@ Commit **F** is **not** on `master`. If you switch back to `master`, there’s n
 You enter a detached HEAD state by checking out a commit hash or tag. For example:
 
 ```bash
-git switch b4d373a8990c2b5de30a37bf843b2f51fae2b40
+git switch --detach b4d373a8990c2b5de30a37bf843b2f51fae2b40
 ```
+
+(Plain `git switch <commit>` without `--detach` is refused with `fatal: a branch is expected, got commit ...`.)
 
 Or equivalently:
 
@@ -119,7 +121,7 @@ Or equivalently:
 git checkout b4d373a8990c2b5de30a37bf843b2f51fae2b40
 ```
 
-`HEAD` now points to that exact commit rather than a branch tip. Git will say:
+`HEAD` now points to that exact commit rather than a branch tip. `git checkout` will say:
 
 ```
 Note: switching to 'b4d373a8990c2b5de30a37bf843b2f51fae2b40'.

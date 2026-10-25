@@ -43,7 +43,7 @@ Staging individual files is useful when you want to commit changes selectively, 
 
 II. **Stage All Changed Files:**
 
-If you want to stage all the changes you made across multiple files, you can use the `git add .` command. The period `.` is a wildcard that tells Git to stage changes from the current directory and all its subdirectories.
+If you want to stage all the changes you made across multiple files, you can use the `git add .` command. The period `.` is a pathspec meaning the current directory, so Git stages changes (including new and deleted files) from the current directory and all its subdirectories.
 
 ```bash
 git add .
@@ -81,7 +81,7 @@ This is helpful when you realize that a particular file shouldn't be part of the
 
 II. **Revert Everything to the State of the Last Commit:**
 
-If you want to discard all changes and revert everything in the working directory and staging area to match the last commit, use the `git reset --hard` command. This will remove all uncommitted changes, so use it with caution.
+If you want to discard all changes and revert everything in the working directory and staging area to match the last commit, use the `git reset --hard` command. This will remove all uncommitted changes to tracked files (untracked files are left in place), so use it with caution.
 
 ```bash
 git reset --hard
@@ -111,7 +111,7 @@ Commits form the backbone of your project's history, allowing you to track progr
 +----------+
 | message  | A brief description of the changes made in the commit.
 +----------+
-| changes  | The actual changes made to the files.
+| snapshot | A full snapshot (tree) of the tracked files, not a diff.
 +----------+
 ```
 
@@ -231,7 +231,7 @@ Clear and accurate commit messages enhance the readability of your project's his
 
 #### Edit the Message of the Most Recent Commit
 
-To change the commit message of the most recent commit, use the `git commit --amend` command followed by the new message. After amending the commit message, you need to force push the changes to the remote repository.
+To change the commit message of the most recent commit, use the `git commit --amend` command followed by the new message. If the commit was already pushed, you need to force push the amended commit to the remote repository.
 
 ```bash
 git commit --amend -m "New, improved message"
@@ -399,13 +399,21 @@ git log --stat
 
 You should no longer see `secret.txt` listed in any commit.
 
-If you want to be extra sure, try:
+If you want to be extra sure, check every ref, not just the current branch:
 
 ```bash
-git grep "secret.txt" $(git rev-list --all)
+git log --all --oneline -- secret.txt
 ```
 
-If nothing shows up, the file is fully removed.
+At first this still lists the old commits, because `filter-branch` keeps a backup of the original history under `refs/original/`. The file is only really gone once you delete that backup, expire the reflog, and garbage-collect:
+
+```bash
+git update-ref -d refs/original/refs/heads/main
+git reflog expire --expire=now --all
+git gc --prune=now
+```
+
+After that, `git log --all --oneline -- secret.txt` prints nothing.
 
 #### Step 4. Push the rewritten history
 

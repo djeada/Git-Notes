@@ -37,7 +37,6 @@ For example:
 ```bash
 $ git stash
 Saved working directory and index state WIP on feature: abcdefg Add new feature
-HEAD is now at abcdefg Add new feature
 ```
 
 This will save your changes and leave your working directory clean, allowing you to switch branches or make other changes without losing your work.
@@ -48,8 +47,7 @@ You can also provide a message when stashing your changes, which can be helpful 
 
 ```bash
 $ git stash push -m "Work in progress on new feature"
-Saved working directory and index state WIP on feature: abcdefg Work in progress on new feature
-HEAD is now at abcdefg Add new feature
+Saved working directory and index state On feature: Work in progress on new feature
 ```
 
 Note: The older `git stash save "message"` syntax still works but has been deprecated since Git 2.16 in favour of `git stash push -m "message"`.
@@ -64,7 +62,7 @@ To see a list of all the stashed changes in your repository, you can use the `gi
 
 ```bash
 $ git stash list
-stash@{0}: WIP on feature: abcdefg Work in progress on new feature
+stash@{0}: On feature: Work in progress on new feature
 stash@{1}: WIP on bugfix: 1234567 Temporary stash before bugfix
 stash@{2}: WIP on refactor: 89abcde Started refactoring codebase
 ```
@@ -126,11 +124,11 @@ This command will apply the changes from the most recent stash (i.e., `stash@{0}
 
 ### Resolving Conflicts
 
-When applying a stash, you may encounter conflicts if the changes in the stash conflict with the changes in your working directory. Git will notify you of any conflicts, and you will need to resolve them manually, similar to resolving merge conflicts. Once resolved, you can continue working with the applied changes.
+When applying a stash, you may encounter conflicts if the changes in the stash conflict with changes committed since the stash was made (if uncommitted local changes touch the same files, Git refuses to apply the stash instead). Git will notify you of any conflicts, and you will need to resolve them manually, similar to resolving merge conflicts. Once resolved, you can continue working with the applied changes.
 
 ### Removing a Stash After Applying
 
-If you want to apply a stash and remove it from the stash list in one step, you can use the `git stash pop` command. This command applies the stash and then deletes it from the stash list:
+If you want to apply a stash and remove it from the stash list in one step, you can use the `git stash pop` command. This command applies the stash and then deletes it from the stash list (if applying it causes conflicts, the stash is kept):
 
 ```bash
 $ git stash pop stash@{0}
@@ -140,7 +138,7 @@ This is useful when you are sure you no longer need the stash after applying it.
 
 ### Applying Stashes with Index Changes
 
-By default, `git stash apply` only applies changes to the working directory. If your stash includes changes to the index (staged files), you can include those changes by using the `--index` option:
+By default, `git stash apply` restores changes to the working directory only, so previously staged modifications come back unstaged (newly added files stay added). If your stash includes changes to the index (staged files), you can include those changes by using the `--index` option:
 
 ```bash
 $ git stash apply --index stash@{0}

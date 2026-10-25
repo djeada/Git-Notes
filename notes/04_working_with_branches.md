@@ -187,7 +187,7 @@ Then run:
 git merge branch1
 ```
 
-This tells Git: “Take all the commits from `branch1` and merge them into `branch2`.” If everything goes smoothly, Git will create a new “merge commit.” Sometimes you’ll encounter conflicts if both branches changed the same lines in different ways. If that happens, Git will pause the merge and let you resolve the conflicts manually in the affected files.
+This tells Git: “Take all the commits from `branch1` and merge them into `branch2`.” If both branches have new commits and everything goes smoothly, Git will create a new “merge commit” (if the current branch has no new commits, Git simply fast-forwards instead, as shown below). Sometimes you’ll encounter conflicts if both branches changed the same lines in different ways. If that happens, Git will pause the merge and let you resolve the conflicts manually in the affected files.
 
 Here’s an example merge flow and its typical output:
 
@@ -241,7 +241,7 @@ Once you’ve merged a branch (or if you decide it’s no longer needed), you ca
 git branch -d branch1
 ```
 
-Git will warn you if the branch hasn’t been merged. In that case, you can force-delete with:
+Git will refuse with an error (`the branch 'branch1' is not fully merged`) if the branch hasn’t been merged. In that case, you can force-delete with:
 
 ```bash
 git branch -D branch1

@@ -12,8 +12,8 @@ Before squashing `feature` into a single commit:
 main branch
 │
 A──B──C          ◄─ tip of main
-    \
-     D──E──F──G  ◄─ feature (4 commits)
+      \
+       D──E──F──G  ◄─ feature (4 commits)
 ```
 
 The four commits **D → G** capture one logical feature but were made in stages.
@@ -23,12 +23,12 @@ One-liner to squash everything on `feature` into a single commit:
 ```bash
 # run from the feature branch
 git reset --soft $(git merge-base main HEAD) \
-  && git commit --amend -m "feat: brief, imperative summary of the feature"
+  && git commit -m "feat: brief, imperative summary of the feature"
 ```
 
 * `git merge-base main HEAD` finds the common ancestor (**C**) of `main` and `feature`.
 * `reset --soft` moves `HEAD` back to **C** while keeping all changes staged.
-* `commit --amend` creates the new squashed commit (**H**) with your message.
+* `commit` creates the new squashed commit (**H**) on top of **C** with your message (do not use `--amend` here: that would rewrite **C**, which belongs to `main`).
 * If the branch is already on a remote: `git push --force-with-lease`.
 
 After squashing:
@@ -37,8 +37,8 @@ After squashing:
 main branch
 │
 A──B──C
-    \
-     H              ◄─ feature (single squashed commit)
+      \
+       H            ◄─ feature (single squashed commit)
 ```
 
 * **H** now contains the combined changes from **D, E, F, G**.
@@ -124,7 +124,7 @@ fixup a3b4c5d6 Update error message
 
 IV. **Save and Close the Editor**:
 
-After you close the editor, Git will apply your rebase instructions. It will then open another editor window to let you customize the final combined commit message.  
+After you close the editor, Git will apply your rebase instructions. If you used `squash`, it will then open another editor window to let you customize the final combined commit message (with only `fixup`, no second editor opens).  
 
 **Tip**: Use this opportunity to write a clear and descriptive commit message that summarizes all the changes you’ve squashed together.
 

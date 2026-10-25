@@ -15,6 +15,7 @@ A comprehensive curated collection of Git documentation, commands, and best prac
 
 - [Overview](#overview)
 - [Documentation Structure](#documentation-structure)
+- [Quizzes](#quizzes)
 - [Getting Started](#getting-started)
 - [Core Topics](#core-topics)
 - [Advanced Concepts](#advanced-concepts)
@@ -67,6 +68,17 @@ This repository provides structured, comprehensive documentation covering Git ve
 | [Monorepo vs. Multirepo](notes/15_mono_and_multi_repo.md) | Repository architecture decisions | Advanced |
 | [Dangerous Commands](notes/16_dangerous_commands.md) | High-risk operations and safeguards | Advanced |
 | [Git Internals](notes/17_git_internals.md) | Object model and internal storage | Advanced |
+
+## 📝 Quizzes
+
+Multiple-choice quizzes with explanations, built from these notes. You can take them interactively on [adamdjellouli.com](https://adamdjellouli.com/tools/quiz_app/?category=git).
+
+| Quiz | Covers |
+|------|--------|
+| [Git Basics](quizzes/git_basics.md) | The three areas, init and clone, config scopes, `.gitignore`, staging, committing, diffs and basic undo |
+| [Branches, HEAD, Tags and Stash](quizzes/git_branches_head_tags_and_stash.md) | Branching, merging, conflicts, rebase, detached HEAD, revision syntax, tags and the stash |
+| [History, Remotes and Recovery](quizzes/git_history_remotes_and_recovery.md) | log, blame and bisect, fetch, pull and push, force-with-lease, squashing, archives, reset and the reflog |
+| [Workflows, Servers and Internals](quizzes/git_workflows_and_internals.md) | Bare repositories and hooks, branching strategies, monorepos and submodules, objects, refs and packfiles |
 
 ## 🚀 Getting Started
 

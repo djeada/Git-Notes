@@ -116,10 +116,8 @@ Example Output:
 
 ```
 @@ -5,7 +5,7 @@
- Here is some text that has changed a little.
-
- - This is the old line
- + This is the new line
+Here is some text that has changed a little.
+This is the [-old-]{+new+} line
 ```
 
 Instead of simply showing a whole line as changed, `--word-diff` zeroes in on the specific words you altered. If you often fix minor typos or modify small text segments, this command saves you from scanning entire lines to find those tiny tweaks.
@@ -143,12 +141,12 @@ git blame index.html
 You’ll see something like:
 
 ```
-a4d6e439 (Alice   2025-04-01 10:12:56) <header>
-d35f7abc (Bob     2025-04-02 14:33:10)   <h1>Welcome</h1>
-a4d6e439 (Alice   2025-04-01 10:12:56) </header>
+a4d6e439 (Alice 2025-04-01 10:12:56 +0000 1) <header>
+d35f7abc (Bob   2025-04-02 14:33:10 +0000 2)   <h1>Welcome</h1>
+a4d6e439 (Alice 2025-04-01 10:12:56 +0000 3) </header>
 ```
 
-- Each line is listed with the commit hash (`a4d6e439`), the author’s name (`Alice`), the date/time, and the code snippet.
+- Each line is listed with the commit hash (`a4d6e439`), the author’s name (`Alice`), the date/time, the line number, and the code snippet.
 - This is especially good for pinpointing when (and who) introduced a bug or feature.
 
 #### Viewing Changes in a Specific File
@@ -253,7 +251,6 @@ Example Output:
 ```
 * 5f86bc9 (HEAD -> main) Add new feature to handle user input
 * a37c3bd Fix layout issue on homepage
-|\
 | * b47c582 (feature-branch) Start working on search functionality
 | * 1c9a6bd Add basic search form
 |/

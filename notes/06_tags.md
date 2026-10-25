@@ -47,8 +47,6 @@ git show --no-patch v2.0.0
 Example output:
 
 ```
-tag v2.0.0
-Tagger: (none - lightweight tag)
 commit b4d373a8990c2...
 Author: Jane Dev <jane@example.com>
 Date:   Mon Sep 1 12:34:56 2025 +0000
@@ -479,7 +477,7 @@ git tag -a v2.3.0 -m "v2.3.0: SSO + revamped audit logs"
 git push origin v2.3.0
 ```
 
-Push only release tags automatically when pushing commits:
+Push annotated tags (not lightweight ones) that point at the commits being pushed:
 
 ```bash
 git push --follow-tags

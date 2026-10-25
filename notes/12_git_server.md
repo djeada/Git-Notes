@@ -55,10 +55,12 @@ Create a home for repos and initialize one:
 
 ```bash
 sudo mkdir -p /opt/git/myrepo.git
-sudo git init --bare /opt/git/myrepo.git
+sudo git init --bare --initial-branch=main /opt/git/myrepo.git
+# without --initial-branch, the server's HEAD may point to "master" and clones end up on the wrong branch
 sudo tree -L 1 /opt/git/myrepo.git 2>/dev/null || ls -1 /opt/git/myrepo.git
 # output (typical top-level contents):
 # HEAD
+# branches
 # config
 # description
 # hooks
@@ -226,12 +228,9 @@ branch=${refname#refs/heads/}
 
 if [ "$branch" = "main" ]; then
   workdir=/var/www/myapp
-  if [ ! -d "$workdir/.git" ]; then
-    git --work-tree="$workdir" --git-dir=/opt/git/myrepo.git checkout -f main
-  else
-    git --work-tree="$workdir" --git-dir=/opt/git/myrepo.git fetch origin main
-    git --work-tree="$workdir" --git-dir=/opt/git/myrepo.git checkout -f main
-  fi
+  mkdir -p "$workdir"
+  # the bare repo already has the pushed commits; just write them into the work tree
+  git --work-tree="$workdir" --git-dir=/opt/git/myrepo.git checkout -f main
   # place build/restart steps here:
   # systemctl restart myapp.service
   echo "Deployed $(git --git-dir=/opt/git/myrepo.git rev-parse --short main) to $workdir"
@@ -244,8 +243,8 @@ Push to trigger:
 
 ```bash
 git push origin main
-# output (server hook echoes back):
-# Deployed 9f3a1c2 to /var/www/myapp
+# output (server hook echoes back, prefixed with "remote:"):
+# remote: Deployed 9f3a1c2 to /var/www/myapp
 ```
 
 Small mental picture of the flow:
@@ -330,6 +329,8 @@ Fix repo permissions:
 sudo chown -R git:git /opt/git
 sudo find /opt/git -type d -exec chmod 755 {} \;
 sudo find /opt/git -type f -exec chmod 644 {} \;
+# 644 removes the execute bit from hooks, and Git silently skips non-executable hooks; restore it:
+sudo chmod 755 /opt/git/myrepo.git/hooks/post-receive
 sudo chmod -R 700 ~git/.ssh
 sudo chmod 600 ~git/.ssh/authorized_keys
 ```
@@ -442,8 +443,10 @@ server {
         root /opt;
         gzip off;
         include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME /usr/lib/git-core/git-http-backend;
         fastcgi_param GIT_HTTP_EXPORT_ALL "";
-        fastcgi_param GIT_PROJECT_ROOT /opt/git;
+        # PATH_INFO is /git/myrepo.git/..., so the project root is /opt (-> /opt/git/myrepo.git)
+        fastcgi_param GIT_PROJECT_ROOT /opt;
         fastcgi_param PATH_INFO $uri;
         fastcgi_pass unix:/run/fcgiwrap.socket;
         # Make sure repos have git-daemon-export-ok or rely on GIT_HTTP_EXPORT_ALL above
@@ -499,6 +502,7 @@ A couple of sanity checks and gotchas that save time. Make sure the web server u
 sudo chgrp -R git /opt/git
 sudo find /opt/git -type d -exec chmod 755 {} \;
 sudo find /opt/git -type f -exec chmod 644 {} \;
+sudo chmod 755 /opt/git/myrepo.git/hooks/post-receive   # keep hooks executable
 sudo usermod -aG git www-data
 ```
 
@@ -511,7 +515,7 @@ I. Install Git, make a bare repo, ensure `git:git` owns it.
 ```bash
 sudo apt install git
 sudo mkdir -p /opt/git/myrepo.git
-sudo git init --bare /opt/git/myrepo.git
+sudo git init --bare --initial-branch=main /opt/git/myrepo.git
 sudo chown -R git:git /opt/git
 ```
 

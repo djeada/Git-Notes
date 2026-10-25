@@ -50,7 +50,7 @@ To start tracking a new project with Git, you create a repository with:
 git init project_name
 ```
 
-This makes a new folder called `project_name` and adds an empty `.git` directory inside it. That `.git` directory holds all the metadata and history.
+This makes a new folder called `project_name` and adds a new `.git` directory inside it. That `.git` directory holds all the metadata and history.
 
 Example:
 

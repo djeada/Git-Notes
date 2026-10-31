@@ -322,7 +322,7 @@ e4f5a6b HEAD@{1}: checkout: moving from feature to main
 c7d8e9f HEAD@{2}: commit: Add search feature
 ```
 
-This is your safety net for recovering lost commits or undoing mistakes. See [Understanding HEAD](05_head.md) for more detail.
+This is your safety net for recovering lost commits or undoing mistakes. See [Understanding HEAD](https://github.com/djeada/Git-Notes/blob/main/notes/05_head.md) for more detail.
 
 #### Contrast Two Specific Commits
 
